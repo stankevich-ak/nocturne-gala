@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Nocturne Gala — Historic Dance Balls in Vancouver & Victoria</title>
+<meta name="description" content="Nocturne Gala creates immersive historic dance balls in BC. Beginner-friendly events with guided rehearsals, live music, photography, and beautiful venues. Join the waitlist for upcoming events in Vancouver and Victoria."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ── */
+:root{
+  --pitch:#0F0D0B;
+  --candlelight:#D4B86A;
+  --beeswax:#B8902A;
+  --parchment:#F0E8D5;
+  --blood:#7A0B14;
+  --deep-red:#4D0009;
+  --navy-dark:#0d1120;
+  --navy-rich:#19233a;
+  --dark:#110C0A;
+  --mid:#1A1210;
+  --warm:#221816;
+  --rose:#2A1015;
+  --hair:rgba(212,184,106,.18);
+  --hair-hi:rgba(212,184,106,.38);
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-sans:'Raleway',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--pitch);color:var(--parchment);font-family:var(--font-sans);font-size:16px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:68px}
+a{color:var(--candlelight);text-decoration:none;transition:color .2s}
+a:hover{color:var(--parchment)}
+img{display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 48px}
+.eyebrow{display:block;font:600 10px/1 var(--font-sans);letter-spacing:.36em;text-transform:uppercase;color:var(--beeswax);margin-bottom:14px}
+.stitle{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:var(--candlelight);line-height:1.18;margin-bottom:16px}
+.stitle em{font-style:italic;color:var(--parchment);opacity:.9}
+.body-text{font:300 16px/1.85 var(--font-sans);color:var(--parchment);opacity:.86}
+.btn{display:inline-block;font:600 11px/1 var(--font-sans);letter-spacing:.17em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;text-decoration:none;transition:background .25s,color .25s,transform .18s,box-shadow .25s}
+.btn-gold{background:var(--beeswax);color:var(--pitch)}
+.btn-gold:hover{background:var(--candlelight);color:var(--pitch);transform:translateY(-2px);box-shadow:0 10px 28px rgba(184,144,42,.28)}
+.btn-outline{background:transparent;color:var(--candlelight);border:1px solid var(--beeswax)}
+.btn-outline:hover{background:rgba(184,144,42,.08);color:var(--parchment);transform:translateY(-2px)}
+.btn-blood{background:var(--blood);color:var(--parchment)}
+.btn-blood:hover{background:#9A1220;color:var(--parchment);transform:translateY(-2px);box-shadow:0 10px 28px rgba(122,11,20,.35)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.22s}.d3{transition-delay:.34s}.d4{transition-delay:.46s}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid transparent;transition:background .4s,padding .3s,border-color .4s}
+#nav.scrolled{background:rgba(8,5,7,.96);backdrop-filter:blur(20px);padding:12px 48px;border-bottom-color:var(--hair)}
+.nav-brand{font-family:var(--font-serif);font-size:16px;font-weight:300;color:var(--candlelight);letter-spacing:.04em;display:flex;align-items:center;gap:9px;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:24px;position:relative}
+.nav-links a{font:500 10px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--parchment);opacity:.6;transition:opacity .2s,color .2s;text-decoration:none}
+.nav-links a:hover{opacity:1;color:var(--candlelight)}
+.nav-links a.active{opacity:1;color:var(--candlelight)}
+.nav-cta{padding:11px 22px;background:var(--beeswax);color:var(--pitch)!important;opacity:1!important;font:600 10px/1 var(--font-sans);letter-spacing:.15em;text-transform:uppercase;transition:background .25s!important}
+.nav-cta:hover{background:var(--candlelight)!important}
+/* Dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{cursor:pointer}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);background:rgba(8,5,7,.97);border:1px solid var(--hair);backdrop-filter:blur(20px);min-width:220px;padding:8px 0;z-index:300}
+.nav-dropdown:hover .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:12px 20px;font:500 10px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);opacity:.65;transition:opacity .2s,color .2s}
+.nav-dropdown-menu a:hover{opacity:1;color:var(--candlelight);background:rgba(212,184,106,.05)}
+.nav-dropdown-menu .menu-divider{height:1px;background:var(--hair);margin:6px 0}
+.nav-dropdown-menu .menu-label{display:block;padding:10px 20px 4px;font:600 8px/1 var(--font-sans);letter-spacing:.28em;text-transform:uppercase;color:var(--beeswax);opacity:.55}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:160px 48px 120px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg-gradient{position:absolute;inset:0;background:linear-gradient(130deg,rgba(8,5,7,.88) 0%,rgba(8,5,7,.6) 50%,rgba(8,5,7,.3) 100%);z-index:1}
+.hero-stars{position:absolute;inset:0;z-index:2;pointer-events:none}
+.hero-stars span{position:absolute;width:2px;height:2px;background:var(--candlelight);border-radius:50%;animation:flicker var(--dur,5s) ease-in-out infinite var(--del,0s);opacity:0}
+@keyframes flicker{0%,100%{opacity:0;transform:scale(.6)}50%{opacity:var(--op,.5);transform:scale(1)}}
+.hero-content{position:relative;z-index:3;max-width:680px}
+.hero-eyebrow{font:600 10px/1 var(--font-sans);letter-spacing:.38em;text-transform:uppercase;color:var(--beeswax);margin-bottom:18px;opacity:0;animation:riseUp .9s .1s var(--ease) forwards}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.8rem,7vw,5.6rem);font-weight:300;color:var(--candlelight);line-height:1.08;margin-bottom:24px;opacity:0;animation:riseUp .9s .25s var(--ease) forwards}
+.hero-title em{font-style:italic;color:var(--parchment);display:block}
+.hero-subtitle{font:300 17px/1.8 var(--font-sans);color:var(--parchment);opacity:.82;margin-bottom:42px;max-width:520px;animation:riseUp .9s .42s var(--ease) forwards;opacity:0}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:riseUp .9s .58s var(--ease) forwards}
+@keyframes riseUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.divider-blood{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--blood),var(--blood),transparent);opacity:.35}
+
+/* ── BRAND STORY ── */
+#brand{padding:88px 0;background:linear-gradient(160deg,var(--pitch) 0%,var(--warm) 50%,var(--dark) 100%);position:relative;overflow:hidden}
+.brand-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start;margin-top:52px}
+.brand-body p{font:300 16px/1.9 var(--font-sans);color:var(--parchment);opacity:.86;margin-bottom:16px}
+.brand-values{list-style:none;padding:0;margin-top:24px;display:flex;flex-direction:column;gap:1px}
+.brand-values li{font:300 14px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;padding:11px 0;border-bottom:1px solid var(--hair);display:flex;align-items:center;gap:12px}
+.brand-values li::before{content:'◆';color:var(--blood);font-size:7px;flex-shrink:0}
+.brand-pull{padding:28px 0 28px 24px;border-left:2px solid var(--beeswax);font-family:var(--font-serif);font-size:clamp(1.2rem,2.2vw,1.6rem);font-style:italic;color:var(--parchment);line-height:1.55;opacity:.9;margin-top:20px}
+.brand-cta-wrap{margin-top:32px}
+
+/* ── EVENTS ── */
+#events{padding:88px 0;background:var(--dark)}
+.events-header{margin-bottom:52px}
+.event-cards{display:flex;flex-direction:column;gap:3px}
+.event-card{display:grid;grid-template-columns:1fr 1.7fr;border:1px solid var(--hair);overflow:hidden;background:var(--mid);transition:border-color .3s}
+.event-card:hover{border-color:var(--hair-hi)}
+.event-card-left{padding:44px 36px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--hair)}
+.event-label{font:600 9px/1 var(--font-sans);letter-spacing:.26em;text-transform:uppercase;margin-bottom:12px}
+.event-label.upcoming{color:var(--candlelight)}
+.event-label.past{color:var(--parchment);opacity:.4}
+.event-name{font-family:var(--font-serif);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;color:var(--candlelight);line-height:1.2;margin-bottom:8px}
+.event-meta{font:400 12px/1.5 var(--font-sans);color:var(--parchment);opacity:.55;letter-spacing:.08em;margin-bottom:20px}
+.event-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.tag{display:inline-block;font:500 9px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--hair);color:var(--parchment);opacity:.55}
+.tag.highlight{border-color:rgba(212,184,106,.3);color:var(--candlelight);opacity:.85}
+.event-card-right{padding:44px 44px 44px 40px;display:flex;flex-direction:column;justify-content:space-between}
+.event-desc{font:300 15px/1.85 var(--font-sans);color:var(--parchment);opacity:.82;margin-bottom:24px}
+.event-ctas{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.past-note{font:300 13px/1.5 var(--font-sans);color:var(--parchment);opacity:.45;font-style:italic;margin-top:12px}
+
+/* ── PHILOSOPHY ── */
+#philosophy{padding:88px 0;background:linear-gradient(160deg,var(--rose) 0%,var(--dark) 60%,var(--pitch) 100%);position:relative;overflow:hidden}
+.philosophy-inner{max-width:720px;margin:0 auto;text-align:center}
+.philosophy-inner .stitle{font-size:clamp(2rem,4vw,3.2rem)}
+.philosophy-body{font:300 16px/1.95 var(--font-sans);color:var(--parchment);opacity:.84;margin-bottom:20px}
+.philosophy-line{width:60px;height:1px;background:var(--beeswax);margin:32px auto}
+
+/* ── INSTAGRAM ── */
+#social{padding:72px 0;background:var(--pitch)}
+.social-inner{text-align:center}
+.social-inner .stitle{margin-bottom:12px}
+.social-handle{font:400 14px/1 var(--font-sans);color:var(--candlelight);opacity:.65;letter-spacing:.08em;margin-bottom:32px}
+.social-handle a{color:var(--candlelight);border-bottom:1px solid rgba(212,184,106,.3)}
+.social-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin:0 auto;max-width:820px}
+.social-tile{aspect-ratio:1;background:var(--mid);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;font:300 10px/1.4 var(--font-sans);color:var(--parchment);opacity:.3;text-align:center;letter-spacing:.06em;text-transform:uppercase;padding:8px}
+
+/* ── FOOTER ── */
+footer{padding:52px 48px;background:var(--pitch);border-top:1px solid var(--hair);text-align:center}
+.footer-brand{font-family:var(--font-serif);font-size:18px;font-weight:300;color:var(--candlelight);letter-spacing:.03em;margin-bottom:18px}
+.footer-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.footer-links a{font:500 9px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--parchment);opacity:.38;transition:opacity .2s}
+.footer-links a:hover{opacity:.82}
+.footer-email{font:300 13px/1 var(--font-sans);color:var(--parchment);opacity:.35;letter-spacing:.04em;margin-bottom:14px}
+.footer-email a{color:var(--candlelight);opacity:.5}
+.footer-copy{font:300 10px/1 var(--font-sans);color:var(--parchment);opacity:.2;letter-spacing:.06em}
+
+/* ── STICKY ── */
+#sticky{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(8,5,7,.97);border-top:1px solid var(--hair);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:12px 48px;gap:20px;transform:translateY(100%);transition:transform .4s var(--ease)}
+#sticky.visible{transform:none}
+.sticky-info{display:flex;flex-direction:column;gap:4px}
+.sticky-name{font-family:var(--font-serif);font-size:13px;font-weight:300;color:var(--candlelight)}
+.sticky-sub{font:500 9px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--parchment);opacity:.45}
+.sticky-ctas{display:flex;gap:10px;flex-shrink:0}
+.sticky-btn{padding:10px 22px;font:600 9px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;transition:background .25s;white-space:nowrap}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:820px){
+  .wrap{padding:0 26px}
+  #nav{padding:14px 26px}#nav.scrolled{padding:10px 26px}
+  .nav-links a:not(.nav-cta){display:none}
+  .nav-dropdown-menu{left:auto;right:0;transform:none}
+  #hero{padding:130px 28px 90px}
+  .hero-ctas .btn{width:100%;text-align:center}
+  .brand-grid{grid-template-columns:1fr;gap:32px}
+  .event-card{grid-template-columns:1fr;display:flex;flex-direction:column}
+  .event-card-left{border-right:none;border-bottom:1px solid var(--hair);padding:32px 26px}
+  .event-card-right{padding:32px 26px}
+  .social-grid{grid-template-columns:repeat(3,1fr)}
+  #sticky{padding:11px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-brand">🌑 Nocturne Gala</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <div class="nav-dropdown">
+      <a href="events.html" class="nav-dropdown-toggle">Events</a>
+      <div class="nav-dropdown-menu">
+        <span class="menu-label">Upcoming</span>
+        <a href="celestial.html">Celestial Winter Masquerade — Vancouver</a>
+        <a href="blood-moon.html">Blood Moon Ball — Victoria</a>
+        <div class="menu-divider"></div>
+        <span class="menu-label">Past</span>
+        <a href="spring-gala.html">Spring Gala 2025 — Vancouver</a>
+        <div class="menu-divider"></div>
+        <a href="events.html">All Events →</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a href="events.html" class="nav-cta">Join Waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" style="background:linear-gradient(145deg,#0A0608 0%,#1A0C10 40%,#0D1120 100%)"></div>
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-stars" id="heroStars"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Nocturne Gala</p>
+    <h1 class="hero-title">Where the<br><em>Dance begins.</em></h1>
+    <p class="hero-subtitle">Immersive historic dance balls in British Columbia — beginner-friendly, beautifully structured, and designed for people who want to stop watching from the sidelines.</p>
+    <div class="hero-ctas">
+      <a href="events.html" class="btn btn-gold">See Upcoming Events</a>
+      <a href="events.html" class="btn btn-outline">Join Waitlist</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider-blood"></div>
+
+<!-- BRAND STORY -->
+<section id="brand">
+  <div class="wrap">
+    <div class="brand-grid">
+      <div class="reveal">
+        <span class="eyebrow">About Nocturne Gala</span>
+        <h2 class="stitle">Not just a party.<br><em>An initiation.</em></h2>
+      </div>
+      <div class="reveal d1">
+        <div class="brand-body">
+          <p>Nocturne Gala creates structured, immersive historic dance balls across British Columbia. We don't just throw elegant evenings — we build the experience from the ground up, starting with you.</p>
+          <p>Every event includes guided workshops or rehearsals so guests learn the dances, meet other people, and arrive at the ball already feeling at home. By the time the music starts, the room is no longer anonymous.</p>
+        </div>
+        <blockquote class="brand-pull">You've been watching scenes like this your whole life. This is your chance to step out of it.</blockquote>
+        <ul class="brand-values">
+          <li>Beginner-friendly — no dance experience needed</li>
+          <li>Structured program with guided instruction</li>
+          <li>Live music, photography, and beautiful venues</li>
+          <li>Social from the very beginning</li>
+        </ul>
+        <div class="brand-cta-wrap">
+          <a href="events.html" class="btn btn-outline">View All Events</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section id="events">
+  <div class="wrap">
+    <div class="events-header reveal">
+      <span class="eyebrow">Events</span>
+      <h2 class="stitle">Upcoming &amp; Past</h2>
+    </div>
+    <div class="event-cards">
+
+      <!-- Blood Moon Ball -->
+      <div class="event-card reveal">
+        <div class="event-card-left">
+          <div>
+            <p class="event-label upcoming">Upcoming</p>
+            <p class="event-name">Blood Moon Ball</p>
+            <p class="event-meta">October 31, 2026 · Victoria, BC</p>
+            <div class="event-tags">
+              <span class="tag highlight">Waitlist Open</span>
+              <span class="tag">Gothic · Historic Dance</span>
+              <span class="tag">Beginner-friendly</span>
+            </div>
+          </div>
+          <div>
+            <a href="blood-moon.html" class="btn btn-blood" style="font-size:10px;padding:12px 22px">View Event</a>
+          </div>
+        </div>
+        <div class="event-card-right">
+          <p class="event-desc">On Halloween night, the Blood Moon rises over Victoria. An immersive gothic historic dance ball where you learn the dances, meet the guests, and enter the evening already recognizing familiar faces. Vampire court. Candlelight. Gothic elegance.</p>
+          <div class="event-ctas">
+            <a href="blood-moon.html#waitlist-form" class="btn btn-blood" style="font-size:10px;padding:11px 22px">Join Waitlist</a>
+            <a href="blood-moon.html" class="btn btn-outline" style="font-size:10px;padding:11px 22px">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Celestial Winter Masquerade -->
+      <div class="event-card reveal d1">
+        <div class="event-card-left">
+          <div>
+            <p class="event-label upcoming">Upcoming</p>
+            <p class="event-name">Celestial Winter Masquerade</p>
+            <p class="event-meta">December 18, 2026 · Vancouver, BC · Scottish Hall</p>
+            <div class="event-tags">
+              <span class="tag highlight">Waitlist Open</span>
+              <span class="tag">Masquerade · Celestial</span>
+              <span class="tag">Rehearsals Included</span>
+            </div>
+          </div>
+          <div>
+            <a href="celestial.html" class="btn btn-gold" style="font-size:10px;padding:12px 22px">View Event</a>
+          </div>
+        </div>
+        <div class="event-card-right">
+          <p class="event-desc">A candlelit winter masquerade at Vancouver's Scottish Hall. Four guided rehearsals, live music, professional photography, and an evening of historic social dancing beneath celestial winter decor. Masks encouraged. Beginners welcome.</p>
+          <div class="event-ctas">
+            <a href="celestial.html#waitlist-form" class="btn btn-gold" style="font-size:10px;padding:11px 22px">Join Waitlist</a>
+            <a href="celestial.html" class="btn btn-outline" style="font-size:10px;padding:11px 22px">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spring Gala — Past -->
+      <div class="event-card reveal d2">
+        <div class="event-card-left">
+          <div>
+            <p class="event-label past">Past Event</p>
+            <p class="event-name" style="color:var(--parchment);opacity:.6">Spring Gala</p>
+            <p class="event-meta">Spring 2025 · Vancouver, BC</p>
+            <div class="event-tags">
+              <span class="tag">Past</span>
+              <span class="tag">Spring · Historic Dance</span>
+            </div>
+          </div>
+          <div>
+            <a href="spring-gala.html" class="btn btn-outline" style="font-size:10px;padding:12px 22px;opacity:.65">See Gallery</a>
+          </div>
+        </div>
+        <div class="event-card-right">
+          <p class="event-desc">Nocturne Gala's first event — a spring historic dance ball in Vancouver. Guests learned the dances in guided rehearsals, then stepped into a beautiful evening of social dancing, music, and photography.</p>
+          <p class="past-note">View photos, video, and music from the event.</p>
+          <div class="event-ctas" style="margin-top:16px">
+            <a href="spring-gala.html" class="btn btn-outline" style="font-size:10px;padding:11px 22px;opacity:.65">Gallery & Recap</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY PULL -->
+<section id="philosophy">
+  <div class="wrap">
+    <div class="philosophy-inner reveal">
+      <span class="eyebrow" style="text-align:center">Why We Do This</span>
+      <h2 class="stitle" style="text-align:center">The evening begins<br>before the ball.</h2>
+      <div class="philosophy-line"></div>
+      <p class="philosophy-body">Every Nocturne Gala event is designed so that the experience starts long before you walk through the door. Workshops, rehearsals, and introductions happen first — so that when the music begins, you already know the steps, you already recognize faces, and you're already part of the story.</p>
+      <p class="philosophy-body">We make it easy to begin, and beautiful to arrive.</p>
+      <div style="margin-top:36px">
+        <a href="events.html" class="btn btn-gold">Find Your Event</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL TEASER -->
+<section id="social">
+  <div class="wrap">
+    <div class="social-inner reveal">
+      <span class="eyebrow" style="text-align:center">Follow Along</span>
+      <h2 class="stitle" style="text-align:center;margin-bottom:10px">@nocturnegala</h2>
+      <p class="social-handle"><a href="https://www.instagram.com/nocturnegala/" target="_blank">Instagram →</a></p>
+      <div class="social-grid">
+        <div class="social-tile">Photo gallery coming</div>
+        <div class="social-tile">Event highlights</div>
+        <div class="social-tile">Behind the scenes</div>
+        <div class="social-tile">Costume inspiration</div>
+        <div class="social-tile">Rehearsal footage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">🌑 Nocturne Gala</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="celestial.html">Celestial Winter Masquerade</a>
+    <a href="blood-moon.html">Blood Moon Ball</a>
+    <a href="spring-gala.html">Spring Gala</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="footer-email"><a href="https://www.instagram.com/nocturnegala/" target="_blank">@nocturnegala on Instagram</a></p>
+  <p class="footer-copy">Nocturne Gala · British Columbia, Canada</p>
+</footer>
+
+<!-- STICKY -->
+<div id="sticky">
+  <div class="sticky-info">
+    <span class="sticky-name">Nocturne Gala</span>
+    <span class="sticky-sub">Upcoming events in Vancouver &amp; Victoria</span>
+  </div>
+  <div class="sticky-ctas">
+    <a href="blood-moon.html#waitlist-form" class="btn btn-blood sticky-btn">Blood Moon Waitlist</a>
+    <a href="celestial.html#waitlist-form" class="btn btn-gold sticky-btn">Celestial Waitlist</a>
+  </div>
+</div>
+
+<script>
+// Stars
+const stars = document.getElementById('heroStars');
+for(let i=0;i<50;i++){const s=document.createElement('span');const sz=Math.random()*3+1;s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--dur:${(Math.random()*7+4).toFixed(1)}s;--del:${(Math.random()*8).toFixed(1)}s;--op:${(Math.random()*.6+.2).toFixed(2)}`;stars.appendChild(s)}
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+// Sticky
+const sticky=document.getElementById('sticky');
+const hero=document.getElementById('hero');
+new IntersectionObserver(e=>sticky.classList.toggle('visible',!e[0].isIntersecting),{threshold:.05}).observe(hero);
+// Reveal
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){el.classList.add('visible');o.unobserve(el)}},{threshold:.07}).observe(el));
+</script>
+</body>
+</html>
