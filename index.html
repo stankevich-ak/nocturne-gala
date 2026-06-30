@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Nocturne Gala — Historic Dance Balls & Immersive Social Events in BC</title>
+<meta name="description" content="Nocturne Gala creates immersive historic dance balls across British Columbia. Beginner-friendly evenings with guided rehearsals, live music, elegant dress, and beautiful venues. Join the waitlist for upcoming events."/>
+<link rel="icon" href="logo.svg" type="image/svg+xml"/>
+<link rel="icon" href="favicon.png" type="image/png" sizes="any"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  /* Core darks (warm) */
+  --pitch:#0F0D0B; --ebony:#1C1710; --walnut:#2E2318; --oak:#4A3728;
+  /* Gold */
+  --amber:#6B4A0A; --beeswax:#B8902A; --candlelight:#D4B86A; --pale-gold:#E8D49A;
+  /* Velvet */
+  --mid-velvet:#2E1840; --aged-velvet:#4A2B5A; --lavender:#D4BAEB;
+  /* Teal (secondary) */
+  --inkwell:#1E6068; --peacock:#2E8890; --mist-teal:#B0D8DC;
+  /* Lights */
+  --warm-sand:#ECD9BC; --parchment:#F0E8D5; --ivory:#FAF7F0;
+  --hair:rgba(212,184,106,.28);
+  --hair-hi:rgba(212,184,106,.4);
+  --blood:#7A0B14;
+  /* Ground aliases (warm-dark, darkest -> warmest) */
+  --navy-deep:#070605; --navy-dark:#0F0D0B; --navy-mid:#1C1710; --navy-rich:#2E2318; --navy-light:#4A3728;
+  --blue-velvet:#2E1840; --teal:#2E8890; --velvet:#4A2B5A; --velvet-light:#D4BAEB;
+  --font-serif:'Libre Baskerville',Georgia,serif;
+  --font-sans:'Poppins',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy-dark);color:var(--parchment);font-family:var(--font-sans);font-size:17px;line-height:1.75;overflow-x:hidden;padding-bottom:78px;-webkit-font-smoothing:antialiased}
+a{color:var(--candlelight);text-decoration:none;transition:color .2s}
+a:hover{color:var(--pale-gold)}
+img{display:block;object-fit:contain}
+.wrap{max-width:1040px;margin:0 auto;padding:0 44px}
+.eyebrow{font:600 11px/1.4 var(--font-sans);letter-spacing:.28em;text-transform:uppercase;color:var(--beeswax);display:block;margin-bottom:14px}
+.stitle{font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;color:var(--candlelight);line-height:1.25;margin-bottom:14px}
+.stitle em{font-style:italic;color:var(--pale-gold)}
+.ssub{font:400 16px/1.85 var(--font-sans);color:var(--parchment);opacity:.85}
+.btn{display:inline-block;font:600 13px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;padding:15px 34px;border-radius:3px;transition:background .25s,color .25s,transform .2s,box-shadow .25s;border:none;cursor:pointer;text-decoration:none}
+.btn-gold{background:var(--beeswax);color:var(--pitch)}
+.btn-gold:hover{background:var(--candlelight);color:var(--pitch);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,144,42,.28)}
+.btn-outline{background:transparent;color:var(--candlelight);border:1px solid var(--beeswax)}
+.btn-outline:hover{background:rgba(184,144,42,.1);color:var(--pale-gold);transform:translateY(-2px)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 44px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .3s,border-color .4s;border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(15,13,11,.96);backdrop-filter:blur(18px);padding:12px 44px;border-bottom-color:var(--hair)}
+.nav-brand{display:flex;align-items:center;gap:11px;font-family:var(--font-serif);font-size:16px;color:var(--candlelight);letter-spacing:.02em;text-decoration:none}
+.nav-logo{height:30px;width:auto;object-fit:contain;flex-shrink:0}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font:500 13px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);opacity:.65;transition:opacity .2s,color .2s}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--candlelight)}
+.nav-cta{padding:12px 24px;border-radius:3px;background:var(--beeswax);color:var(--pitch)!important;opacity:1!important;font:600 12px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;transition:background .25s!important}
+.nav-cta:hover{background:var(--candlelight)!important}
+
+/* ── HERO (sized to fit one laptop fold) ── */
+#hero{height:100vh;min-height:600px;max-height:920px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:96px 44px 64px;background:radial-gradient(110% 120% at 78% 18%,#181109 0%,var(--pitch) 60%,#070605 100%)}
+/* HERO MEDIA — drop a cinematic image OR short looping video into .hero-media.
+   IMAGE: 1920×1080 px min (16:9), JPG/WebP, ~300–600 KB.
+   VIDEO: 1920×1080 px MP4 (H.264), muted loop, 8–15 s, ~3–8 MB; add a 1920×1080 poster JPG.
+   Keep .hero-overlay for text legibility. */
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,13,11,.55),rgba(15,13,11,.78))}
+.hero-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);width:min(520px,76vw);opacity:.05;z-index:1;pointer-events:none}
+.hero-inner{position:relative;z-index:3;max-width:780px;display:flex;flex-direction:column;align-items:center}
+.hero-mark{height:50px;width:auto;margin-bottom:22px;opacity:0;animation:fadeUp .9s .1s var(--ease) forwards}
+.hero-eyebrow{font:600 12px/1 var(--font-sans);letter-spacing:.42em;text-transform:uppercase;color:var(--beeswax);margin-bottom:20px;opacity:0;animation:fadeUp .9s .2s var(--ease) forwards}
+.hero-title{font-family:var(--font-serif);font-size:clamp(2.3rem,5vw,4rem);font-weight:400;color:var(--candlelight);line-height:1.13;margin-bottom:24px;opacity:0;animation:fadeUp .9s .32s var(--ease) forwards}
+.hero-title em{font-style:italic;color:var(--pale-gold)}
+.hero-sub{font:400 17.5px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;max-width:600px;margin-bottom:34px;animation:fadeUp .9s .46s var(--ease) forwards;opacity:0}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .9s .58s var(--ease) forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ── WHAT IS NOCTURNE GALA ── */
+#about{padding:88px 0;background:var(--navy-deep)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.4fr;gap:60px;align-items:start}
+.about-grid .stitle{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.about-body p{font:400 16.5px/1.92 var(--font-sans);color:var(--parchment);opacity:.86;margin-bottom:18px}
+.about-body p:last-child{margin-bottom:0}
+
+/* ── UPCOMING EVENTS (tuned to sit within one fold) ── */
+#events{padding:62px 0 66px;background:var(--navy-dark)}
+.events-head{margin-bottom:32px}
+.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.ev-card{display:flex;flex-direction:column;border:1px solid var(--hair);background:var(--navy-mid);overflow:hidden;transition:border-color .3s,transform .3s}
+.ev-card:hover{border-color:var(--hair-hi);transform:translateY(-3px)}
+.ev-img{position:relative;aspect-ratio:16/9;display:flex;align-items:flex-end;padding:16px}
+.ev-img.blood{background:linear-gradient(150deg,#2a0a10,#5a0d18 70%,#1a0608)}
+.ev-img.celestial{background:linear-gradient(150deg,#0d1733,#243a66 60%,#0a0f1c)}
+.ev-status{font:600 9px/1 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 11px;border-radius:3px;background:rgba(15,13,11,.7);backdrop-filter:blur(6px);color:var(--candlelight);border:1px solid var(--hair-hi)}
+.ev-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ev-name{font-family:var(--font-serif);font-size:1.3rem;font-weight:400;color:var(--candlelight);line-height:1.3;margin-bottom:9px}
+.ev-meta{font:500 11px/1.6 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--warm-sand);opacity:.85;margin-bottom:14px}
+.ev-desc{font:400 14px/1.65 var(--font-sans);color:var(--parchment);opacity:.78;margin-bottom:20px;flex:1}
+.ev-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.ev-ctas .btn{font-size:11px;padding:12px 22px;letter-spacing:.12em}
+
+/* ── PAST EVENTS (link only — no module) ── */
+#past{padding:34px 0;background:var(--navy-dark);border-top:1px solid var(--hair)}
+.past-bar{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.past-bar .eyebrow{margin-bottom:0}
+.past-link{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--candlelight)}
+.past-link:hover{color:var(--pale-gold)}
+.past-link span{font-family:var(--font-serif);font-size:14px;letter-spacing:.02em;text-transform:none;opacity:.85}
+
+/* ── EVENT HIGHLIGHTS (gallery slider) ── */
+#highlights{padding:80px 0;background:var(--navy-deep);overflow:hidden}
+.hl-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px}
+.hl-arrows{display:flex;gap:8px;flex-shrink:0}
+.hl-arrow{width:44px;height:44px;border:1px solid var(--hair-hi);background:transparent;color:var(--candlelight);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,color .25s,border-color .25s}
+.hl-arrow:hover{background:rgba(184,144,42,.12);border-color:var(--beeswax)}
+.hl-arrow:disabled{opacity:.3;cursor:default}
+.hl-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:6px;-ms-overflow-style:none;scrollbar-width:none}
+.hl-track::-webkit-scrollbar{display:none}
+.hl-tile{position:relative;flex:0 0 300px;aspect-ratio:4/5;scroll-snap-align:start;background:var(--navy-mid);border:1px solid var(--hair);display:flex;align-items:flex-end;padding:16px;overflow:hidden}
+.hl-tile::after{content:attr(data-note);font:500 9px/1.5 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);opacity:.42}
+.hl-tile.video::before{content:'';position:absolute;top:50%;left:50%;width:46px;height:46px;transform:translate(-50%,-50%);border:1px solid var(--hair-hi);border-radius:50%;background:rgba(15,13,11,.5)}
+.hl-tile.video .play{position:absolute;top:50%;left:50%;transform:translate(-42%,-50%);z-index:2;width:0;height:0;border-left:13px solid var(--candlelight);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.hl-social{margin-top:40px;text-align:center}
+.hl-social p{font:400 14px/1.7 var(--font-sans);color:var(--parchment);opacity:.8;margin-bottom:20px}
+.social-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.social-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:3px;border:1px solid var(--beeswax);color:var(--candlelight);font:600 12px/1 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;transition:background .25s,color .25s,transform .2s}
+.social-btn:hover{background:rgba(184,144,42,.12);color:var(--pale-gold);transform:translateY(-2px)}
+.social-btn svg{flex-shrink:0}
+
+/* ── TESTIMONIALS (editorial: feature + stacked) ── */
+#testimonials{padding:84px 0;background:linear-gradient(165deg,var(--aged-velvet) 0%,var(--mid-velvet) 45%,var(--pitch) 100%)}
+.tm-head{max-width:560px;margin:0 auto 44px;text-align:center}
+.tm-layout{display:grid;grid-template-columns:1.45fr 1fr;gap:18px;align-items:stretch}
+.tm-card{position:relative;padding:34px 32px;border:1px solid var(--hair);background:rgba(46,24,64,.32)}
+.tm-feature{padding:48px 46px;border-color:rgba(212,186,235,.3);background:linear-gradient(155deg,rgba(74,43,90,.6),rgba(46,24,64,.45));display:flex;flex-direction:column;justify-content:center}
+.tm-feature .tm-mark{font-family:var(--font-serif);font-size:78px;line-height:.4;color:var(--beeswax);opacity:.55;margin-bottom:18px;display:block}
+.tm-feature .tm-quote{font-size:22px;line-height:1.55;color:var(--candlelight)}
+.tm-feature .tm-author{color:var(--lavender);opacity:.95}
+.tm-col{display:flex;flex-direction:column;gap:18px}
+.tm-col .tm-card{flex:1;display:flex;flex-direction:column;justify-content:center}
+.tm-quote{font-family:var(--font-serif);font-style:italic;font-size:16px;line-height:1.7;color:var(--pale-gold);margin-bottom:18px}
+.tm-author{font:600 11px/1.5 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight);opacity:.85}
+.tm-placeholder .tm-quote{color:var(--parchment);opacity:.42;font-style:normal;font-family:var(--font-sans);font-size:13.5px;letter-spacing:.04em}
+
+/* ── MAILING LIST (Tally embed) ── */
+#newsletter{padding:78px 0;background:linear-gradient(135deg,var(--navy-rich),var(--navy-mid) 70%,var(--navy-dark));text-align:center}
+.nl-inner{max-width:600px;margin:0 auto}
+.nl-inner .stitle{font-size:clamp(1.7rem,3.2vw,2.4rem)}
+.nl-line{font:400 16px/1.7 var(--font-sans);color:var(--parchment);opacity:.85;margin:14px auto 28px;max-width:500px}
+.nl-embed{max-width:520px;margin:0 auto;text-align:left}
+.nl-embed iframe{width:100%;display:block}
+
+/* ── FOOTER (pages and socials kept separate) ── */
+footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid var(--hair);text-align:center}
+.footer-brand-wrap{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px}
+.footer-logo{height:32px;width:auto;object-fit:contain}
+.footer-name{font-family:var(--font-serif);font-size:18px;color:var(--candlelight);letter-spacing:.02em}
+.footer-nav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.footer-nav a{font:500 11px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);opacity:.6;transition:opacity .2s,color .2s}
+.footer-nav a:hover{opacity:1;color:var(--candlelight)}
+.footer-social{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.footer-social a{display:inline-flex;align-items:center;gap:7px;font:500 11px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight);opacity:.8;transition:opacity .2s,color .2s}
+.footer-social a:hover{opacity:1;color:var(--pale-gold)}
+.footer-divider{width:46px;height:1px;background:var(--hair);margin:0 auto 22px}
+.footer-email{margin-bottom:14px}
+.footer-email a{font:400 13px/1 var(--font-sans);letter-spacing:.04em;color:var(--candlelight);opacity:.7}
+.footer-copy{font:400 11px/1.6 var(--font-sans);letter-spacing:.06em;color:var(--parchment);opacity:.4}
+
+/* ── STICKY ── */
+#sticky{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(15,13,11,.97);border-top:1px solid var(--hair);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;padding:12px 44px;gap:20px;transform:translateY(100%);transition:transform .45s var(--ease)}
+#sticky.visible{transform:none}
+.sticky-info{display:flex;flex-direction:column;gap:4px}
+.sticky-name{font-family:var(--font-serif);font-size:14px;color:var(--candlelight)}
+.sticky-date{font:500 10px/1.3 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pale-gold);opacity:.6}
+.sticky-ctas{display:flex;gap:10px;flex-shrink:0}
+.sticky-btn{display:inline-block;padding:13px 30px;border-radius:3px;background:var(--beeswax);color:var(--pitch);font:700 12px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;transition:background .25s;white-space:nowrap;text-decoration:none;flex-shrink:0}
+.sticky-btn:hover{background:var(--candlelight);color:var(--pitch)}
+.sticky-btn.blood{background:var(--blood);color:var(--parchment)}
+.sticky-btn.blood:hover{background:#9A1220;color:var(--parchment)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.hl-track{scroll-behavior:auto}}
+@media(max-width:860px){
+  .wrap{padding:0 26px}
+  #nav{padding:14px 26px}#nav.scrolled{padding:10px 26px}
+  .nav-links{gap:18px}
+  #hero{height:auto;min-height:100vh;padding:120px 26px 80px}
+  .hero-ctas .btn{width:100%;text-align:center}
+  .about-grid{grid-template-columns:1fr;gap:26px}
+  .event-grid{grid-template-columns:1fr}
+  .hl-head{flex-direction:column;align-items:flex-start}
+  .hl-tile{flex-basis:240px}
+  .tm-layout{grid-template-columns:1fr}
+  #sticky{padding:11px 20px}
+  .sticky-ctas{flex-direction:column;gap:7px}
+  .sticky-btn{padding:11px 22px;font-size:11px}
+}
+
+/* ── CREATIVE ASSETS ── */
+.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{background:linear-gradient(180deg,rgba(8,6,5,.58) 0%,rgba(15,13,11,.72) 55%,rgba(7,6,5,.9) 100%)}
+#about{position:relative;overflow:hidden}
+.about-pattern{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;z-index:0;pointer-events:none}
+#about .wrap{position:relative;z-index:1}
+.ev-img{overflow:hidden}
+.ev-img.blood,.ev-img.celestial{background:none}
+.ev-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.ev-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,11,0) 45%,rgba(15,13,11,.78));z-index:1}
+.ev-img .ev-status{position:relative;z-index:2}
+#testimonials{position:relative;overflow:hidden;background:var(--pitch)}
+.tm-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
+#testimonials::before{content:'';position:absolute;inset:0;background:linear-gradient(165deg,rgba(74,43,90,.74),rgba(46,24,64,.8) 55%,rgba(15,13,11,.86));z-index:1}
+#testimonials .wrap{position:relative;z-index:2}
+.tm-card{background:rgba(74,43,90,.5)!important;backdrop-filter:blur(8px);border-color:rgba(212,186,235,.3)!important}
+.tm-feature{background:rgba(74,43,90,.6)!important}
+#newsletter{position:relative;overflow:hidden}
+.nl-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
+#newsletter::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,11,.8),rgba(7,6,5,.9));z-index:1}
+#newsletter .wrap{position:relative;z-index:2}
+.hl-tile img,.hl-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:var(--ebony)}
+.hl-tile.video{cursor:pointer}
+.hl-tile.video::before,.hl-tile.video .play{z-index:2}
+.hl-tile.playing::before,.hl-tile.playing .play{display:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="https://nocturne-gala.vercel.app/" class="nav-brand">
+    <img class="nav-logo" src="logo.svg" alt="Nocturne Gala logo"/>
+    Nocturne Gala
+  </a>
+  <div class="nav-links">
+    <a href="https://nocturne-gala.vercel.app/" class="active">Home</a>
+    <a href="https://nocturne-gala.vercel.app/events">Events</a>
+    <a href="https://nocturne-gala.vercel.app/contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<section id="hero">
+  <!-- HERO MEDIA — add a cinematic image OR short looping video here (sizes noted in CSS above).
+       IMAGE:  <img src="hero.jpg" alt=""/>                          → 1920×1080 px min, ~300–600 KB
+       VIDEO:  <video autoplay muted loop playsinline poster="hero-poster.jpg">
+                 <source src="hero.mp4" type="video/mp4"></video>    → 1920×1080 px MP4, 8–15 s, ~3–8 MB -->
+  <div class="hero-media" aria-hidden="true"><!-- ASSET: /images/1. hero.webp -->
+    <img src="/images/1. hero.webp" alt=""/>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <img class="hero-mark" src="logo.svg" alt="Nocturne Gala"/>
+    <p class="hero-eyebrow">Nocturne Gala</p>
+    <h1 class="hero-title">Historic Dance Balls &amp;<br><em>Immersive Social Events</em></h1>
+    <p class="hero-sub">Cinematic, social, and dance-filled evenings in BC, Canada — beginner-friendly historic events with guided rehearsals, elegant dress, and live music.</p>
+    <div class="hero-ctas">
+      <a href="#events" class="btn btn-gold">Upcoming Events</a>
+      <a href="#about" class="btn btn-outline">About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. WHAT IS NOCTURNE GALA ============ -->
+<section id="about">
+  <!-- ASSET: /images/2. what is nocturne gala.webp, full-width @30% -->
+  <img class="about-pattern" src="/images/2. what is nocturne gala.webp" alt="" aria-hidden="true"/>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">About</span>
+        <h2 class="stitle">What Is<br><em>Nocturne Gala</em></h2>
+      </div>
+      <div class="about-body reveal d1">
+        <p>Nocturne Gala creates immersive social events where guests step into an imaginative world for one evening, surrounded by music, movement, elegant dress, and atmosphere.</p>
+        <p>Our events are built around connection. Guided rehearsals help guests learn the dances, meet each other, and feel comfortable before the ball begins — no experience required.</p>
+        <p>We believe timeless elegance, culture, and shared ritual still matter. Dance gives people a rare way to express personality, meet others naturally, and become part of something beautiful together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. UPCOMING EVENTS ============ -->
+<section id="events">
+  <div class="wrap">
+    <div class="events-head reveal">
+      <span class="eyebrow">Upcoming Events</span>
+      <h2 class="stitle">Where we&rsquo;re dancing next</h2>
+    </div>
+    <div class="event-grid">
+
+      <!-- Blood Moon Ball -->
+      <div class="ev-card reveal">
+        <!-- EVENT IMAGE — replace gradient with a real event/poster image → 1200×675 px (16:9), JPG/WebP, ~200–400 KB -->
+        <div class="ev-img blood"><img class="ev-photo" src="/images/3. blood moon ball - card.webp" alt="Blood Moon Ball"/><span class="ev-status">Waitlist Open</span></div>
+        <div class="ev-body">
+          <h3 class="ev-name">Blood Moon Ball</h3>
+          <p class="ev-meta">Victoria, BC &middot; Oct 31, 2026</p>
+          <p class="ev-desc">A gothic historic dance ball on Halloween night — vampire court, candlelight, and an immersive evening of social dancing.</p>
+          <div class="ev-ctas">
+            <a href="https://nocturne-gala.vercel.app/blood-moon-ball" class="btn btn-outline">Learn More</a>
+            <a href="https://nocturne-gala.vercel.app/blood-moon-ball" class="btn btn-gold">Join Waitlist</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Celestial Winter Masquerade -->
+      <div class="ev-card reveal d1">
+        <!-- EVENT IMAGE — replace gradient with a real event/poster image → 1200×675 px (16:9), JPG/WebP, ~200–400 KB -->
+        <div class="ev-img celestial"><img class="ev-photo" src="/images/4. celestial masquerade - card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Waitlist Open</span></div>
+        <div class="ev-body">
+          <h3 class="ev-name">Celestial Winter Masquerade</h3>
+          <p class="ev-meta">Vancouver, BC &middot; Dec 18, 2026</p>
+          <p class="ev-desc">A candlelit winter masquerade at Scottish Hall, with guided rehearsals, live music, and celestial winter decor.</p>
+          <div class="ev-ctas">
+            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="btn btn-outline">Learn More</a>
+            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="btn btn-gold">Join Waitlist</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PAST EVENTS (link only) ============ -->
+<section id="past">
+  <div class="wrap">
+    <div class="past-bar reveal">
+      <span class="eyebrow">Past Events</span>
+      <a class="past-link" href="https://nocturne-gala.vercel.app/spring-gala/">
+        <span>Spring Gala &middot; Vancouver, Spring 2025</span> View Recap &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. EVENT HIGHLIGHTS (gallery slider) ============ -->
+<section id="highlights">
+  <div class="wrap">
+    <div class="hl-head reveal">
+      <div>
+        <span class="eyebrow">Event Highlights</span>
+        <h2 class="stitle" style="margin-bottom:0">Moments from the floor</h2>
+      </div>
+      <div class="hl-arrows">
+        <button class="hl-arrow" id="hlPrev" aria-label="Previous highlights">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="hl-arrow" id="hlNext" aria-label="Next highlights">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- GALLERY — first tile is the clip (/celestial-winter-masquerade/public/videos/quiet.mp4 ~16 MB, poster carousel1), then 4 photos (4:5). -->
+    <div class="hl-track" id="hlTrack">
+      <div class="hl-tile video" data-note="">
+        <video preload="none" playsinline loop muted poster="/images/carousel 1.webp">
+          <source src="/celestial-winter-masquerade/public/videos/quiet.mp4" type="video/mp4"/>
+        </video>
+        <span class="play"></span>
+      </div>
+      <div class="hl-tile"><img src="/images/carousel 1.webp" alt="Nocturne Gala highlight"/></div>
+      <div class="hl-tile"><img src="/images/carousel 2.webp" alt="Nocturne Gala highlight"/></div>
+      <div class="hl-tile"><img src="/images/carousel 3.webp" alt="Nocturne Gala highlight"/></div>
+      <div class="hl-tile"><img src="/images/carousel 4.webp" alt="Nocturne Gala highlight"/></div>
+    </div>
+    <div class="hl-social reveal">
+      <p>See more on our socials</p>
+      <div class="social-btns">
+        <a class="social-btn" href="https://www.instagram.com/nocturnegala/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a class="social-btn" href="https://www.facebook.com/nocturnegala" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+        <a class="social-btn" href="https://www.tiktok.com/@nocturnegala" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.7 3.5 4.1v2.6c-1.3 0-2.5-.4-3.5-1v6.1a5.6 5.6 0 11-5.6-5.6c.3 0 .6 0 .9.1v2.7a3 3 0 102.1 2.8V3h2.6z"/></svg>
+          TikTok
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. TESTIMONIALS ============ -->
+<section id="testimonials">
+  <!-- ASSET: /images/5. guests - Ballroom.webp, full-width -->
+  <img class="tm-bg" src="/images/5. guests - Ballroom.webp" alt="" aria-hidden="true"/>
+  <div class="wrap">
+    <div class="tm-head reveal">
+      <span class="eyebrow" style="text-align:center">In Their Words</span>
+      <h2 class="stitle" style="margin-bottom:0">What guests say</h2>
+    </div>
+    <div class="tm-layout">
+      <div class="tm-card tm-feature reveal">
+        <span class="tm-mark">&ldquo;</span>
+        <p class="tm-quote">Thank you and I hope that this becomes one of Burnaby&rsquo;s cherished traditions!</p>
+      </div>
+      <div class="tm-col">
+        <div class="tm-card reveal d1">
+          <p class="tm-quote">Thank you for organizing such a wonderful event!</p>
+        </div>
+        <div class="tm-card reveal d2">
+          <p class="tm-quote">Have them more often, I&rsquo;ll help!</p>
+        </div>
+        <div class="tm-card reveal d3">
+          <p class="tm-quote">I&rsquo;m looking forward to another ball &#128064;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. MAILING LIST ============ -->
+<section id="newsletter">
+  <!-- ASSET: /images/6. gold envelopes pattern.webp, full-width @50% -->
+  <img class="nl-bg" src="/images/6. gold envelopes pattern.webp" alt="" aria-hidden="true"/>
+  <div class="wrap">
+    <div class="nl-inner reveal">
+      <span class="eyebrow" style="text-align:center">Stay in the Loop</span>
+      <h2 class="stitle">Join the Mailing List</h2>
+      <p class="nl-line">Get notified about ticket drops, our other events and workshops, and discounts.</p>
+      <!-- Tally embed -->
+      <div class="nl-embed">
+        <iframe data-tally-src="https://tally.so/embed/44p0VO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="214" frameborder="0" marginheight="0" marginwidth="0" title="Join the Mailing List"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. FOOTER ============ -->
+<footer>
+  <!-- 1) Pages -->
+  <nav class="footer-nav">
+    <a href="https://nocturne-gala.vercel.app/">Home</a>
+    <a href="https://nocturne-gala.vercel.app/events">Events</a>
+    <a href="https://nocturne-gala.vercel.app/contact">Contact</a>
+  </nav>
+  <!-- 2) divider -->
+  <div class="footer-divider"></div>
+  <!-- 3) Socials -->
+  <div class="footer-social">
+    <a href="https://www.instagram.com/nocturnegala/" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram
+    </a>
+    <a href="https://www.facebook.com/nocturnegala" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>Facebook
+    </a>
+    <a href="https://www.tiktok.com/@nocturnegala" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.7 3.5 4.1v2.6c-1.3 0-2.5-.4-3.5-1v6.1a5.6 5.6 0 11-5.6-5.6c.3 0 .6 0 .9.1v2.7a3 3 0 102.1 2.8V3h2.6z"/></svg>TikTok
+    </a>
+  </div>
+  <!-- 4) Email -->
+  <div class="footer-email"><a href="mailto:enchanted.gala.connect@gmail.com">enchanted.gala.connect@gmail.com</a></div>
+  <p class="footer-copy">&copy; 2026 Nocturne Gala &middot; Historic Social Dancing &middot; British Columbia, Canada</p>
+</footer>
+
+<!-- STICKY -->
+<div id="sticky">
+  <div class="sticky-info">
+    <span class="sticky-name">Upcoming events</span>
+  </div>
+  <div class="sticky-ctas">
+    <a href="https://nocturne-gala.vercel.app/blood-moon-ball" class="sticky-btn blood" title="Blood Moon Ball — Victoria">Victoria</a>
+    <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="sticky-btn" title="Celestial Winter Masquerade — Vancouver">Vancouver</a>
+  </div>
+</div>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+// Sticky reveal once past hero
+const sticky=document.getElementById('sticky');
+const hero=document.getElementById('hero');
+new IntersectionObserver(e=>sticky.classList.toggle('visible',!e[0].isIntersecting),{threshold:.05}).observe(hero);
+// Reveal on scroll
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){el.classList.add('visible');o.unobserve(el);}},{threshold:.08}).observe(el));
+// Gallery video play
+document.querySelectorAll('.hl-tile.video').forEach(t=>{const v=t.querySelector('video');if(!v)return;t.addEventListener('click',()=>{if(v.paused){v.muted=false;v.play();t.classList.add('playing');}else{v.pause();t.classList.remove('playing');}});});
+// Highlights slider arrows
+const track=document.getElementById('hlTrack'),prev=document.getElementById('hlPrev'),next=document.getElementById('hlNext');
+if(track){
+  const step=()=>Math.max(track.clientWidth*.8,260);
+  const sync=()=>{prev.disabled=track.scrollLeft<8;next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-8;};
+  prev.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
+  next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+  track.addEventListener('scroll',sync,{passive:true});window.addEventListener('resize',sync);sync();
+}
+</script>
+<!-- Tally embed loader -->
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</body>
+</html>
