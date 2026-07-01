@@ -57,25 +57,25 @@
 <style>
 
 :root{
-  --pitch:#080507;
-  --navy-deep:#080507;
-  --navy-dark:#0F0809;
-  --navy-mid:#18090C;
-  --navy-rich:#260B11;
-  --navy-light:#3A1018;
-  --blue-velvet:#12070A;
-  --beeswax:#9B1523;
-  --candlelight:#D4B86A;
-  --pale-gold:#E8D49A;
-  --parchment:#F0E8D5;
-  --ivory:#FAF7F0;
-  --hair:rgba(212,184,106,.2);
-  --hair-hi:rgba(212,184,106,.4);
+  --pitch:#020102;
+  --navy-deep:#030203;
+  --navy-dark:#070304;
+  --navy-mid:#0B0406;
+  --navy-rich:#150609;
+  --navy-light:#25080D;
+  --blue-velvet:#090305;
+  --beeswax:#8F111D;
+  --candlelight:#A7833C;
+  --pale-gold:#D2B56D;
+  --parchment:#E6D8C6;
+  --ivory:#F4EBDD;
+  --hair:rgba(122,11,20,.32);
+  --hair-hi:rgba(159,25,37,.6);
   --teal:#8F111D;
-  --velvet:#2A1015;
-  --velvet-light:#B85A64;
-  --blood:#7A0B14;
-  --crimson:#A01020;
+  --velvet:#1A070A;
+  --velvet-light:#A04750;
+  --blood:#6D0710;
+  --crimson:#9F1925;
   --font-serif:'Libre Baskerville',Georgia,serif;
   --font-sans:'Poppins',sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
@@ -137,6 +137,17 @@ img{display:block;object-fit:cover}
 .story-grid p{font:400 16px/1.9 var(--font-sans);color:var(--parchment);opacity:.86;margin-bottom:18px}
 .story-quote{border-left:2px solid var(--beeswax);padding:4px 0 4px 22px;margin-top:24px}
 .story-quote p{font-family:var(--font-serif);font-style:italic;font-size:17px;color:var(--pale-gold);opacity:1!important;margin:0;line-height:1.65}
+
+
+/* ── BLOOD MOON PULL QUOTE ── */
+.blood-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(109,7,16,.35),rgba(159,25,37,.72),rgba(109,7,16,.35),transparent);opacity:.82;margin:0}
+.pull-section{padding:80px 0;background:linear-gradient(160deg,#020102 0%,#160407 46%,#050203 100%);position:relative;overflow:hidden}
+.pull-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(109,7,16,.32) 0%,rgba(109,7,16,.08) 42%,transparent 74%);pointer-events:none}
+.pull-section::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.62));pointer-events:none}
+.pull-inner{position:relative;z-index:1;text-align:center;max-width:720px;margin:0 auto;padding:0 44px}
+.pull-quote{font-family:var(--font-serif);font-size:clamp(1.55rem,3.2vw,2.5rem);font-weight:400;font-style:italic;color:var(--pale-gold);line-height:1.45;margin-bottom:24px;text-shadow:0 12px 38px rgba(0,0,0,.72)}
+.pull-stanzas{display:flex;flex-direction:column;gap:8px;margin-top:32px}
+.pull-stanzas p{font:300 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.78;letter-spacing:.03em}
 
 /* ── EXPERIENCE ── */
 #experience{padding:80px 0;background:var(--navy-deep)}
@@ -244,7 +255,7 @@ img{display:block;object-fit:cover}
 .cta-strip p{font:400 12px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--pale-gold);opacity:.6;margin-bottom:40px}
 
 /* ── FAQ ── */
-#faq{padding:80px 0;background:var(--navy-dark)}
+#faq{padding:80px 0;background:#050203}
 .faq-hdr{text-align:center;margin-bottom:48px}
 .faq-list{max-width:680px;margin:0 auto}
 details{border-bottom:1px solid var(--hair)}
@@ -354,10 +365,10 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .hero-bg::after{background:linear-gradient(105deg,rgba(8,5,7,.9) 0%,rgba(18,6,8,.68) 52%,rgba(70,4,14,.18) 100%)}
 .hero-title em{font-style:italic;color:var(--pale-gold)}
 .hero-stars span{background:var(--pale-gold)}
-#experience{position:relative;overflow:hidden;background:var(--navy-deep)}
-.experience-lace{position:absolute;inset:0;z-index:0;background-size:420px auto;background-repeat:repeat;opacity:.115;mix-blend-mode:screen;pointer-events:none}
+#experience{position:relative;overflow:hidden;background:linear-gradient(170deg,#030203 0%,#0B0406 50%,#140407 100%)}
+.experience-lace{position:absolute;inset:0;z-index:0;background-size:460px auto;background-repeat:repeat;opacity:.2;mix-blend-mode:normal;pointer-events:none;filter:contrast(1.08) brightness(.78)}
 #experience .wrap{position:relative;z-index:1}
-#rehearsals{background:linear-gradient(135deg,var(--navy-mid),var(--navy-rich) 60%,var(--navy-dark))}
+#rehearsals{background:linear-gradient(145deg,#020102 0%,#130407 54%,#060203 100%)}
 .journey-header{text-align:center;margin-bottom:48px}
 .journey-card-meta{font:600 10px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--beeswax);margin-bottom:14px}
 .journey-card-title{font-family:var(--font-serif);font-size:clamp(1.35rem,2.5vw,2rem);font-weight:400;color:var(--candlelight);line-height:1.28;margin-bottom:14px}
@@ -367,6 +378,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .journey-date-chip strong{display:block;font-family:var(--font-serif);font-size:22px;font-weight:400;color:var(--candlelight);line-height:1}
 .journey-date-chip small{display:block;margin-top:7px;font:500 9px/1.3 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--parchment);opacity:.72}
 .waitlist-live{max-width:680px;margin:-6px auto 28px;font:400 15px/1.7 var(--font-sans);color:var(--pale-gold);opacity:.86;text-align:center}
+.ticket-date-note{margin:28px auto 0;color:var(--pale-gold);opacity:.9}
 .waitlist-panel{border:1px solid var(--hair);background:rgba(8,5,7,.72);backdrop-filter:blur(8px);padding:28px;min-height:100%}
 .waitlist-title{font-family:var(--font-serif);font-size:clamp(1.55rem,2.2vw,2rem);font-weight:400;color:var(--candlelight);line-height:1.25;margin:0 0 12px}
 .waitlist-copy{font:400 15px/1.7 var(--font-sans);color:var(--parchment);opacity:.84;margin:0 0 20px;max-width:520px}
@@ -378,27 +390,43 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .inc-ico{flex-shrink:0;width:34px;height:34px;color:var(--beeswax);display:inline-flex;align-items:center;justify-content:center}
 .inc-ico svg{width:30px;height:30px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .venue-note{max-width:410px;margin:18px 0 0 auto;font:400 13px/1.7 var(--font-sans);color:var(--parchment);opacity:.7}
-#dress{padding:80px 0;background:linear-gradient(160deg,var(--pitch),var(--navy-dark));position:relative;overflow:hidden}
+#dress{padding:80px 0;background:linear-gradient(160deg,#020102 0%,#090304 54%,#020102 100%);position:relative;overflow:hidden}
 .dress-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:44px}
 .dress-grid h2{font-family:var(--font-serif);font-size:clamp(1.4rem,2.8vw,2.1rem);font-weight:400;color:var(--candlelight);line-height:1.3;margin-bottom:18px}
 .dress-grid p{font:400 16px/1.85 var(--font-sans);color:var(--parchment);opacity:.86;margin-bottom:14px}
 .dress-directions{list-style:none;margin:20px 0 24px;padding:0}
-.dress-directions li{font:400 15px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;padding:8px 0;display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid rgba(212,184,106,.08)}
+.dress-directions li{font:400 15px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;padding:8px 0;display:flex;gap:12px;align-items:flex-start;border-bottom:0}
 .dress-directions li::before{content:"◆";color:var(--beeswax);font-size:8px;line-height:1;margin-top:9px;flex-shrink:0}
 .dress-note{border:1px solid rgba(212,184,106,.24);background:rgba(122,11,20,.12);padding:16px 18px;margin-top:18px}
 .dress-note p{font-size:14px;line-height:1.7;margin:0;opacity:.78}
-.pinterest-link{display:inline-flex;margin-top:18px;font:600 10px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--candlelight);border-bottom:1px solid rgba(212,184,106,.3);padding-bottom:5px}
+.pinterest-link{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font:600 12.5px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--candlelight);border-bottom:1px solid rgba(167,131,60,.42);padding-bottom:6px}
+.pinterest-link svg{width:16px;height:16px;display:block;fill:currentColor;flex-shrink:0}
 .outfit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.outfit-card{min-height:230px;background-size:cover;background-position:center;border:1px solid var(--hair);position:relative;overflow:hidden}
-.outfit-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,5,7,.05),rgba(8,5,7,.42))}
+.outfit-card{min-height:230px;background-size:cover;background-position:center;border:1px solid rgba(122,11,20,.55);position:relative;overflow:hidden;background-color:#050203;box-shadow:0 0 0 1px rgba(0,0,0,.86) inset,0 16px 42px rgba(0,0,0,.28)}
+.outfit-card::before{content:'';position:absolute;inset:8px;z-index:2;border:1px solid rgba(159,25,37,.46);box-shadow:inset 0 0 24px rgba(0,0,0,.44);pointer-events:none}
+.outfit-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,1,2,.04),rgba(3,1,2,.48))}
 .outfit-caption{font:500 10px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--pale-gold);opacity:.62;text-align:center;margin-top:14px}
-#tickets{background:linear-gradient(170deg,var(--navy-rich),var(--navy-deep))}
+#tickets{background:linear-gradient(170deg,#120407,#020102 74%)}
 .tix-bg{opacity:.14}
-#contact{background:var(--blue-velvet)}
-.final-bg::after{background:linear-gradient(180deg,rgba(8,5,7,.52),rgba(8,5,7,.9))}
-#sticky{background:rgba(8,5,7,.97)}
+#contact{background:#060203}
+.final-bg::after{background:linear-gradient(180deg,rgba(3,1,2,.62),rgba(3,1,2,.94))}
+#sticky{background:rgba(3,1,2,.97)}
+
+.id-card{border-color:rgba(122,11,20,.54);background:#050203;box-shadow:0 0 0 1px rgba(0,0,0,.92) inset,0 24px 70px rgba(0,0,0,.36)}
+.id-card:hover{border-color:rgba(159,25,37,.72)}
+.id-photo::before{content:'';position:absolute;inset:10px;z-index:2;border:1px solid rgba(159,25,37,.5);box-shadow:0 0 0 1px rgba(0,0,0,.65),inset 0 0 32px rgba(0,0,0,.52);pointer-events:none}
+.id-photo::after{background:linear-gradient(180deg,rgba(3,1,2,.08),rgba(3,1,2,.36))}
+.id-body{background:linear-gradient(160deg,rgba(8,3,4,.9),rgba(3,1,2,.96));border-left:1px solid rgba(122,11,20,.28)}
+.id-card.flip .id-body{border-left:0;border-right:1px solid rgba(122,11,20,.28)}
+.vid-col{border:1px solid rgba(122,11,20,.52);box-shadow:0 0 0 1px rgba(0,0,0,.86) inset,0 20px 60px rgba(0,0,0,.34)}
+.journey-date-chip{border-color:rgba(159,25,37,.58);background:rgba(3,1,2,.82);box-shadow:0 0 0 1px rgba(0,0,0,.82)}
+.waitlist-panel{border-color:rgba(122,11,20,.5);background:linear-gradient(160deg,rgba(8,3,4,.84),rgba(3,1,2,.92));box-shadow:0 18px 54px rgba(0,0,0,.28)}
+.inc-ico{color:var(--candlelight)}
+
 
 @media(max-width:820px){
+  .pull-section{padding:64px 0}
+  .pull-inner{padding:0 24px}
   .dress-grid{grid-template-columns:1fr;gap:30px;margin-top:28px}
   .outfit-card{min-height:210px}
   .journey-header{text-align:left;margin-bottom:34px}
@@ -440,6 +468,23 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     </div>
   </div>
 </section>
+<div class="blood-divider"></div>
+
+<!-- PULL QUOTE -->
+<section class="pull-section">
+  <div class="pull-inner">
+    <p class="pull-quote reveal">
+      &ldquo;The Blood Moon rises. Somewhere in the dark, the doors open.&rdquo;
+    </p>
+    <div class="pull-stanzas reveal d1">
+      <p>Some say it offers beauty.</p>
+      <p>Some say it offers youth.</p>
+      <p>Some say it offers one perfect night you will remember for the rest of your life.</p>
+    </div>
+  </div>
+</section>
+
+<div class="blood-divider"></div>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -450,12 +495,12 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         <span class="eyebrow">The Experience</span>
         <h2>A vampire ball you actually take part in.</h2>
         <p>Blood Moon Ball is built around participation, not standing at the edge of the room. Before Halloween night, you learn the dances in a guided workshop, meet other guests, and arrive ready to step in.</p>
-        <p>Then the room turns darker: candlelight, old roses, velvet, lace, music, and a floor full of people who no longer feel like strangers.</p>
+        <p>Then the room turns darker: candlelight, roses, velvet, lace, music, and a floor full of people who no longer feel like strangers.</p>
         <ul class="exp-bullets">
           <li>No dance experience needed</li>
-          <li>Dance workshop before the Ball</li>
+          <li>Learn historic dances before the Ball, workshop included in your ticket</li>
           <li>Costumes required for a full gothic court atmosphere</li>
-          <li>Structured social dancing so the evening has momentum</li>
+          <li>Structured social dancing</li>
         </ul>
       </div>
       <div class="vid-col reveal d2" id="expVid">
@@ -470,7 +515,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   <div class="wrap">
     <div class="journey-header reveal">
       <span class="eyebrow" style="display:block;text-align:center">Your Journey</span>
-      <h2 class="stitle" style="text-align:center">Two evenings.<br><em>One initiation.</em></h2>
+      <h2 class="stitle" style="text-align:center">Two evenings.<br><em>One invitation.</em></h2>
     </div>
 
     <div class="id-cards">
@@ -493,8 +538,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         <div class="id-body">
           <div class="journey-card-meta">Step Two</div>
           <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
-          <p class="journey-card-text">Return on Halloween night in costume. The workshop becomes the first act; the Ball is where the room opens up.</p>
-          <p class="journey-card-text">You know the dances, you know some faces, and the evening can move instead of stall.</p>
+          <p class="journey-card-text">Return on Halloween night in costume and enter the vampire court. The workshop becomes the first act; the Ball is the Halloween party version of a ritual: candlelight, masks, red velvet, music, and a room that starts to move together.</p>
+          <p class="journey-card-text">You are not arriving cold. You know the steps, you recognize a few faces, and the night can pull you into the gothic atmosphere instead of leaving you watching from the edge.</p>
         </div>
       </div>
     </div>
@@ -507,7 +552,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   <div class="wrap">
     <span class="eyebrow reveal">Join the Waitlist</span>
     <h2 class="stitle reveal">Your Invitation Includes</h2>
-    <p class="waitlist-live reveal d1">Tickets go live July 25, 2026. Join the waitlist to be notified when sales open.</p>
     <div class="tix-layout">
       <div class="reveal d1 waitlist-panel" id="waitlist-form">
         <h3 class="waitlist-title">Be first in line when tickets open.</h3>
@@ -529,6 +573,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         <p class="venue-note"><strong>Venue TBA.</strong> The venue is being finalized and will be announced before tickets go live.</p>
       </div>
     </div>
+    <p class="waitlist-live ticket-date-note reveal d3">Tickets go live July 25, 2026. Join the waitlist to be notified when sales open.</p>
   </div>
 </section>
 
@@ -551,7 +596,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         <div class="dress-note">
           <p><strong>Please avoid:</strong> low-effort party costumes, novelty costumes, inflatable costumes, and casual streetwear.</p>
         </div>
-        <a class="pinterest-link" href="https://pin.it/6OAkdKlCl" target="_blank" rel="noopener">Open Pinterest inspiration</a>
+        <a class="pinterest-link" href="https://pin.it/6OAkdKlCl" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.57 2 3 5.64 3 10.25c0 2.14 1.2 4.82 3.12 5.67.29.13.45.07.52-.2.05-.2.31-1.26.43-1.75.04-.16.02-.3-.11-.45-.63-.75-1.13-2.13-1.13-3.42 0-3.22 2.45-6.34 6.62-6.34 3.6 0 6.12 2.45 6.12 5.95 0 3.95-2 6.69-4.6 6.69-1.44 0-2.52-1.19-2.17-2.65.41-1.74 1.22-3.61 1.22-4.86 0-1.12-.6-2.06-1.85-2.06-1.47 0-2.65 1.52-2.65 3.56 0 1.3.44 2.18.44 2.18s-1.46 6.18-1.73 7.33c-.3 1.27-.18 3.05-.05 4.2.03.24.34.32.48.12.61-.84 1.62-2.4 1.94-3.62.17-.66.88-3.35.88-3.35.46.88 1.8 1.62 3.23 1.62 4.25 0 7.31-3.91 7.31-8.77C21 5.95 17.6 2 12.04 2Z"/></svg>Open Pinterest inspiration</a>
       </div>
       <div class="reveal d2">
         <div class="outfit-grid">
