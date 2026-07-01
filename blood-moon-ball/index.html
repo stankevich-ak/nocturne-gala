@@ -425,7 +425,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg" id="heroBg" style="background-image:url('/blood-moon-ball/images/1.%20hero%20image.webp')"></div>
   <div class="hero-stars" id="heroStars"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Nocturne Gala Presents</p>
@@ -443,7 +443,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="experience-lace" id="experienceLace"></div>
+  <div class="experience-lace" id="experienceLace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
   <div class="wrap">
     <div class="two-col vid-right">
       <div class="section-text reveal">
@@ -459,7 +459,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         </ul>
       </div>
       <div class="vid-col reveal d2" id="expVid">
-        <video id="expVideo" src="" autoplay muted loop playsinline preload="auto"></video>
+        <video id="expVideo" autoplay muted loop playsinline preload="auto"><source src="/blood-moon-ball/videos/blood-moon-trailer.mp4" type="video/mp4"></video>
       </div>
     </div>
   </div>
@@ -475,7 +475,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
     <div class="id-cards">
       <div class="id-card reveal">
-        <div class="id-photo" id="workshopPhoto">
+        <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
           <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 23</strong><small>1:00 PM to 5:00 PM</small></div>
         </div>
         <div class="id-body">
@@ -487,7 +487,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       </div>
 
       <div class="id-card flip reveal d1">
-        <div class="id-photo" id="ballPhoto">
+        <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')">
           <div class="journey-date-chip"><span>The Ball</span><strong>Oct 31</strong><small>Halloween Night</small></div>
         </div>
         <div class="id-body">
@@ -503,7 +503,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 <!-- WAITLIST + WHAT'S INCLUDED -->
 <section id="tickets">
-  <div class="tix-bg" id="tixBg"></div>
+  <div class="tix-bg" id="tixBg" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')"></div>
   <div class="wrap">
     <span class="eyebrow reveal">Join the Waitlist</span>
     <h2 class="stitle reveal">Your Invitation Includes</h2>
@@ -555,10 +555,10 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       </div>
       <div class="reveal d2">
         <div class="outfit-grid">
-          <div class="outfit-card" id="outfit1"></div>
-          <div class="outfit-card" id="outfit2"></div>
-          <div class="outfit-card" id="outfit3"></div>
-          <div class="outfit-card" id="outfit4"></div>
+          <div class="outfit-card" id="outfit1" style="background-image:url('/blood-moon-ball/images/outfit1.webp')"></div>
+          <div class="outfit-card" id="outfit2" style="background-image:url('/blood-moon-ball/images/outfit2.webp')"></div>
+          <div class="outfit-card" id="outfit3" style="background-image:url('/blood-moon-ball/images/outfit3.webp')"></div>
+          <div class="outfit-card" id="outfit4" style="background-image:url('/blood-moon-ball/images/outfit4.webp')"></div>
         </div>
         <p class="outfit-caption">Gothic romance, vampire court, Victorian silhouettes</p>
       </div>
@@ -587,7 +587,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 <!-- FINAL CTA -->
 <section id="final-cta">
-  <div class="final-bg" id="finalBg"></div>
+  <div class="final-bg" id="finalBg" style="background-image:url('/blood-moon-ball/images/final%20just%20do%20it%20section.webp')"></div>
   <div class="final-c reveal">
     <span class="final-ey">Nocturne Gala &middot; October 31, 2026</span>
     <h2 class="final-t">You can keep scrolling.<br>Or you can actually do this.</h2>
@@ -636,16 +636,16 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 const BASE = "";
 function loadResources() {
   return Promise.resolve({
-    hero_image: "images/1.%20hero%20image.webp",
-    lace_pattern: "images/2.%20lace%20pattern.webp",
-    experience_video: "videos/blood-moon-trailer.mp4",
-    workshop_card: "images/3.%20rehearsals.webp",
-    ball_card: "images/4.%20dance-procession.webp",
-    final_cta_image: "images/final%20just%20do%20it%20section.webp",
-    outfit_1: "images/outfit1.webp",
-    outfit_2: "images/outfit2.webp",
-    outfit_3: "images/outfit3.webp",
-    outfit_4: "images/outfit4.webp"
+    hero_image: "/blood-moon-ball/images/1.%20hero%20image.webp",
+    lace_pattern: "/blood-moon-ball/images/2.%20lace%20pattern.webp",
+    experience_video: "/blood-moon-ball/videos/blood-moon-trailer.mp4",
+    workshop_card: "/blood-moon-ball/images/3.%20rehearsals.webp",
+    ball_card: "/blood-moon-ball/images/4.%20dance-procession.webp",
+    final_cta_image: "/blood-moon-ball/images/final%20just%20do%20it%20section.webp",
+    outfit_1: "/blood-moon-ball/images/outfit1.webp",
+    outfit_2: "/blood-moon-ball/images/outfit2.webp",
+    outfit_3: "/blood-moon-ball/images/outfit3.webp",
+    outfit_4: "/blood-moon-ball/images/outfit4.webp"
   });
 }
 
