@@ -112,9 +112,11 @@ img{display:block;object-fit:contain}
 #past{padding:34px 0;background:var(--navy-dark);border-top:1px solid var(--hair)}
 .past-bar{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .past-bar .eyebrow{margin-bottom:0}
-.past-link{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--candlelight)}
+.past-link{display:inline-flex;align-items:center;gap:16px;font:600 12px/1 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--candlelight)}
 .past-link:hover{color:var(--pale-gold)}
-.past-link span{font-family:var(--font-serif);font-size:14px;letter-spacing:.02em;text-transform:none;opacity:.85}
+.past-event-copy{font-family:var(--font-serif);font-size:14px;letter-spacing:.02em;text-transform:none;opacity:.85;display:flex;flex-direction:column;gap:4px;line-height:1.42}
+.past-event-title,.past-event-location{display:block}
+.past-cta{font-family:var(--font-sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:1;white-space:nowrap}
 
 /* ── EVENT HIGHLIGHTS (gallery slider) ── */
 #highlights{padding:80px 0;background:var(--navy-deep);overflow:hidden}
@@ -162,8 +164,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .footer-brand-wrap{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px}
 .footer-logo{height:32px;width:auto;object-fit:contain}
 .footer-name{font-family:var(--font-serif);font-size:18px;color:var(--candlelight);letter-spacing:.02em}
-.footer-nav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
-.footer-nav a{font:500 11px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);opacity:.6;transition:opacity .2s,color .2s}
+.footer-nav{display:grid;grid-template-columns:repeat(3,92px);justify-content:center;gap:0;margin-bottom:18px}
+.footer-nav a{font:500 11px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);opacity:.6;transition:opacity .2s,color .2s;text-align:center}
 .footer-nav a:hover{opacity:1;color:var(--candlelight)}
 .footer-social{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
 .footer-social a{display:inline-flex;align-items:center;gap:7px;font:500 11px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight);opacity:.8;transition:opacity .2s,color .2s}
@@ -177,7 +179,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 #sticky{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(15,13,11,.97);border-top:1px solid var(--hair);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;padding:12px 44px;gap:20px;transform:translateY(100%);transition:transform .45s var(--ease)}
 #sticky.visible{transform:none}
 .sticky-info{display:flex;flex-direction:column;gap:4px}
-.sticky-name{font-family:var(--font-serif);font-size:14px;color:var(--candlelight)}
+.sticky-name{font-family:var(--font-serif);font-size:16.1px;color:var(--candlelight)}
 .sticky-date{font:500 10px/1.3 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pale-gold);opacity:.6}
 .sticky-ctas{display:flex;gap:10px;flex-shrink:0}
 .sticky-btn{display:inline-block;padding:13px 30px;border-radius:3px;background:var(--beeswax);color:var(--pitch);font:700 12px/1 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;transition:background .25s;white-space:nowrap;text-decoration:none;flex-shrink:0}
@@ -190,6 +192,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .wrap{padding:0 26px}
   #nav{padding:14px 26px}#nav.scrolled{padding:10px 26px}
   .nav-links{gap:18px}
+  .nav-brand-text{display:none}
   #hero{height:auto;min-height:100vh;padding:120px 26px 80px}
   .hero-ctas .btn{width:100%;text-align:center}
   .about-grid{grid-template-columns:1fr;gap:26px}
@@ -220,7 +223,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .tm-card{background:rgba(74,43,90,.5)!important;backdrop-filter:blur(8px);border-color:rgba(212,186,235,.3)!important}
 .tm-feature{background:rgba(74,43,90,.6)!important}
 #newsletter{position:relative;overflow:hidden}
-.nl-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
+.nl-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.6}
 #newsletter::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,11,.8),rgba(7,6,5,.9));z-index:1}
 #newsletter .wrap{position:relative;z-index:2}
 .hl-tile img,.hl-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:var(--ebony)}
@@ -233,7 +236,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 <nav id="nav">
   <a href="https://nocturne-gala.vercel.app/" class="nav-brand">
     <img class="nav-logo" src="logo.svg" alt="Nocturne Gala logo"/>
-    Nocturne Gala
+    <span class="nav-brand-text">Nocturne Gala</span>
   </a>
   <div class="nav-links">
     <a href="https://nocturne-gala.vercel.app/" class="active">Home</a>
@@ -316,7 +319,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
           <p class="ev-meta">Vancouver, BC &middot; Dec 18, 2026</p>
           <p class="ev-desc">A candlelit winter masquerade at Scottish Hall, with guided rehearsals, live music, and celestial winter decor.</p>
           <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold">Buy Tickets</a>
+            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#waitlist-form" class="btn btn-gold">Buy Tickets</a>
             <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="btn btn-outline">Learn More</a>
           </div>
         </div>
@@ -332,7 +335,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <div class="past-bar reveal">
       <span class="eyebrow">Past Events</span>
       <a class="past-link" href="https://nocturne-gala.vercel.app/spring-gala/">
-        <span>Spring Gala &middot; Vancouver, May 8, 2025</span> View Recap &rarr;
+        <span class="past-event-copy"><span class="past-event-title">Spring Gala</span><span class="past-event-location">Vancouver, May 8th, 2026</span></span>
+        <span class="past-cta">View Recap &rarr;</span>
       </a>
     </div>
   </div>
