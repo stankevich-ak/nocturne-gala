@@ -127,8 +127,6 @@ img{display:block;object-fit:contain}
 .hl-track::-webkit-scrollbar{display:none}
 .hl-tile{position:relative;flex:0 0 300px;aspect-ratio:4/5;scroll-snap-align:start;background:var(--navy-mid);border:1px solid var(--hair);display:flex;align-items:flex-end;padding:16px;overflow:hidden}
 .hl-tile::after{content:attr(data-note);font:500 9px/1.5 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);opacity:.42}
-.hl-tile.video::before{content:'';position:absolute;top:50%;left:50%;width:46px;height:46px;transform:translate(-50%,-50%);border:1px solid var(--hair-hi);border-radius:50%;background:rgba(15,13,11,.5)}
-.hl-tile.video .play{position:absolute;top:50%;left:50%;transform:translate(-42%,-50%);z-index:2;width:0;height:0;border-left:13px solid var(--candlelight);border-top:8px solid transparent;border-bottom:8px solid transparent}
 .hl-social{margin-top:40px;text-align:center}
 .hl-social p{font:400 14px/1.7 var(--font-sans);color:var(--parchment);opacity:.8;margin-bottom:20px}
 .social-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -227,8 +225,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 #newsletter .wrap{position:relative;z-index:2}
 .hl-tile img,.hl-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:var(--ebony)}
 .hl-tile.video{cursor:pointer}
-.hl-tile.video::before,.hl-tile.video .play{z-index:2}
-.hl-tile.playing::before,.hl-tile.playing .play{display:none}
 </style>
 </head>
 <body>
@@ -365,7 +361,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         <video preload="auto" autoplay muted playsinline loop poster="/images/carousel 1.webp">
           <source src="/celestial-winter-masquerade/public/videos/quiet.mp4" type="video/mp4"/>
         </video>
-        <span class="play"></span>
       </div>
       <div class="hl-tile"><img src="/images/carousel 1.webp" alt="Nocturne Gala highlight"/></div>
       <div class="hl-tile"><img src="/images/carousel 2.webp" alt="Nocturne Gala highlight"/></div>
