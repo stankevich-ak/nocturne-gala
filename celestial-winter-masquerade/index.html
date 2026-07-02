@@ -231,9 +231,9 @@ img{display:block;object-fit:cover}
 .tix-layout{display:grid;grid-template-columns:minmax(560px,.98fr) minmax(330px,.7fr);gap:58px;align-items:start;margin-top:0}
 /* ticket rows — LEFT */
 .tix-rows{display:flex;flex-direction:column;max-width:640px}
-.tix-row{position:relative;padding:14px 18px 14px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(13,17,32,.7);backdrop-filter:blur(8px);transition:border-color .3s,background .3s}
+.tix-row{position:relative;padding:14px 18px 14px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(13,17,32,.7);backdrop-filter:blur(8px);transition:border-color .3s,background .3s;cursor:pointer}
 .tix-row:hover{border-color:var(--hair-hi);background:rgba(22,30,48,.9);z-index:1}
-.tix-row.featured{border-color:rgba(212,184,106,.42);background:rgba(20,28,50,.88)}
+.tix-row:focus-visible{outline:1px solid var(--candlelight);outline-offset:3px;z-index:2}
 .tix-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
 .acc-c{background:linear-gradient(180deg,var(--beeswax),var(--candlelight))}
 .acc-f{background:linear-gradient(180deg,var(--velvet),#4A2B5A)}
@@ -538,11 +538,11 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       <div class="reveal d1">
         <div class="tix-rows">
           <!-- COUPLES first -->
-          <div class="tix-row featured">
+          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=7530590d572c44a3f0af74&productId=1747066&productQuantity=1&amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" role="link" tabindex="0" aria-label="Get Couples Ticket">
             <div class="tix-accent acc-c"></div>
             <div class="tix-inner">
               <div class="tix-left">
-                <div class="tix-role">Couples <span class="tix-badge">Popular</span></div>
+                <div class="tix-role">Couples</div>
                 <div class="tix-desc">Rehearsals and Ball access for two guests in a dancing pair. Roles open to all genders.</div>
                 <a class="tix-btn btn-gold-sm" href="https://enchanted-gala.myhelcim.com/hosted/?token=7530590d572c44a3f0af74&productId=1747066&productQuantity=1&amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank">Get Couples Ticket</a>
               </div>
@@ -550,7 +550,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
             </div>
           </div>
           <!-- FOLLOWER -->
-          <div class="tix-row">
+          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=cedaf431c87d421fdd8f2f&productId=1684467&productQuantity=1&amountHash=b4af9cbcd052a654a1a0298bffe1abc80d2ccd211031e89c4ee23d84bacd1d42" role="link" tabindex="0" aria-label="Get Follower Ticket">
             <div class="tix-accent acc-f"></div>
             <div class="tix-inner">
               <div class="tix-left">
@@ -562,7 +562,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
             </div>
           </div>
           <!-- LEADER -->
-          <div class="tix-row">
+          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=c793540264f37ff40606f5&productId=1747062&productQuantity=1&amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Leader Ticket">
             <div class="tix-accent acc-l"></div>
             <div class="tix-inner">
               <div class="tix-left">
@@ -893,6 +893,27 @@ function initVideoPlayers(){
   });
 }
 
+function initTicketCards(){
+  document.querySelectorAll('.tix-row[data-ticket-url]').forEach(row=>{
+    if(row.dataset.ticketBound==='true')return;
+    row.dataset.ticketBound='true';
+    const openTicket=()=>{
+      const url=row.dataset.ticketUrl;
+      if(url)window.open(url,'_blank','noopener');
+    };
+    row.addEventListener('click',event=>{
+      if(event.target.closest('a'))return;
+      openTicket();
+    });
+    row.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){
+        event.preventDefault();
+        openTicket();
+      }
+    });
+  });
+}
+
 // ── TALLY EMBED ────────────────────────────────────────────────
 var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})},s=d.querySelector('script[src="'+w+'"]');if("undefined"!=typeof Tally)v();else if(s){s.addEventListener("load",v);s.addEventListener("error",v);}else{s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}
 
@@ -900,6 +921,7 @@ var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=t
 loadResources().then(R => {
   applyResources(R);
   initVideoPlayers();
+  initTicketCards();
   // match heights after images/videos load
   window.addEventListener('load', () => { matchVideoHeights(); initVideoPlayers(); });
   window.addEventListener('resize', matchVideoHeights);
