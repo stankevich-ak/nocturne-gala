@@ -193,6 +193,13 @@ img{display:block;object-fit:cover}
 /* Video — height matched to sibling text via JS */
 .vid-col{position:relative;overflow:hidden;background:var(--navy-dark);border:1px solid var(--hair);flex-shrink:0}
 .vid-col video{width:100%;height:100%;object-fit:cover;display:block}
+.vid-col.video-frame{line-height:0}
+.sound-toggle{position:absolute;left:14px;bottom:14px;z-index:4;width:44px;height:44px;border:1px solid rgba(232,212,154,.76);background:rgba(27,25,24,.82);color:var(--pale-gold);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);transition:background .2s,color .2s,border-color .2s,transform .2s}
+.sound-toggle:hover,.sound-toggle.sound-on{background:var(--beeswax);color:var(--pitch);border-color:var(--beeswax);transform:translateY(-1px)}
+.sound-toggle svg{width:23px;height:23px;display:block}
+.sound-toggle .icon-sound{display:none}
+.sound-toggle.sound-on .icon-muted{display:none}
+.sound-toggle.sound-on .icon-sound{display:block}
 /* Match rehearsal video sizing to the main experience video */
 #rehVid{justify-self:stretch;width:100%;max-width:none;aspect-ratio:auto;min-height:0}
 #rehVid video{height:100%;min-height:0;object-fit:cover}
@@ -450,18 +457,16 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <div class="two-col vid-right">
       <div class="section-text reveal">
         <span class="eyebrow">The Experience</span>
-        <h2>You&rsquo;ve been watching scenes like this your whole life.</h2>
-        <p>In Pride and Prejudice. In Bridgerton. Candlelit ballrooms. Elegant music. Couples moving as if it all just works.</p>
-        <p>This is your chance to step out of it &mdash; stop being a spectator and become one of the dancers.</p>
-        <ul class="exp-bullets">
-          <li>You arrive and recognize faces &mdash; people you&rsquo;ve already danced with at rehearsals</li>
-          <li>The music starts, and the steps come naturally &mdash; because you already know them</li>
-          <li>Someone extends a hand and you don&rsquo;t hesitate</li>
-          <li>You move through the evening with ease, and just enough elegance to surprise yourself</li>
-        </ul>
+        <h2>You&rsquo;re Not Watching the Ball. You&rsquo;re In It.</h2>
+        <p>You&rsquo;ve seen evenings like this in films and period dramas: candlelit rooms, elegant music, beautiful clothes, and people moving together like they already belong there.</p>
+        <p>Nocturne Gala makes that feeling possible for real guests. Before the ball, we teach beginner-friendly adaptations of historic dances through guided rehearsals and workshops, so you arrive knowing what to do, who you&rsquo;re dancing with, and how to take part.</p>
       </div>
-      <div class="vid-col reveal d2" id="expVid">
+      <div class="vid-col video-frame reveal d2" id="expVid">
         <video id="expVideo" src="" autoplay muted loop playsinline preload="auto"></video>
+        <button class="sound-toggle" type="button" aria-label="Turn sound on">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
+          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -491,8 +496,12 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 <section id="rehearsals">
   <div class="wrap">
     <div class="two-col vid-left">
-      <div class="vid-col reveal" id="rehVid">
+      <div class="vid-col video-frame reveal" id="rehVid">
         <video id="rehVideo" src="" autoplay muted loop playsinline preload="auto"></video>
+        <button class="sound-toggle" type="button" aria-label="Turn sound on">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
+          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
+        </button>
       </div>
       <div class="reveal d2">
         <span class="eyebrow">Your Journey</span>
@@ -852,14 +861,45 @@ for(let i=0;i<55;i++){
 
 // ── WHY DIFFERENT — photos assigned in applyResources ──
 
+
+function initVideoPlayers(){
+  document.querySelectorAll('.video-frame').forEach(frame=>{
+    const video=frame.querySelector('video');
+    const button=frame.querySelector('.sound-toggle');
+    if(!video)return;
+    video.muted=true;
+    video.defaultMuted=true;
+    video.playsInline=true;
+    video.play().catch(()=>{});
+    if(button && !button.dataset.bound){
+      button.dataset.bound='true';
+      button.addEventListener('click',()=>{
+        const turnOn=video.muted;
+        document.querySelectorAll('.video-frame video').forEach(other=>{
+          if(other!==video){other.muted=true;}
+        });
+        document.querySelectorAll('.sound-toggle').forEach(otherButton=>{
+          if(otherButton!==button){otherButton.classList.remove('sound-on');otherButton.setAttribute('aria-label','Turn sound on');}
+        });
+        video.muted=!turnOn;
+        video.defaultMuted=!turnOn;
+        video.play().catch(()=>{});
+        button.classList.toggle('sound-on',turnOn);
+        button.setAttribute('aria-label',turnOn?'Turn sound off':'Turn sound on');
+      });
+    }
+  });
+}
+
 // ── TALLY EMBED ────────────────────────────────────────────────
 var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})},s=d.querySelector('script[src="'+w+'"]');if("undefined"!=typeof Tally)v();else if(s){s.addEventListener("load",v);s.addEventListener("error",v);}else{s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}
 
 // ── INIT ───────────────────────────────────────────────────────
 loadResources().then(R => {
   applyResources(R);
+  initVideoPlayers();
   // match heights after images/videos load
-  window.addEventListener('load', matchVideoHeights);
+  window.addEventListener('load', () => { matchVideoHeights(); initVideoPlayers(); });
   window.addEventListener('resize', matchVideoHeights);
   setTimeout(matchVideoHeights, 800);
 });
