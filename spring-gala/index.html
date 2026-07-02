@@ -189,8 +189,7 @@ img{display:block;object-fit:cover}
 #hero{height:100vh;min-height:600px;max-height:920px;display:flex;align-items:center;position:relative;overflow:hidden;padding:96px 44px 64px;background:var(--pitch)}
 .hero-media{position:absolute;inset:0;z-index:0;background:var(--pitch)}
 .hero-media img{width:100%;height:100%;object-fit:cover}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(15,13,11,.86) 0%,rgba(15,13,11,.62) 50%,rgba(74,43,90,.24) 100%)}
-.hero-overlay::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 72% 25%,rgba(212,186,235,.18),transparent 34%),radial-gradient(circle at 86% 70%,rgba(232,212,154,.13),transparent 36%);mix-blend-mode:screen;pointer-events:none}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,13,11,.86) 0%,rgba(15,13,11,.62) 38%,rgba(15,13,11,.22) 72%,rgba(15,13,11,.12) 100%),linear-gradient(180deg,rgba(15,13,11,.18) 0%,rgba(15,13,11,.48) 100%)}
 .hero-content{position:relative;z-index:3;max-width:600px;margin-left:8%}
 .hero-eyebrow{font:600 12px/1 var(--font-sans);letter-spacing:.34em;text-transform:uppercase;color:var(--beeswax);margin-bottom:20px;opacity:0;animation:fadeUp .9s .15s var(--ease) forwards}
 .hero-title{font-family:var(--font-serif);font-size:clamp(2.8rem,7vw,5.2rem);font-weight:400;color:var(--candlelight);line-height:1.2;margin-bottom:26px;opacity:0;animation:fadeUp .9s .3s var(--ease) forwards}
@@ -242,7 +241,7 @@ img{display:block;object-fit:cover}
 .playlist-inline a:hover{color:var(--spring-purple)}
 
 /* PEOPLE */
-#people{padding:80px 0;background:linear-gradient(180deg,rgba(15,13,11,.88),rgba(20,16,24,.9)),url('/spring-gala/images/floralbg.jpg') center/cover no-repeat;position:relative}
+#people{padding:80px 0;background:linear-gradient(180deg,rgba(15,13,11,.62),rgba(20,16,24,.68)),url('/spring-gala/images/floralbg.jpg') center/cover no-repeat;position:relative}
 .people-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:end;margin-bottom:34px}
 .people-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .person-card{border:1px solid var(--hair);background:rgba(15,13,11,.72);min-height:308px;display:flex;flex-direction:column;backdrop-filter:blur(6px)}
@@ -256,22 +255,22 @@ img{display:block;object-fit:cover}
 .asset-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;font:600 10px/1.6 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(240,232,213,.42)}
 
 /* UPCOMING EVENT CARDS — reused from index 15 */
-#events{padding:80px 0 84px;background:linear-gradient(160deg,var(--beeswax) 0%,var(--candlelight) 58%,var(--pale-gold) 100%);color:var(--pitch)}
-#events .events-head .eyebrow{color:rgba(15,13,11,.72)}
-#events .events-head .stitle{color:var(--pitch)}
+#events{padding:80px 0 84px;background:linear-gradient(160deg,var(--spring-paper),var(--spring-bone));color:var(--spring-ink)}
+#events .events-head .eyebrow{color:var(--spring-purple)}
+#events .events-head .stitle{color:var(--spring-ink)}
 .events-head{margin-bottom:32px}
-.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.ev-card{display:flex;flex-direction:column;border:1px solid var(--hair);background:var(--navy-mid);overflow:hidden;transition:border-color .3s,transform .3s}
+.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+.ev-card{display:flex;flex-direction:column;border:1px solid var(--hair);background:rgba(15,13,11,.82);overflow:hidden;transition:border-color .3s,transform .3s;height:100%}
 .ev-card:hover{border-color:var(--hair-hi);transform:translateY(-3px)}
 .ev-img{position:relative;aspect-ratio:16/9;display:flex;align-items:flex-end;padding:16px;overflow:hidden}
 .ev-img.blood{background:linear-gradient(150deg,#2a0a10,#5a0d18 70%,#1a0608)}
 .ev-img.celestial{background:linear-gradient(150deg,#0d1733,#243a66 60%,#0a0f1c)}
 .ev-status{font:600 9px/1 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 11px;background:rgba(15,13,11,.7);backdrop-filter:blur(6px);color:var(--candlelight);border:1px solid var(--hair-hi)}
-.ev-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ev-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1;background:rgba(15,13,11,.76);backdrop-filter:blur(6px)}
 .ev-name{font-family:var(--font-serif);font-size:1.3rem;font-weight:400;color:var(--candlelight);line-height:1.3;margin-bottom:9px}
 .ev-meta{font:500 11px/1.6 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--warm-sand);opacity:.85;margin-bottom:14px}
 .ev-desc{font:400 14px/1.65 var(--font-sans);color:var(--parchment);opacity:.78;margin-bottom:20px;flex:1}
-.ev-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.ev-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
 .ev-ctas .btn{font-size:11px;padding:12px 22px;letter-spacing:.12em}
 .ev-img.blood,.ev-img.celestial{background:none}
 .ev-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
@@ -461,24 +460,24 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     </div>
     <div class="people-grid">
       <article class="person-card reveal">
-        <div class="person-image"><img src="/spring-gala/images/Sara%20Cruz.webp" alt="Sara Cruz at the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Live Violin</p><h3 class="person-name">Sara Cruz</h3><a class="person-link" href="https://www.instagram.com/saracruzviolin/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-image"><img src="/spring-gala/images/Sara%20Cruz.webp" alt="Sarah Cruz at the Spring Gala" loading="lazy"/></div>
+        <div class="person-body"><p class="person-role">Violin</p><h3 class="person-name">Sarah Cruz</h3><a class="person-link" href="https://www.instagram.com/saracruzviolin/" target="_blank" rel="noopener">Instagram</a></div>
       </article>
       <article class="person-card reveal d1">
         <div class="person-image"><img src="/spring-gala/images/Academie%20Cavallo.webp" alt="Académie Cavallo sword combat performance" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Sword Combat</p><h3 class="person-name">Académie Cavallo</h3><a class="person-link" href="https://www.instagram.com/jmlandels/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-body"><p class="person-role">Sword Combat</p><h3 class="person-name">Academie Cavallo</h3><a class="person-link" href="https://www.instagram.com/jmlandels/" target="_blank" rel="noopener">Instagram</a></div>
       </article>
       <article class="person-card reveal d2">
-        <div class="person-image"><img src="/spring-gala/images/devon%20ellis-durity.webp" alt="Devon Ellis-Durity at the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Performer</p><h3 class="person-name">Devon Ellis-Durity</h3><a class="person-link" href="https://www.instagram.com/devonellisdurity/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-image"><img src="/spring-gala/images/devon%20ellis-durity.webp" alt="Devon Ellis at the Spring Gala" loading="lazy"/></div>
+        <div class="person-body"><p class="person-role">Director, Photography</p><h3 class="person-name">Devon Ellis</h3><a class="person-link" href="https://www.instagram.com/devonellisdurity/" target="_blank" rel="noopener">Instagram</a></div>
       </article>
       <article class="person-card reveal d3">
-        <div class="person-image"><img src="/spring-gala/images/gmweek.webp" alt="GMWeek photography for the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Photography</p><h3 class="person-name">GMWeek</h3><a class="person-link" href="https://www.instagram.com/gmweek/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-image"><img src="/spring-gala/images/gmweek.webp" alt="GMWEEK piano at the Spring Gala" loading="lazy"/></div>
+        <div class="person-body"><p class="person-role">Piano</p><h3 class="person-name">GMWEEK</h3><a class="person-link" href="https://www.instagram.com/gmweek/" target="_blank" rel="noopener">Instagram</a></div>
       </article>
       <article class="person-card reveal d4">
-        <div class="person-image"><img src="/spring-gala/images/kliomedia.webp" alt="KlioMedia video for the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Video</p><h3 class="person-name">KlioMedia</h3><a class="person-link" href="https://www.instagram.com/kliomedia/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-image"><img src="/spring-gala/images/kliomedia.webp" alt="KlioMedia videography for the Spring Gala" loading="lazy"/></div>
+        <div class="person-body"><p class="person-role">Videography</p><h3 class="person-name">KlioMedia</h3><a class="person-link" href="https://www.instagram.com/kliomedia/" target="_blank" rel="noopener">Instagram</a></div>
       </article>
     </div>
   </div>
