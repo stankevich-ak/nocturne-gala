@@ -152,7 +152,7 @@ img{display:block;object-fit:cover}
 .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--candlelight)}
 
 #page-hero{min-height:520px;display:flex;align-items:center;position:relative;overflow:hidden;padding:130px 44px 82px;background:radial-gradient(110% 120% at 78% 18%,#181109 0%,var(--pitch) 60%,#070605 100%)}
-.page-hero-media{position:absolute;inset:0;z-index:0;background:linear-gradient(145deg,rgba(46,24,64,.5),rgba(15,13,11,.88) 58%,rgba(7,6,5,.96)),url('/images/2. what is nocturne gala.webp') center/cover no-repeat;opacity:.82}
+.page-hero-media{position:absolute;inset:0;z-index:0;background:linear-gradient(145deg,rgba(46,24,64,.38),rgba(15,13,11,.78) 58%,rgba(7,6,5,.9)),url('/images/2. what is nocturne gala.webp') center/cover no-repeat;opacity:1}
 .page-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,13,11,.34),rgba(15,13,11,.82))}
 .page-hero-inner{position:relative;z-index:2;max-width:720px}
 .page-title{font-family:var(--font-serif);font-size:clamp(3rem,7vw,5.4rem);font-weight:400;color:var(--candlelight);line-height:1.08;margin-bottom:24px}
@@ -160,8 +160,9 @@ img{display:block;object-fit:cover}
 
 #upcoming{padding:74px 0 84px;background:var(--navy-dark)}
 .events-head{margin-bottom:32px;max-width:680px}
-.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.ev-card{display:flex;flex-direction:column;border:1px solid var(--hair);background:var(--navy-mid);overflow:hidden;transition:border-color .3s,transform .3s}
+.events-head .eyebrow{margin-bottom:0}
+.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+.ev-card{display:flex;flex-direction:column;height:100%;border:1px solid var(--hair);background:var(--navy-mid);overflow:hidden;transition:border-color .3s,transform .3s}
 .ev-card:hover{border-color:var(--hair-hi);transform:translateY(-3px)}
 .ev-img{position:relative;aspect-ratio:16/9;display:flex;align-items:flex-end;padding:16px;overflow:hidden;background:var(--navy-rich)}
 .ev-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,11,0) 40%,rgba(15,13,11,.82));z-index:1}
@@ -169,7 +170,7 @@ img{display:block;object-fit:cover}
 .ev-card:hover .ev-photo{transform:scale(1.035)}
 .ev-status{font:600 9px/1 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 11px;border-radius:3px;background:rgba(15,13,11,.72);backdrop-filter:blur(6px);color:var(--candlelight);border:1px solid var(--hair-hi);position:relative;z-index:2}
 .ev-status.past{color:var(--parchment);border-color:rgba(240,232,213,.35);opacity:.9}
-.ev-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ev-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1;min-height:258px}
 .ev-name{font-family:var(--font-serif);font-size:1.3rem;font-weight:400;color:var(--candlelight);line-height:1.3;margin-bottom:9px}
 .ev-meta{font:500 11px/1.6 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--warm-sand);opacity:.85;margin-bottom:14px}
 .ev-desc{font:400 14px/1.65 var(--font-sans);color:var(--parchment);opacity:.78;margin-bottom:20px;flex:1}
@@ -179,15 +180,17 @@ img{display:block;object-fit:cover}
 .btn-blood:hover{background:#9A1220;color:var(--parchment);transform:translateY(-2px);box-shadow:0 10px 30px rgba(122,11,20,.32)}
 
 #past-events{padding:78px 0 84px;background:var(--navy-deep);border-top:1px solid var(--hair)}
-#past-events .event-grid{grid-template-columns:minmax(0,1fr);max-width:620px}
-#past-events .ev-card{background:linear-gradient(165deg,rgba(46,35,24,.84),rgba(28,23,16,.94))}
-#past-events .ev-name{color:var(--pale-gold)}
 
 #faq{padding:84px 0 92px;background:linear-gradient(165deg,var(--navy-rich),var(--navy-mid) 65%,var(--navy-dark));border-top:1px solid var(--hair)}
 .faq-head{max-width:620px;margin-bottom:34px}
-.faq-list{display:grid;grid-template-columns:1fr;gap:10px}
-.faq-item{border:1px solid var(--hair);background:rgba(15,13,11,.42);padding:24px 26px}
-.faq-q{font-family:var(--font-serif);font-size:1.08rem;font-weight:400;color:var(--candlelight);line-height:1.4;margin-bottom:8px}
+.faq-list{display:grid;grid-template-columns:1fr;gap:10px;max-width:860px}
+.faq-item{border:1px solid var(--hair);background:rgba(15,13,11,.42);transition:border-color .25s,background .25s}
+.faq-item[open]{border-color:var(--hair-hi);background:rgba(15,13,11,.58)}
+.faq-q{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px 26px;font-family:var(--font-serif);font-size:1.08rem;font-weight:400;color:var(--candlelight);line-height:1.4}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:'+';font:400 24px/1 var(--font-serif);color:var(--beeswax);transition:transform .2s}
+.faq-item[open] .faq-q::after{content:'−'}
+.faq-content{padding:0 26px 24px}
 .faq-a{font:400 14.5px/1.75 var(--font-sans);color:var(--parchment);opacity:.78}
 .ticket-types{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
 .ticket-type{border:1px solid rgba(212,184,106,.18);padding:13px 14px;background:rgba(184,144,42,.05)}
@@ -254,8 +257,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   <div class="wrap">
     <div class="events-head reveal">
       <span class="eyebrow">Upcoming Events</span>
-      <h2 class="stitle">Where we&rsquo;re dancing next</h2>
-      <p class="ssub">Each event has its own theme, guided preparation, and a full evening built around social dancing.</p>
     </div>
     <div class="event-grid">
 
@@ -293,7 +294,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   <div class="wrap">
     <div class="events-head reveal">
       <span class="eyebrow">Past Events</span>
-      <h2 class="stitle">Recent gatherings</h2>
     </div>
     <div class="event-grid">
       <div class="ev-card reveal">
@@ -319,43 +319,45 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       <p class="ssub">Common questions about rehearsals, tickets, dress code, and event format.</p>
     </div>
     <div class="faq-list">
-      <div class="faq-item reveal">
-        <h3 class="faq-q">Do I need dance experience?</h3>
-        <p class="faq-a">No. Our events are designed to be beginner-friendly, and the dances are taught before the ball.</p>
-      </div>
-      <div class="faq-item reveal d1">
-        <h3 class="faq-q">How do I learn the dances?</h3>
-        <p class="faq-a">We provide classes, rehearsals, or workshops before the ball so guests can learn the dances, meet each other, and feel comfortable before the evening begins.</p>
-      </div>
-      <div class="faq-item reveal d2">
-        <h3 class="faq-q">Can I come alone?</h3>
-        <p class="faq-a">Yes. You can come alone with the right ticket type. Ticket availability may depend on dance role balance for that event.</p>
-        <div class="ticket-types">
-          <div class="ticket-type"><strong>Leader Ticket</strong><span>For one guest dancing the leading role.</span></div>
-          <div class="ticket-type"><strong>Follower Ticket</strong><span>For one guest dancing the following role.</span></div>
-          <div class="ticket-type"><strong>Couples Ticket</strong><span>For two guests registering together.</span></div>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Do I need dance experience?</summary>
+        <div class="faq-content"><p class="faq-a">No. Our events are designed to be beginner-friendly, and the dances are taught before the ball.</p></div>
+      </details>
+      <details class="faq-item reveal d1">
+        <summary class="faq-q">How do I learn the dances?</summary>
+        <div class="faq-content"><p class="faq-a">We provide classes, rehearsals, or workshops before the ball so guests can learn the dances, meet each other, and feel comfortable before the evening begins.</p></div>
+      </details>
+      <details class="faq-item reveal d2">
+        <summary class="faq-q">Can I come alone?</summary>
+        <div class="faq-content">
+          <p class="faq-a">Yes. You can come alone with the right ticket type. Ticket availability may depend on dance role balance for that event.</p>
+          <div class="ticket-types">
+            <div class="ticket-type"><strong>Leader Ticket</strong><span>For one guest dancing the leading role.</span></div>
+            <div class="ticket-type"><strong>Follower Ticket</strong><span>For one guest dancing the following role.</span></div>
+            <div class="ticket-type"><strong>Couples Ticket</strong><span>For two guests registering together.</span></div>
+          </div>
         </div>
-      </div>
-      <div class="faq-item reveal">
-        <h3 class="faq-q">Is this historically accurate?</h3>
-        <p class="faq-a">We use beginner-friendly adaptations of actual historic dances. The goal is to make the dances feel elegant, social, and accessible rather than strict reenactment.</p>
-      </div>
-      <div class="faq-item reveal d1">
-        <h3 class="faq-q">Are rehearsals included in the ticket?</h3>
-        <p class="faq-a">Yes. The rehearsals, classes, or workshops listed for the event are included in the ticket.</p>
-      </div>
-      <div class="faq-item reveal d2">
-        <h3 class="faq-q">What should I wear?</h3>
-        <p class="faq-a">It depends on the theme of the ball. We provide costume inspiration for each event so guests can plan formalwear or theme-appropriate looks.</p>
-      </div>
-      <div class="faq-item reveal">
-        <h3 class="faq-q">Is there an age restriction?</h3>
-        <p class="faq-a">Yes. Events are 14 plus. Guests under 18 must be accompanied by an adult.</p>
-      </div>
-      <div class="faq-item reveal d1">
-        <h3 class="faq-q">What is the refund policy?</h3>
-        <p class="faq-a">Ticket sales are final, but ticket transfers are allowed before the start of rehearsals.</p>
-      </div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Is this historically accurate?</summary>
+        <div class="faq-content"><p class="faq-a">We use beginner-friendly adaptations of actual historic dances. The goal is to make the dances feel elegant, social, and accessible rather than strict reenactment.</p></div>
+      </details>
+      <details class="faq-item reveal d1">
+        <summary class="faq-q">Are rehearsals included in the ticket?</summary>
+        <div class="faq-content"><p class="faq-a">Yes. The rehearsals, classes, or workshops listed for the event are included in the ticket.</p></div>
+      </details>
+      <details class="faq-item reveal d2">
+        <summary class="faq-q">What should I wear?</summary>
+        <div class="faq-content"><p class="faq-a">It depends on the theme of the ball. We provide costume inspiration for each event so guests can plan formalwear or theme-appropriate looks.</p></div>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Is there an age restriction?</summary>
+        <div class="faq-content"><p class="faq-a">Yes. Events are 14 plus. Guests under 18 must be accompanied by an adult.</p></div>
+      </details>
+      <details class="faq-item reveal d1">
+        <summary class="faq-q">What is the refund policy?</summary>
+        <div class="faq-content"><p class="faq-a">Ticket sales are final, but ticket transfers are allowed before the start of rehearsals.</p></div>
+      </details>
     </div>
   </div>
 </section>
@@ -386,6 +388,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50),{passive:true});
 document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((entries,observer)=>{if(entries[0].isIntersecting){el.classList.add('visible');observer.unobserve(el);}},{threshold:.08}).observe(el));
+document.querySelectorAll('.faq-item').forEach(item=>item.addEventListener('toggle',()=>{if(item.open){document.querySelectorAll('.faq-item[open]').forEach(openItem=>{if(openItem!==item)openItem.open=false;});}}));
 </script>
 </body>
 </html>
