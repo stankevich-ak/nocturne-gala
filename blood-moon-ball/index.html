@@ -321,8 +321,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 
 /* Global brightness lift */
-body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background:rgba(255,236,205,.08);mix-blend-mode:screen}
-
 @media(max-width:820px){
   .wrap{padding:0 24px}
   #nav{padding:14px 24px}#nav.scrolled{padding:10px 24px}
@@ -476,6 +474,15 @@ body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
   .journey-header{text-align:left;margin-bottom:34px}
   .journey-date-chip{left:18px;top:18px}
   .inc-header,.inc-list,.venue-note{max-width:none;margin-left:0}
+}
+
+
+/* Contrast-preserving brightness adjustment */
+:root{
+  --parchment:#F2E7D7;
+  --ivory:#FFF8EB;
+  --pale-gold:#E3C778;
+  --candlelight:#C9A84F;
 }
 
 </style>
