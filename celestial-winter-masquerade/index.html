@@ -125,6 +125,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--navy-dark);color:var(--parchment);font-family:var(--font-sans);font-size:17px;line-height:1.75;overflow-x:hidden;padding-bottom:72px;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background:#fff;opacity:.08;mix-blend-mode:screen}
 a{color:var(--candlelight);text-decoration:none;transition:color .2s}
 a:hover{color:var(--pale-gold)}
 img{display:block;object-fit:cover}
@@ -149,6 +150,7 @@ img{display:block;object-fit:cover}
 .nav-logo{height:30px;width:auto;object-fit:contain;flex-shrink:0}
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font:500 13px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);opacity:.65;transition:opacity .2s,color .2s}
+@media(min-width:821px){.nav-links{gap:30px}.nav-links a{font-size:14.95px}}
 .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--candlelight)}
 .nav-cta{padding:12px 24px;border-radius:3px;background:var(--beeswax);color:var(--pitch)!important;opacity:1!important;font:600 12px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;transition:background .25s!important}
 .nav-cta:hover{background:var(--candlelight)!important}
@@ -168,6 +170,7 @@ img{display:block;object-fit:cover}
 .hero-bullets{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
 .hero-bullets span{margin:0 11px;opacity:.45}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .65s var(--ease) forwards}
+.hero-ticket-note{margin-top:13px;font:500 11px/1 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--pale-gold);opacity:.66;animation:fadeUp .9s .8s var(--ease) forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* ── STORY ── */
@@ -187,13 +190,19 @@ img{display:block;object-fit:cover}
 .two-col.vid-left{grid-template-columns:1fr 1.15fr}
 .section-text h2{font-family:var(--font-serif);font-size:clamp(1.4rem,2.8vw,2.1rem);font-weight:400;color:var(--candlelight);line-height:1.3;margin-bottom:18px}
 .section-text p{font:400 16px/1.85 var(--font-sans);color:var(--parchment);opacity:.86;margin-bottom:14px}
-.exp-bullets{list-style:none;padding:0;margin-top:18px}
+.exp-bullets{list-style:none;padding:0;margin:18px 0 0 22px}
 .exp-bullets li{font:400 16px/1.65 var(--font-sans);color:var(--parchment);opacity:.88;padding:9px 0;display:flex;gap:12px;align-items:flex-start}
 .exp-bullets li::before{content:"\25C6";color:var(--beeswax);font-size:8px;flex-shrink:0;margin-top:7px}
 /* Video player */
-.vid-col{height:min(66vh,620px);aspect-ratio:9/16;max-width:360px;width:100%;border:1px solid var(--hair);background:linear-gradient(180deg,rgba(212,184,106,.14),rgba(13,17,32,.26));position:relative;overflow:hidden;justify-self:end;flex-shrink:0}
+.vid-col{width:fit-content;max-width:100%;height:auto;border:0;background:transparent;position:relative;overflow:visible;justify-self:end;display:block;line-height:0;flex-shrink:0}
 .two-col.vid-left .vid-col{justify-self:start}
-.vid-col video,.vid-col iframe{width:100%;height:100%;display:block;object-fit:cover;border:0}
+.vid-col video,.vid-col iframe{display:block;width:auto;height:min(66vh,620px);max-height:620px;max-width:100%;object-fit:contain;border:1px solid var(--hair);background:transparent}
+.sound-toggle{position:absolute;left:14px;bottom:14px;z-index:4;width:44px;height:44px;border:1px solid rgba(232,212,154,.76);background:rgba(10,15,28,.82);color:var(--pale-gold);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);transition:background .2s,color .2s,border-color .2s,transform .2s}
+.sound-toggle:hover,.sound-toggle.sound-on{background:var(--beeswax);color:var(--pitch);border-color:var(--beeswax);transform:translateY(-1px)}
+.sound-toggle svg{width:23px;height:23px;display:block}
+.sound-toggle .icon-sound{display:none}
+.sound-toggle.sound-on .icon-muted{display:none}
+.sound-toggle.sound-on .icon-sound{display:block}
 
 /* ── REHEARSALS ── */
 #rehearsals{padding:80px 0;background:linear-gradient(135deg,var(--navy-mid),var(--navy-rich) 60%,var(--navy-dark));position:relative;overflow:hidden}
@@ -222,9 +231,10 @@ img{display:block;object-fit:cover}
 .tix-layout{display:grid;grid-template-columns:minmax(560px,.98fr) minmax(330px,.7fr);gap:58px;align-items:start;margin-top:0}
 /* ticket rows — LEFT */
 .tix-rows{display:flex;flex-direction:column;max-width:640px}
-.tix-row{position:relative;padding:14px 18px 14px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(13,17,32,.7);backdrop-filter:blur(8px);transition:border-color .3s,background .3s}
+.tix-row{display:block;position:relative;padding:14px 18px 14px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(13,17,32,.7);backdrop-filter:blur(8px);transition:border-color .3s,background .3s;color:inherit;text-decoration:none;cursor:pointer}
 .tix-row:hover{border-color:var(--hair-hi);background:rgba(22,30,48,.9);z-index:1}
-.tix-row.featured{border-color:rgba(212,184,106,.42);background:rgba(20,28,50,.88)}
+.tix-row.featured{border-color:var(--hair);background:rgba(13,17,32,.7)}
+.tix-row.featured:hover{border-color:rgba(212,184,106,.42);background:rgba(20,28,50,.88)}
 .tix-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
 .acc-c{background:linear-gradient(180deg,var(--beeswax),var(--candlelight))}
 .acc-f{background:linear-gradient(180deg,var(--velvet),#4A2B5A)}
@@ -232,10 +242,13 @@ img{display:block;object-fit:cover}
 .tix-inner{display:flex;align-items:flex-start;gap:18px;justify-content:space-between}
 .tix-left{flex:1;min-width:0}
 .tix-role{font-family:var(--font-serif);font-size:18px;color:var(--candlelight);line-height:1.2;margin-bottom:4px}
-.tix-badge{display:inline-block;font:600 9px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;background:rgba(212,184,106,.12);color:var(--candlelight);border:1px solid var(--hair);margin-left:7px;vertical-align:middle}
+.tix-badge{display:inline-block;font:600 9px/1 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;background:rgba(212,184,106,.12);color:var(--candlelight);border:1px solid var(--hair);margin-left:7px;vertical-align:middle;opacity:0;transition:opacity .25s}
+.tix-row:hover .tix-badge{opacity:1}
 .tix-desc{font:400 14px/1.45 var(--font-sans);color:var(--parchment);opacity:.82;margin-bottom:10px;max-width:520px}
 .tix-btn{display:inline-block;padding:9px 18px;font:600 10px/1 var(--font-sans);letter-spacing:.13em;text-transform:uppercase;transition:all .25s;text-decoration:none}
 .btn-gold-sm{background:var(--beeswax);color:var(--pitch)}.btn-gold-sm:hover{background:var(--candlelight);color:var(--pitch)}
+.tix-row.featured .btn-gold-sm{background:transparent;color:var(--candlelight);border:1px solid rgba(212,184,106,.42)}
+.tix-row.featured:hover .btn-gold-sm{background:var(--beeswax);color:var(--pitch);border-color:var(--beeswax)}
 .btn-teal{color:#2E8890;border:1px solid #2E8890}.btn-teal:hover{background:rgba(46,136,144,.12);color:#B0D8DC}
 .btn-velvet{color:var(--velvet-light);border:1px solid rgba(212,186,235,.38)}.btn-velvet:hover{background:rgba(46,24,64,.3);color:var(--ivory)}
 .tix-right{text-align:right;flex-shrink:0;min-width:82px;padding-top:1px}
@@ -367,8 +380,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .two-col{display:flex;flex-direction:column;align-items:stretch}
   .two-col.vid-left .section-text{order:1}
   .two-col.vid-left .vid-col{order:2}
-  .vid-col{width:100%;max-width:360px;margin:0 auto;height:auto!important;max-height:none!important;min-height:0;aspect-ratio:9/16}
-  .vid-col video{height:100%!important;min-height:0;object-fit:cover}
+  .vid-col{width:100%;max-width:360px;margin:0 auto;height:auto!important;max-height:none!important;min-height:0}
+  .vid-col video{width:100%;height:auto!important;max-height:none!important;min-height:0;object-fit:contain}
   #rehVid{max-width:360px;min-height:0}
   #rehVid video{min-height:0}
   .id-card,.id-card.flip{display:flex;flex-direction:column;direction:ltr;min-height:0}
@@ -412,9 +425,10 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       <p class="hero-bullets">Beginner-friendly <span>&middot;</span> Rehearsals included <span>&middot;</span> Masks encouraged</p>
     </div>
     <div class="hero-ctas">
-      <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold">Claim Your Spot</a>
+      <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold">Get Your Ticket</a>
       <a href="#rehearsals" class="btn btn-outline">What&rsquo;s Included</a>
     </div>
+    <p class="hero-ticket-note">Tickets are limited.</p>
   </div>
 </section>
 
@@ -424,20 +438,24 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <div class="two-col vid-right">
       <div class="section-text reveal">
         <span class="eyebrow">The Experience</span>
-        <h2>You&rsquo;ve been watching scenes like this your whole life.</h2>
-        <p>In Pride and Prejudice. In Bridgerton. Candlelit ballrooms. Elegant music. Couples moving as if it all just works.</p>
-        <p>This is your chance to step out of it &mdash; stop being a spectator and become one of the dancers.</p>
+        <h2>You&rsquo;re Not Watching the Ball. You&rsquo;re In It.</h2>
+        <p>You&rsquo;ve seen evenings like this in films and period dramas: candlelit rooms, elegant music, beautiful clothes, and people moving together like they already belong there.</p>
+        <p>Nocturne Gala makes that feeling possible for real guests. Before the ball, we teach beginner-friendly adaptations of historic dances through guided rehearsals and workshops, so you arrive knowing what to do, who you&rsquo;re dancing with, and how to take part.</p>
         <ul class="exp-bullets">
-          <li>You arrive and recognize faces &mdash; people you&rsquo;ve already danced with at rehearsals</li>
-          <li>The music starts, and the steps come naturally &mdash; because you already know them</li>
-          <li>Someone extends a hand and you don&rsquo;t hesitate</li>
-          <li>You move through the evening with ease, and just enough elegance to surprise yourself</li>
+          <li>You arrive and recognize familiar faces from rehearsals.</li>
+          <li>The music starts, and the steps come back because you have already learned them.</li>
+          <li>Someone offers a hand, and you know how to say yes.</li>
+          <li>You move through the evening with confidence, ease, and just enough elegance to surprise yourself.</li>
         </ul>
       </div>
       <div class="vid-col reveal d2" id="expVid">
-        <video controls preload="metadata" playsinline poster="/celestial-winter-masquerade/public/images/Masked%20couple%20dancing.webp">
+        <video autoplay muted loop preload="auto" playsinline poster="/celestial-winter-masquerade/public/images/Masked%20couple%20dancing.webp">
           <source src="/celestial-winter-masquerade/public/videos/winter-ball-trailer-website.mp4" type="video/mp4"/>
         </video>
+        <button class="sound-toggle" type="button" aria-label="Turn sound on">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
+          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -468,10 +486,14 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   <div class="wrap">
     <div class="two-col vid-left">
       <div class="vid-col reveal" id="rehVid">
-        <video controls preload="metadata" playsinline poster="/celestial-winter-masquerade/public/images/Polonaise.webp">
+        <video autoplay muted loop preload="auto" playsinline poster="/celestial-winter-masquerade/public/images/Polonaise.webp">
           <source src="/celestial-winter-masquerade/public/videos/reheasals%20video.mp4" type="video/mp4"/>
           <source src="/celestial-winter-masquerade/public/videos/rehearsals-video.mp4" type="video/mp4"/>
         </video>
+        <button class="sound-toggle" type="button" aria-label="Turn sound on">
+          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
+          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
+        </button>
       </div>
       <div class="reveal d2">
         <span class="eyebrow">Your Journey</span>
@@ -481,19 +503,20 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
           <div class="pro-tip-label">&#10022; Good to know</div>
           <p>You don&rsquo;t have to come to all rehearsals. Miss a session? No problem &mdash; we provide video tutorials for every dance so you can catch up at your own pace and still walk into the Ball feeling confident and ready.</p>
         </div>
-        <div class="timeline">
-          <div class="timeline-label">Rehearsals &amp; The Ball</div>
-          <div class="tl-track">
-            <div class="tl-item"><div class="tl-box"><div class="tl-month">Nov</div><div class="tl-day">24</div></div><div class="tl-name">Rehearsal One</div></div>
-            <div class="tl-item"><div class="tl-box"><div class="tl-month">Dec</div><div class="tl-day">1</div></div><div class="tl-name">Rehearsal Two</div></div>
-            <div class="tl-item"><div class="tl-box"><div class="tl-month">Dec</div><div class="tl-day">8</div></div><div class="tl-name">Rehearsal Three</div></div>
-            <div class="tl-item"><div class="tl-box"><div class="tl-month">Dec</div><div class="tl-day">15</div></div><div class="tl-name">Rehearsal Four</div></div>
-            <div class="tl-item"><div class="tl-box ball"><div class="tl-month">Dec</div><div class="tl-day">18</div></div><div class="tl-name">The Ball</div></div>
-          </div>
-          <div class="tl-sub">Rehearsals: Taylor Park Elementary, Burnaby &middot; 6&ndash;8 PM</div>
-        </div>
+
       </div>
     </div>
+    <div class="timeline journey-timeline">
+        <div class="timeline-label">Rehearsals &amp; The Ball</div>
+        <div class="tl-track">
+          <div class="tl-item"><div class="tl-box"><div class="tl-month">Nov</div><div class="tl-day">24</div></div><div class="tl-name">Rehearsal One</div></div>
+          <div class="tl-item"><div class="tl-box"><div class="tl-month">Dec</div><div class="tl-day">1</div></div><div class="tl-name">Rehearsal Two</div></div>
+          <div class="tl-item"><div class="tl-box"><div class="tl-month">Dec</div><div class="tl-day">8</div></div><div class="tl-name">Rehearsal Three</div></div>
+          <div class="tl-item"><div class="tl-box"><div class="tl-month">Dec</div><div class="tl-day">15</div></div><div class="tl-name">Rehearsal Four</div></div>
+          <div class="tl-item"><div class="tl-box ball"><div class="tl-month">Dec</div><div class="tl-day">18</div></div><div class="tl-name">The Ball</div></div>
+        </div>
+        <div class="tl-sub">Rehearsals: Taylor Park Elementary, Burnaby &middot; 6&ndash;8 PM</div>
+      </div>
   </div>
 </section>
 
@@ -508,42 +531,42 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       <div class="reveal d1">
         <div class="tix-rows">
           <!-- COUPLES first -->
-          <div class="tix-row featured">
+          <a class="tix-row featured" href="https://enchanted-gala.myhelcim.com/hosted/?token=7530590d572c44a3f0af74&productId=1747066&productQuantity=1&amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">
             <div class="tix-accent acc-c"></div>
             <div class="tix-inner">
               <div class="tix-left">
                 <div class="tix-role">Couples <span class="tix-badge">Popular</span></div>
                 <div class="tix-desc">Rehearsals and Ball access for two guests in a dancing pair. Roles open to all genders.</div>
-                <a class="tix-btn btn-gold-sm" href="https://enchanted-gala.myhelcim.com/hosted/?token=7530590d572c44a3f0af74&productId=1747066&productQuantity=1&amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank">Get Couples Ticket</a>
+                <span class="tix-btn btn-gold-sm">Get Your Ticket</span>
               </div>
               <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two</div></div>
             </div>
-          </div>
+          </a>
           <!-- FOLLOWER -->
-          <div class="tix-row">
+          <a class="tix-row" href="https://enchanted-gala.myhelcim.com/hosted/?token=cedaf431c87d421fdd8f2f&productId=1684467&productQuantity=1&amountHash=b4af9cbcd052a654a1a0298bffe1abc80d2ccd211031e89c4ee23d84bacd1d42" target="_blank" rel="noopener">
             <div class="tix-accent acc-f"></div>
             <div class="tix-inner">
               <div class="tix-left">
                 <div class="tix-role">Follower<sup>*</sup></div>
                 <div class="tix-desc">Traditionally the &ldquo;lady&rsquo;s part&rdquo; &mdash; the dancer responding to cues given by the Lead.</div>
-                <a class="tix-btn btn-velvet" href="https://enchanted-gala.myhelcim.com/hosted/?token=cedaf431c87d421fdd8f2f&productId=1684467&productQuantity=1&amountHash=b4af9cbcd052a654a1a0298bffe1abc80d2ccd211031e89c4ee23d84bacd1d42" target="_blank">Get Follower Ticket</a>
+                <span class="tix-btn btn-velvet">Get Your Ticket</span>
               </div>
               <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
             </div>
-          </div>
+          </a>
           <!-- LEADER -->
-          <div class="tix-row">
+          <a class="tix-row" href="https://enchanted-gala.myhelcim.com/hosted/?token=c793540264f37ff40606f5&productId=1747062&productQuantity=1&amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">
             <div class="tix-accent acc-l"></div>
             <div class="tix-inner">
               <div class="tix-left">
                 <div class="tix-role">Leader<sup>*</sup></div>
                 <div class="tix-desc">Traditionally the &ldquo;gentleman&rsquo;s part&rdquo; &mdash; the dancer responsible for guiding the couple&rsquo;s movement.</div>
-                <a class="tix-btn btn-teal" href="https://enchanted-gala.myhelcim.com/hosted/?token=c793540264f37ff40606f5&productId=1747062&productQuantity=1&amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank">Get Leader Ticket</a>
+                <span class="tix-btn btn-teal">Get Your Ticket</span>
               </div>
               <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
             </div>
-          </div>
-          <p class="tix-footer">All sales final &middot; Transfers allowed before rehearsals begin</p>
+          </a>
+          <p class="tix-footer">All sales are final.</p>
         </div>
       </div>
       <!-- RIGHT: includes -->
@@ -615,7 +638,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <span class="cta-strip-eyebrow">Nocturne Gala &middot; Vancouver</span>
     <h2>December 18, 2026<br>Scottish Hall</h2>
     <p>Tickets are limited</p>
-    <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold" style="font-size:13px;padding:17px 44px;letter-spacing:.16em">Claim Your Spot</a>
+    <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold" style="font-size:13px;padding:17px 44px;letter-spacing:.16em">Get Your Ticket</a>
   </div>
 </div>
 
@@ -660,7 +683,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <span class="final-ey">Nocturne Gala &middot; December 18, 2026</span>
     <h2 class="final-t">You can keep scrolling.<br>Or you can actually do this.</h2>
     <p class="final-s">No experience required. Just a room full of people who decided to step into something beautiful &mdash; and are glad they did.</p>
-    <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold" style="font-size:12px;padding:16px 48px">Claim Your Spot</a>
+    <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold" style="font-size:12px;padding:16px 48px">Get Your Ticket</a>
     <p class="final-m">Scottish Hall &middot; Vancouver &middot; December 18, 2026</p>
   </div>
 </section>
@@ -800,6 +823,37 @@ function matchVideoHeights() {
   }
 }
 
+
+// ── VIDEO SOUND TOGGLES ────────────────────────────────────────
+function initSoundToggles() {
+  document.querySelectorAll('.vid-col').forEach(frame => {
+    const video = frame.querySelector('video');
+    const button = frame.querySelector('.sound-toggle');
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.play().catch(() => {});
+    if (!button) return;
+    button.addEventListener('click', () => {
+      const turnOn = video.muted;
+      document.querySelectorAll('.vid-col video').forEach(other => {
+        if (other !== video) other.muted = true;
+      });
+      document.querySelectorAll('.sound-toggle').forEach(otherButton => {
+        if (otherButton !== button) {
+          otherButton.classList.remove('sound-on');
+          otherButton.setAttribute('aria-label', 'Turn sound on');
+        }
+      });
+      video.muted = !turnOn;
+      video.play().catch(() => {});
+      button.classList.toggle('sound-on', turnOn);
+      button.setAttribute('aria-label', turnOn ? 'Turn sound off' : 'Turn sound on');
+    });
+  });
+}
+
 // ── NAV SCROLL ─────────────────────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), {passive:true});
@@ -833,6 +887,7 @@ var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=t
 // ── INIT ───────────────────────────────────────────────────────
 loadResources().then(R => {
   applyResources(R);
+  initSoundToggles();
 });
 </script>
 </body>
