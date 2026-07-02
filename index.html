@@ -254,7 +254,7 @@ img{display:block;object-fit:contain}
 #past{padding:44px 0 48px;background:var(--navy-dark);border-top:1px solid rgba(212,184,106,.48)}
 .past-head{margin-bottom:18px}
 .past-head .eyebrow{margin-bottom:0;color:var(--pale-gold);opacity:1;text-shadow:0 0 18px rgba(212,184,106,.16)}
-.past-card{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:24px;max-width:760px;padding:14px;border:1px solid rgba(212,184,106,.42);background:rgba(28,23,16,.86);color:var(--parchment);transition:border-color .25s,background .25s,transform .2s,box-shadow .25s}
+.past-card{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:24px;width:100%;max-width:none;padding:14px;border:1px solid rgba(212,184,106,.42);background:rgba(28,23,16,.86);color:var(--parchment);transition:border-color .25s,background .25s,transform .2s,box-shadow .25s}
 .past-card:hover{border-color:var(--pale-gold);background:rgba(46,35,24,.95);transform:translateY(-2px);box-shadow:0 12px 34px rgba(0,0,0,.24);color:var(--parchment)}
 .past-thumb{display:block;width:150px;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--hair);background:var(--navy-mid)}
 .past-thumb img{width:100%;height:100%;object-fit:cover}
@@ -286,15 +286,13 @@ img{display:block;object-fit:contain}
 /* ── TESTIMONIALS (editorial: feature + stacked) ── */
 #testimonials{padding:84px 0;background:linear-gradient(165deg,var(--aged-velvet) 0%,var(--mid-velvet) 45%,var(--pitch) 100%)}
 .tm-head{max-width:560px;margin:0 auto 44px;text-align:center}
-.tm-layout{display:grid;grid-template-columns:1.45fr 1fr;gap:18px;align-items:stretch}
+.tm-layout{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:stretch}
 .tm-card{position:relative;padding:34px 32px;border:1px solid var(--hair);background:rgba(46,24,64,.32)}
 .tm-mark{font-family:var(--font-serif);font-size:42px;line-height:.45;color:var(--beeswax);opacity:.62;margin-bottom:16px;display:block}
-.tm-feature{padding:48px 46px;border-color:rgba(212,186,235,.3);background:linear-gradient(155deg,rgba(74,43,90,.6),rgba(46,24,64,.45));display:flex;flex-direction:column;justify-content:center}
-.tm-feature .tm-mark{font-family:var(--font-serif);font-size:78px;line-height:.4;color:var(--beeswax);opacity:.55;margin-bottom:18px;display:block}
-.tm-feature .tm-quote{font-size:20px;line-height:1.55;color:var(--candlelight)}
+.tm-feature{padding:34px 32px;border-color:rgba(212,186,235,.3);display:flex;flex-direction:column;justify-content:flex-start}
+.tm-feature .tm-mark{font-family:var(--font-serif);font-size:42px;line-height:.45;color:var(--beeswax);opacity:.62;margin-bottom:16px;display:block}
+.tm-feature .tm-quote{font-size:16px;line-height:1.7;color:var(--pale-gold)}
 .tm-feature .tm-author{color:var(--lavender);opacity:.95}
-.tm-col{display:flex;flex-direction:column;gap:18px}
-.tm-col .tm-card{flex:1;display:flex;flex-direction:column;justify-content:center}
 .tm-quote{font-family:var(--font-serif);font-style:italic;font-size:16px;line-height:1.7;color:var(--pale-gold);margin-bottom:18px}
 .tm-author{font:600 11px/1.5 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight);opacity:.85}
 .tm-placeholder .tm-quote{color:var(--parchment);opacity:.42;font-style:normal;font-family:var(--font-sans);font-size:13.5px;letter-spacing:.04em}
@@ -554,19 +552,17 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         <span class="tm-mark">&ldquo;</span>
         <p class="tm-quote">I loved that everyone learned together before the ball. It made the event feel less intimidating and much easier to meet people naturally. I made new friends, and honestly, we learned so much during the five rehearsals. It felt almost like a full semester of dance school, very impressive!</p>
       </div>
-      <div class="tm-col">
-        <div class="tm-card reveal d1">
-          <span class="tm-mark">&ldquo;</span>
-          <p class="tm-quote">Everyone looked so pretty, and the whole thing just clicked, even the Spanish Waltz lol. The music, the dancing, the outfits, everyone smiling. Honestly, it was the best evening I had all year</p>
-        </div>
-        <div class="tm-card reveal d2">
-          <span class="tm-mark">&ldquo;</span>
-          <p class="tm-quote">My wife invited me and, honestly, I did not really want to come at first. But after the ball I get it now. It was actually very manly in the best way, and I had a great time dancing, meeting people, and being part of the whole evening. Highly recommend.</p>
-        </div>
-        <div class="tm-card reveal d3">
-          <span class="tm-mark">&ldquo;</span>
-          <p class="tm-quote">LOVED the music, the performers were great, the food amazing. Looking forward to the next event.</p>
-        </div>
+      <div class="tm-card reveal d1">
+        <span class="tm-mark">&ldquo;</span>
+        <p class="tm-quote">Everyone looked so pretty, and the whole thing just clicked, even the Spanish Waltz lol. The music, the dancing, the outfits, everyone smiling. Honestly, it was the best evening I had all year</p>
+      </div>
+      <div class="tm-card reveal d2">
+        <span class="tm-mark">&ldquo;</span>
+        <p class="tm-quote">My wife invited me and, honestly, I did not really want to come at first. But after the ball I get it now. It was actually very manly in the best way, and I had a great time dancing, meeting people, and being part of the whole evening. Highly recommend.</p>
+      </div>
+      <div class="tm-card reveal d3">
+        <span class="tm-mark">&ldquo;</span>
+        <p class="tm-quote">LOVED the music, the performers were great, the food amazing. Looking forward to the next event.</p>
       </div>
     </div>
   </div>
