@@ -234,7 +234,7 @@ img{display:block;object-fit:cover}
 .memory-list{list-style:none;margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px}
 .memory-list li{position:relative;padding-left:20px;font:600 14px/1.55 var(--font-sans);color:rgba(28,23,16,.84)}
 .memory-list li::before{content:'';position:absolute;left:0;top:.75em;width:7px;height:7px;background:var(--beeswax);transform:rotate(45deg)}
-.video-frame{aspect-ratio:1.91/1;max-width:760px;width:min(100%,760px);height:auto;max-height:min(62vh,520px);border:1px solid rgba(74,43,90,.28);background:rgba(250,247,240,.38);position:relative;overflow:hidden;justify-self:end;display:flex;align-items:center;justify-content:center}
+.video-frame{aspect-ratio:1/1.91;max-width:430px;width:min(100%,430px);height:auto;max-height:min(78vh,720px);border:1px solid rgba(74,43,90,.28);background:rgba(250,247,240,.18);position:relative;overflow:hidden;justify-self:end;display:flex;align-items:center;justify-content:center}
 .memory-block.flip .video-frame{justify-self:start}
 .video-frame video,.video-frame iframe{width:100%;height:100%;display:block;object-fit:contain;border:0;background:transparent}
 .sound-toggle{position:absolute;left:14px;bottom:14px;z-index:4;width:44px;height:44px;border:1px solid rgba(232,212,154,.76);background:rgba(27,25,24,.82);color:var(--pale-gold);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);transition:background .2s,color .2s,border-color .2s,transform .2s}
@@ -320,7 +320,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .memory-block,.memory-block.flip{display:flex;flex-direction:column;gap:30px;min-height:0}
   .memory-block.flip .video-frame{order:2}
   .memory-block.flip .memory-text{order:1}
-  .video-frame,.memory-block.flip .video-frame{justify-self:center;max-width:100%;width:100%;height:auto;max-height:none;aspect-ratio:1.91/1}
+  .video-frame,.memory-block.flip .video-frame{justify-self:center;max-width:380px;width:min(100%,380px);height:auto;max-height:none;aspect-ratio:1/1.91}
   .memory-list{grid-template-columns:1fr}
   .playlist-inline{align-items:flex-start}
   .event-grid{grid-template-columns:1fr}
