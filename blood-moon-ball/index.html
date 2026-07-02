@@ -159,12 +159,10 @@ img{display:block;object-fit:cover}
 .exp-bullets{list-style:none;padding:0;margin-top:18px}
 .exp-bullets li{font:400 16px/1.65 var(--font-sans);color:var(--parchment);opacity:.88;padding:9px 0;display:flex;gap:12px;align-items:flex-start}
 .exp-bullets li::before{content:"\25C6";color:var(--beeswax);font-size:8px;flex-shrink:0;margin-top:7px}
-/* Video - height matched to sibling text via JS */
-.vid-col{position:relative;overflow:hidden;background:var(--navy-dark);border:1px solid var(--hair);flex-shrink:0}
-.vid-col video{width:100%;height:100%;object-fit:cover;display:block}
-/* Match rehearsal video sizing to the main experience video */
-#rehVid{justify-self:stretch;width:100%;max-width:none;aspect-ratio:auto;min-height:0}
-#rehVid video{height:100%;min-height:0;object-fit:cover}
+/* Video player */
+.vid-col{height:min(66vh,620px);aspect-ratio:9/16;max-width:360px;width:100%;border:1px solid var(--hair);background:linear-gradient(180deg,rgba(212,184,106,.14),rgba(13,17,32,.26));position:relative;overflow:hidden;justify-self:end;flex-shrink:0}
+.two-col.vid-left .vid-col{justify-self:start}
+.vid-col video,.vid-col iframe{width:100%;height:100%;display:block;object-fit:cover;border:0}
 
 /* ── REHEARSALS ── */
 #rehearsals{padding:80px 0;background:linear-gradient(135deg,var(--navy-mid),var(--navy-rich) 60%,var(--navy-dark));position:relative;overflow:hidden}
@@ -338,9 +336,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .two-col{display:flex;flex-direction:column;align-items:stretch}
   .two-col.vid-left .section-text{order:1}
   .two-col.vid-left .vid-col{order:2}
-  .vid-col{width:100%;max-width:420px;margin:0 auto;height:auto!important;max-height:none!important;min-height:0;aspect-ratio:9/16}
+  .vid-col{width:100%;max-width:360px;margin:0 auto;height:auto!important;max-height:none!important;min-height:0;aspect-ratio:9/16}
   .vid-col video{height:100%!important;min-height:0;object-fit:cover}
-  #rehVid{max-width:420px;min-height:0}
+  #rehVid{max-width:360px;min-height:0}
   #rehVid video{min-height:0}
   .id-card,.id-card.flip{display:flex;flex-direction:column;direction:ltr;min-height:0}
   .id-card.flip>*{direction:ltr}
@@ -535,7 +533,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
         </ul>
       </div>
       <div class="vid-col reveal d2" id="expVid">
-        <video id="expVideo" autoplay muted loop playsinline preload="auto"><source src="/blood-moon-ball/videos/blood-moon-trailer.mp4" type="video/mp4"></video>
+        <video id="expVideo" controls preload="metadata" playsinline poster="/blood-moon-ball/images/4.%20dance-procession.webp">
+          <source src="/blood-moon-ball/videos/blood-moon-trailer.mp4" type="video/mp4"/>
+        </video>
       </div>
     </div>
   </div>
@@ -742,17 +742,6 @@ function applyResources(R) {
   setBg('outfit3', R.outfit_3);
   setBg('outfit4', R.outfit_4);
 
-  const expV = document.getElementById('expVideo');
-  if (expV && R.experience_video) {
-    expV.muted = true;
-    expV.defaultMuted = true;
-    expV.playsInline = true;
-    expV.preload = 'auto';
-    expV.src = R.experience_video;
-    expV.load();
-    const attempt = expV.play();
-    if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
-  }
 }
 
 function matchVideoHeights() {
@@ -797,9 +786,6 @@ var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=t
 
 loadResources().then(R => {
   applyResources(R);
-  window.addEventListener('load', matchVideoHeights);
-  window.addEventListener('resize', matchVideoHeights);
-  setTimeout(matchVideoHeights, 800);
 });
 </script>
 </body>
