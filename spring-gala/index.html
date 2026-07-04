@@ -257,12 +257,13 @@ img{display:block;object-fit:cover}
 .people-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:end;margin-bottom:34px}
 .people-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .person-card{border:1px solid var(--hair);background:rgba(15,13,11,.72);min-height:308px;display:flex;flex-direction:column;backdrop-filter:blur(6px)}
-.person-image{height:188px;border-bottom:1px solid var(--hair);background:linear-gradient(160deg,rgba(74,43,90,.32),rgba(184,144,42,.09));position:relative;overflow:hidden}
+.person-image{width:100%;height:auto;aspect-ratio:1/1;border-bottom:1px solid var(--hair);background:linear-gradient(160deg,rgba(74,43,90,.32),rgba(184,144,42,.09));position:relative;overflow:hidden}
 .person-image img{width:100%;height:100%;object-fit:cover}
 .person-body{padding:18px 16px 17px;display:flex;flex-direction:column;gap:9px;flex:1}
 .person-role{font:600 9px/1.2 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--beeswax);opacity:.9}
 .person-name{font-family:var(--font-serif);font-size:1.02rem;line-height:1.25;color:var(--pale-gold)}
-.person-link{font:600 10px/1.3 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--parchment);opacity:.62;margin-top:auto}
+.person-link{font:600 10px/1.3 var(--font-sans);letter-spacing:.08em;color:var(--parchment);opacity:.72;margin-top:auto;display:inline-flex;align-items:center;gap:7px}
+.person-link svg{flex:0 0 auto}
 .person-link:hover{opacity:1;color:var(--candlelight)}
 .asset-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;font:600 10px/1.6 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(240,232,213,.42)}
 
@@ -332,11 +333,12 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .nav-links a:nth-child(2){display:none}
   .people-grid{grid-template-columns:1fr}
   .person-card{min-height:0}
-  .person-image{height:230px}
+  .person-image{height:auto;aspect-ratio:1/1}
   .footer-nav{grid-template-columns:1fr;gap:14px}
   .footer-social{flex-direction:column;align-items:center}
 }
 </style>
+<link rel="stylesheet" href="/shared-components.css"/>
 </head>
 <body>
 
@@ -483,23 +485,23 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <div class="people-grid">
       <article class="person-card reveal">
         <div class="person-image"><img src="/spring-gala/images/Sara%20Cruz.webp" alt="Sarah Cruz at the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Violin</p><h3 class="person-name">Sarah Cruz</h3><a class="person-link" href="https://www.instagram.com/saracruzviolin/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-body"><p class="person-role">Violin</p><h3 class="person-name">Sarah Cruz</h3><a class="person-link" href="https://www.instagram.com/saracruzviolin/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@saracruzviolin</a></div>
       </article>
       <article class="person-card reveal d1">
         <div class="person-image"><img src="/spring-gala/images/Academie%20Cavallo.webp" alt="Académie Cavallo sword combat performance" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Sword Combat</p><h3 class="person-name">Academie Cavallo</h3><a class="person-link" href="https://www.instagram.com/jmlandels/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-body"><p class="person-role">Sword Combat</p><h3 class="person-name">Academie Cavallo</h3><a class="person-link" href="https://www.instagram.com/jmlandels/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@jmlandels</a></div>
       </article>
       <article class="person-card reveal d2">
-        <div class="person-image"><img src="/spring-gala/images/devon%20ellis-durity.webp" alt="Devon Ellis at the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Director, Photography</p><h3 class="person-name">Devon Ellis</h3><a class="person-link" href="https://www.instagram.com/devonellisdurity/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-image"><img src="/spring-gala/images/devon%20ellis-durity.webp" alt="Devon Ellis-Durity at the Spring Gala" loading="lazy"/></div>
+        <div class="person-body"><p class="person-role">Director, Photography</p><h3 class="person-name">Devon Ellis-Durity</h3><a class="person-link" href="https://www.instagram.com/devonellisdurity/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@devonellisdurity</a></div>
       </article>
       <article class="person-card reveal d3">
         <div class="person-image"><img src="/spring-gala/images/gmweek.webp" alt="GMWEEK piano at the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Piano</p><h3 class="person-name">GMWEEK</h3><a class="person-link" href="https://www.instagram.com/gmweek/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-body"><p class="person-role">Piano</p><h3 class="person-name">GMWEEK</h3><a class="person-link" href="https://www.instagram.com/gmweek/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@gmweek</a></div>
       </article>
       <article class="person-card reveal d4">
         <div class="person-image"><img src="/spring-gala/images/kliomedia.webp" alt="KlioMedia videography for the Spring Gala" loading="lazy"/></div>
-        <div class="person-body"><p class="person-role">Videography</p><h3 class="person-name">KlioMedia</h3><a class="person-link" href="https://www.instagram.com/kliomedia/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="person-body"><p class="person-role">Videography</p><h3 class="person-name">KlioMedia</h3><a class="person-link" href="https://www.instagram.com/kliomedia/" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@kliomedia</a></div>
       </article>
     </div>
   </div>
@@ -512,8 +514,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       <h2 class="stitle">Where we&rsquo;re dancing next</h2>
     </div>
     <div class="event-grid">
-      <div class="ev-card reveal" data-href="https://nocturne-gala.vercel.app/blood-moon-ball">
-        <div class="ev-img blood"><img class="ev-photo" src="/images/3.%20vampire%20-%20card.webp" alt="Blood Moon Ball"/><span class="ev-status">Waitlist Open</span></div>
+      <div class="ev-card reveal">
+        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/blood-moon-ball" aria-label="Learn more about Blood Moon Ball"><div class="ev-img blood"><img class="ev-photo" src="/images/3.%20vampire%20-%20card.webp" alt="Blood Moon Ball"/><span class="ev-status">Waitlist Open</span></div></a>
         <div class="ev-body">
           <h3 class="ev-name">Blood Moon Ball</h3>
           <p class="ev-meta">Victoria, BC &middot; Oct 31, 2026</p>
@@ -524,8 +526,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
           </div>
         </div>
       </div>
-      <div class="ev-card reveal d1" data-href="https://nocturne-gala.vercel.app/celestial-winter-masquerade">
-        <div class="ev-img celestial"><img class="ev-photo" src="/images/4.%20celestial%20-%20card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Tickets On Sale</span></div>
+      <div class="ev-card reveal d1">
+        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" aria-label="Learn more about Celestial Winter Masquerade"><div class="ev-img celestial"><img class="ev-photo" src="/images/4.%20celestial%20-%20card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Tickets On Sale</span></div></a>
         <div class="ev-body">
           <h3 class="ev-name">Celestial Winter Masquerade</h3>
           <p class="ev-meta">Vancouver, BC &middot; Dec 18, 2026</p>
@@ -602,18 +604,6 @@ document.querySelectorAll('.video-frame').forEach(frame=>{
   }
 });
 
-document.querySelectorAll('.ev-card[data-href]').forEach(card=>{
-  card.setAttribute('role','link');
-  card.setAttribute('tabindex','0');
-  const go=()=>{ window.location.href=card.dataset.href; };
-  card.addEventListener('click',e=>{
-    if(e.target.closest('a,button')) return;
-    go();
-  });
-  card.addEventListener('keydown',e=>{
-    if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); }
-  });
-});
 </script>
 </body>
 </html>

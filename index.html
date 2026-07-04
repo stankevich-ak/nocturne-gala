@@ -129,7 +129,7 @@
       "url": "https://nocturne-gala.vercel.app/celestial-winter-masquerade",
       "location": {
         "@type": "Place",
-        "name": "Scottish Hall",
+        "name": "Scottish Cultural Centre",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Vancouver",
@@ -375,6 +375,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .hl-tile img,.hl-tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:var(--ebony)}
 .hl-tile.video{cursor:pointer}
 </style>
+<link rel="stylesheet" href="/shared-components.css"/>
 </head>
 <body>
 
@@ -442,9 +443,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
     <div class="event-grid">
 
       <!-- Blood Moon Ball -->
-      <div class="ev-card reveal" data-card-link="https://nocturne-gala.vercel.app/blood-moon-ball" role="link" tabindex="0" aria-label="Learn more about Blood Moon Ball">
+      <div class="ev-card reveal">
         <!-- EVENT IMAGE — replace gradient with a real event/poster image → 1200×675 px (16:9), JPG/WebP, ~200–400 KB -->
-        <div class="ev-img blood"><img class="ev-photo" src="/images/3. vampire - card.webp" alt="Blood Moon Ball"/><span class="ev-status">Waitlist Open</span></div>
+        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/blood-moon-ball" aria-label="Learn more about Blood Moon Ball"><div class="ev-img blood"><img class="ev-photo" src="/images/3. vampire - card.webp" alt="Blood Moon Ball"/><span class="ev-status">Waitlist Open</span></div></a>
         <div class="ev-body">
           <h3 class="ev-name">Blood Moon Ball</h3>
           <p class="ev-meta">Victoria, BC &middot; Oct 31, 2026</p>
@@ -457,13 +458,13 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
       </div>
 
       <!-- Celestial Winter Masquerade -->
-      <div class="ev-card reveal d1" data-card-link="https://nocturne-gala.vercel.app/celestial-winter-masquerade" role="link" tabindex="0" aria-label="Learn more about Celestial Winter Masquerade">
+      <div class="ev-card reveal d1">
         <!-- EVENT IMAGE — replace gradient with a real event/poster image → 1200×675 px (16:9), JPG/WebP, ~200–400 KB -->
-        <div class="ev-img celestial"><img class="ev-photo" src="/images/4. celestial - card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Tickets On Sale</span></div>
+        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" aria-label="Learn more about Celestial Winter Masquerade"><div class="ev-img celestial"><img class="ev-photo" src="/images/4. celestial - card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Tickets On Sale</span></div></a>
         <div class="ev-body">
           <h3 class="ev-name">Celestial Winter Masquerade</h3>
           <p class="ev-meta">Vancouver, BC &middot; Dec 18, 2026</p>
-          <p class="ev-desc">A candlelit winter masquerade at Scottish Hall, with guided rehearsals, live music, and celestial winter decor.</p>
+          <p class="ev-desc">A candlelit winter masquerade at the Scottish Cultural Centre, with guided rehearsals, live music, and celestial winter decor.</p>
           <div class="ev-ctas">
             <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold">Buy Tickets</a>
             <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="btn btn-outline">Learn More</a>
@@ -644,12 +645,6 @@ if(track){
   next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
   track.addEventListener('scroll',sync,{passive:true});window.addEventListener('resize',sync);sync();
 }
-// Make event cards clickable without hijacking the existing buttons.
-document.querySelectorAll('.ev-card[data-card-link]').forEach(card=>{
-  const go=()=>{window.location.href=card.dataset.cardLink;};
-  card.addEventListener('click',e=>{if(!e.target.closest('a,button'))go();});
-  card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a,button')){e.preventDefault();go();}});
-});
 </script>
 <!-- Tally embed loader -->
 <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
