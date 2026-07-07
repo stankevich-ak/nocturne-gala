@@ -397,13 +397,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 const nav=document.getElementById('nav');
-const navHero=document.querySelector('#hero,#page-hero,main section:first-of-type,section:first-of-type');
 const syncNav=()=>{
-  const heroBottom=navHero?navHero.offsetTop+navHero.offsetHeight-nav.offsetHeight:50;
-  nav.classList.toggle('scrolled',window.scrollY>=heroBottom);
+  nav.classList.toggle('scrolled',window.scrollY>0);
 };
 window.addEventListener('scroll',syncNav,{passive:true});
-window.addEventListener('resize',syncNav);
 syncNav();
 document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((entries,observer)=>{if(entries[0].isIntersecting){el.classList.add('visible');observer.unobserve(el);}},{threshold:.08}).observe(el));
 document.querySelectorAll('.faq-item').forEach(item=>item.addEventListener('toggle',()=>{if(item.open){document.querySelectorAll('.faq-item[open]').forEach(openItem=>{if(openItem!==item)openItem.open=false;});}}));
