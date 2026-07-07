@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZ2KPPMC');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Events | Nocturne Gala</title>
@@ -230,6 +237,10 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 <link rel="stylesheet" href="/shared-components.css"/>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ2KPPMC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav id="nav">
   <a href="https://nocturne-gala.vercel.app/" class="nav-brand">
@@ -248,7 +259,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   <div class="page-hero-overlay" aria-hidden="true"></div>
   <div class="wrap">
     <div class="page-hero-inner reveal">
-      <span class="eyebrow">Nocturne Gala</span>
       <h1 class="page-title">Events</h1>
       <p class="page-blurb">Historic social dance events in BC for people who want to learn together, dance together, dress beautifully, and have a real evening out. Beginner-friendly, atmospheric, and made to feel social, elegant, and fun.</p>
     </div>
@@ -387,7 +397,14 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 <script>
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>50),{passive:true});
+const navHero=document.querySelector('#hero,#page-hero,main section:first-of-type,section:first-of-type');
+const syncNav=()=>{
+  const heroBottom=navHero?navHero.offsetTop+navHero.offsetHeight-nav.offsetHeight:50;
+  nav.classList.toggle('scrolled',window.scrollY>=heroBottom);
+};
+window.addEventListener('scroll',syncNav,{passive:true});
+window.addEventListener('resize',syncNav);
+syncNav();
 document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((entries,observer)=>{if(entries[0].isIntersecting){el.classList.add('visible');observer.unobserve(el);}},{threshold:.08}).observe(el));
 document.querySelectorAll('.faq-item').forEach(item=>item.addEventListener('toggle',()=>{if(item.open){document.querySelectorAll('.faq-item[open]').forEach(openItem=>{if(openItem!==item)openItem.open=false;});}}));
 </script>
