@@ -425,6 +425,15 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .waitlist-panel{border:1px solid var(--hair);background:rgba(8,5,7,.72);backdrop-filter:blur(8px);padding:28px;min-height:100%}
 .waitlist-title{font-family:var(--font-serif);font-size:clamp(1.55rem,2.2vw,2rem);font-weight:400;color:var(--candlelight);line-height:1.25;margin:0 0 12px}
 .waitlist-copy{font:400 15px/1.7 var(--font-sans);color:var(--parchment);opacity:.84;margin:0 0 20px;max-width:520px}
+.pricing-preview{margin:0 0 26px}
+.pricing-label{font:600 10px/1 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--beeswax);margin-bottom:10px}
+.pricing-intro{font:400 14px/1.65 var(--font-sans);color:var(--parchment);opacity:.82;margin:0 0 16px}
+.pricing-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pricing-option{border:1px solid var(--hair);background:rgba(212,184,106,.05);padding:17px 18px}
+.pricing-name{font:500 12px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--parchment);opacity:.8;margin-bottom:7px}
+.pricing-price{font-family:var(--font-serif);font-size:28px;line-height:1;color:var(--candlelight)}
+.pricing-price small{font:400 11px/1.3 var(--font-sans);color:var(--parchment);opacity:.58;margin-left:5px}
+.pricing-detail{font:400 12px/1.55 var(--font-sans);color:var(--parchment);opacity:.68;margin:10px 0 0}
 .waitlist-panel iframe{display:block;width:100%;border:0}
 .inc-panel{padding-top:0}
 .inc-header{font:400 15px/1.65 var(--font-sans);color:var(--parchment);opacity:.88;margin:0 0 22px auto;max-width:410px}
@@ -507,6 +516,10 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .journey-header{text-align:left;margin-bottom:34px}
   .journey-date-chip{left:18px;top:18px}
   .inc-header,.inc-list,.venue-note{max-width:none;margin-left:0}
+}
+
+@media(max-width:520px){
+  .pricing-options{grid-template-columns:1fr}
 }
 
 
@@ -650,13 +663,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="stitle reveal">Get notified when tickets become available</h2>
     <div class="tix-layout">
       <div class="reveal d1 waitlist-panel" id="waitlist-form">
+        <div class="pricing-preview">
+          <div class="pricing-label">Ticket pricing</div>
+          <p class="pricing-intro">We&rsquo;re very excited to bring this new project to Victoria&mdash;we just don&rsquo;t know yet how many local vampires can join. While we gather interest, here&rsquo;s our approximate ticket pricing so there are no surprises. Join the waitlist below if you would like to join!</p>
+          <div class="pricing-options">
+            <div class="pricing-option">
+              <div class="pricing-name">Single ticket</div>
+              <div class="pricing-price">~$120</div>
+              <p class="pricing-detail">For one guest dancing as either a Leader or a Follower.</p>
+            </div>
+            <div class="pricing-option">
+              <div class="pricing-name">Couple ticket</div>
+              <div class="pricing-price">~$220</div>
+              <p class="pricing-detail">For two guests dancing together as one Leader and one Follower.</p>
+            </div>
+          </div>
+        </div>
         <iframe data-tally-src="https://tally.so/embed/Y5qlz6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="319" frameborder="0" marginheight="0" marginwidth="0" title="Waitlist - Blood Moon Ball"></iframe>
       </div>
       <div class="reveal d2 inc-panel">
         <p class="inc-header">When you attend Blood Moon Ball, you&rsquo;re stepping into a full vampire ball experience:</p>
         <ul class="inc-list">
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 11.5V8h22v3.5a3.5 3.5 0 0 0 0 7V22H5v-3.5a3.5 3.5 0 0 0 0-7Z"/><path d="M13 9v2M13 15v2M13 21v2"/><path d="M18.5 13h5M18.5 17h4"/></svg></span>Ball entry</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="11" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><path d="M11 10v7l-4 7"/><path d="M11 17l4 7"/><path d="M8 13h6l4-3"/><path d="M21 10v7l-3 7"/><path d="M21 17l5 7"/><path d="M18 13h6"/></svg></span>One guided dance workshop</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="11" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><path d="M11 10v7l-4 7"/><path d="M11 17l4 7"/><path d="M8 13h6l4-3"/><path d="M21 10v7l-3 7"/><path d="M21 17l5 7"/><path d="M18 13h6"/></svg></span>4-hour comprehensive dance workshop</li>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h9a4 4 0 0 1 4 4v15a4 4 0 0 0-4-4H5Z"/><path d="M27 7h-9a4 4 0 0 0-4 4v15a4 4 0 0 1 4-4h9Z"/><path d="M16 11v15"/></svg></span>Beginner-friendly instruction</li>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h9a4 4 0 0 1 4 4v15a4 4 0 0 0-4-4H5Z"/><path d="M27 7h-9a4 4 0 0 0-4 4v15a4 4 0 0 1 4-4h9Z"/><path d="M16 11v15"/></svg></span>Structured dance program</li>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 23a4 4 0 1 1-2-3.45V7l14-3v16"/><path d="M24 20a4 4 0 1 1-2-3.45"/><path d="M12 11l12-2.5"/></svg></span>Gothic Halloween music</li>
@@ -667,7 +696,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="venue-note"><strong>Venue TBA.</strong> The venue is being finalized and will be announced before tickets go live.</p>
       </div>
     </div>
-    <p class="waitlist-live ticket-date-note reveal d3">Tickets go live July 25, 2026. Join the waitlist to be notified when sales open.</p>
   </div>
 </section>
 
@@ -715,8 +743,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="faq-list reveal d1">
       <details><summary>Do I need dance experience?</summary><div class="faq-ans">No. The event is designed to be beginner-friendly. The workshop teaches the dances before the Ball, and the evening itself is structured to help guests participate with confidence.</div></details>
       <details><summary>Do I need to attend the workshop?</summary><div class="faq-ans">Yes, preferably. The dance workshop helps you learn the dances, meet people before the Ball, and feel more confident during the evening. If you cannot attend, we&rsquo;ll share videos for home practice.</div></details>
-      <details><summary>Where is the venue?</summary><div class="faq-ans">The venue is still being finalized and will be announced before tickets go live on July 25, 2026.</div></details>
-      <details><summary>When do tickets go live?</summary><div class="faq-ans">Tickets go live July 25, 2026. Join the waitlist to be notified when sales open.</div></details>
+      <details><summary>Where is the venue?</summary><div class="faq-ans">The venue is still being finalized and will be announced before tickets go live.</div></details>
+      <details><summary>When do tickets go live?</summary><div class="faq-ans">Join the waitlist to be notified when sales open.</div></details>
       <details><summary>Is this a Halloween party?</summary><div class="faq-ans">It is a Halloween event, but not a standard party. It is a structured historic dance ball with instruction, social dancing, a dress code, atmosphere, and an immersive gothic theme.</div></details>
       <details><summary>Can I come alone?</summary><div class="faq-ans">Yes. Leader and Follower are dance roles, not gender rules. Solo guests can buy the role they want to dance, rotate partners during many dances, and meet people throughout the workshop and Ball.</div></details>
       <details><summary>Is this historically accurate?</summary><div class="faq-ans">We use actual historic dances and adapt them for a modern social event. It is still a themed gothic Halloween Ball, not a strict reenactment.</div></details>
