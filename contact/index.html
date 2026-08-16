@@ -97,6 +97,19 @@ main{min-height:calc(100vh - 246px);background:linear-gradient(160deg,var(--navy
 .contact-value a:hover{color:var(--candlelight);border-bottom-color:var(--candlelight)}
 .form-card{background:rgba(10,15,28,.56);border:1px solid var(--hair);box-shadow:0 28px 80px rgba(0,0,0,.22);padding:34px;backdrop-filter:blur(10px)}
 .form-card iframe{display:block;width:100%;border:0;background:transparent}
+.involved-section{padding:0 0 112px;position:relative}
+.involved-header{text-align:center;max-width:720px;margin:0 auto 48px}
+.involved-title{font-family:var(--font-serif);font-size:clamp(2rem,4vw,3.25rem);font-weight:400;color:var(--candlelight);line-height:1.2;margin-bottom:16px}
+.involved-copy{font:400 16px/1.8 var(--font-sans);color:var(--parchment);opacity:.78}
+.application-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.application-card{display:flex;flex-direction:column;background:rgba(10,15,28,.58);border:1px solid var(--hair);overflow:hidden;transition:transform .3s var(--ease),border-color .3s}
+.application-card:hover{transform:translateY(-4px);border-color:var(--hair-hi)}
+.application-image{width:100%;aspect-ratio:16/9;object-fit:cover}
+.application-body{display:flex;flex-direction:column;flex:1;padding:25px 24px 27px}
+.application-title{font-family:var(--font-serif);font-size:1.35rem;font-weight:400;line-height:1.3;color:var(--candlelight);margin-bottom:12px}
+.application-copy{font:400 14px/1.7 var(--font-sans);color:var(--parchment);opacity:.8;margin-bottom:22px;flex:1}
+.application-btn{align-self:flex-start;background:var(--beeswax);color:var(--pitch)}
+.application-btn:hover{background:var(--candlelight);color:var(--pitch);transform:translateY(-1px)}
 
 /* ── FOOTER (pages and socials kept separate) ── */
 footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid var(--hair);text-align:center}
@@ -127,6 +140,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .contact-grid{grid-template-columns:1fr;gap:40px}
   .contact-copy{font-size:15px}
   .form-card{padding:20px}
+  .involved-section{padding:0 0 76px}
+  .involved-header{margin-bottom:34px}
+  .application-grid{grid-template-columns:1fr;gap:20px}
   .footer-nav{grid-template-columns:1fr;gap:14px}
 }
 </style>
@@ -173,6 +189,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="form-card">
         <iframe data-tally-src="https://tally.so/embed/rjpMgp?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="447" frameborder="0" marginheight="0" marginwidth="0" title="Contact Us"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="involved-section" aria-labelledby="involved-title">
+    <div class="wrap">
+      <div class="involved-header">
+        <span class="eyebrow">Join the Gala</span>
+        <h2 class="involved-title" id="involved-title">Get Involved</h2>
+        <p class="involved-copy">Help bring the evening to life, on stage, behind the scenes, or on the dance floor.</p>
+      </div>
+
+      <div class="application-grid">
+        <article class="application-card">
+          <img class="application-image" src="/contact/images/Performers.webp" alt="Musicians performing at Nocturne Gala"/>
+          <div class="application-body">
+            <h3 class="application-title">Performers</h3>
+            <p class="application-copy">We primarily welcome live musicians. Dance acts and other distinctive performers suited to the gala atmosphere may also be considered.</p>
+            <a class="btn application-btn" href="/contact/performers">Apply to Perform</a>
+          </div>
+        </article>
+
+        <article class="application-card">
+          <img class="application-image" src="/contact/images/Volunteers.webp" alt="Volunteers welcoming guests at Nocturne Gala"/>
+          <div class="application-body">
+            <h3 class="application-title">Volunteers</h3>
+            <p class="application-copy">Help with event setup and guest registration. You&rsquo;ll receive free event access and discounted tickets for your plus ones.</p>
+            <a class="btn application-btn" href="/contact/volunteers">Apply to Volunteer</a>
+          </div>
+        </article>
+
+        <article class="application-card">
+          <img class="application-image" src="/contact/images/Dance ambassadors.webp" alt="Dance ambassadors guiding guests at Nocturne Gala"/>
+          <div class="application-body">
+            <h3 class="application-title">Dance Ambassadors</h3>
+            <p class="application-copy">Receive 50% off your ticket, advance dance instruction, and extra rehearsals and meetups, then help guests feel confident during the ball.</p>
+            <a class="btn application-btn" href="/contact/dance-ambassadors">Apply as an Ambassador</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
