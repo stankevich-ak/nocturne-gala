@@ -68,7 +68,7 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
   "image": ["https://nocturne-gala.vercel.app/blood-moon-ball/site%20preview.webp"],
   "location": {
     "@type": "Place",
-    "name": "Edelweiss Club",
+    "name": "Venue TBA",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Victoria",
@@ -81,32 +81,6 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
     "name": "Nocturne Gala",
     "url": "https://www.instagram.com/nocturnegala/"
   },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Couples Ticket",
-      "price": "240",
-      "priceCurrency": "CAD",
-      "url": "https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&productId=1786175&productQuantity=1&amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818",
-      "availability": "https://schema.org/InStock"
-    },
-    {
-      "@type": "Offer",
-      "name": "Follower Ticket",
-      "price": "130",
-      "priceCurrency": "CAD",
-      "url": "https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&productId=1786177&productQuantity=1&amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948",
-      "availability": "https://schema.org/InStock"
-    },
-    {
-      "@type": "Offer",
-      "name": "Leader Ticket",
-      "price": "130",
-      "priceCurrency": "CAD",
-      "url": "https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&productId=1786179&productQuantity=1&amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948",
-      "availability": "https://schema.org/InStock"
-    }
-  ],
   "url": "https://nocturne-gala.vercel.app/blood-moon-ball/",
   "keywords": ["Blood Moon Ball", "Victoria Halloween ball", "vampire ball Victoria", "historic dance Victoria", "Nocturne Gala"]
 }
@@ -261,9 +235,9 @@ img{display:block;object-fit:cover}
 .tix-layout{display:grid;grid-template-columns:minmax(560px,.98fr) minmax(330px,.7fr);gap:58px;align-items:start;margin-top:0}
 /* ticket rows - LEFT */
 .tix-rows{display:flex;flex-direction:column;max-width:640px}
-.tix-row{position:relative;padding:14px 18px 14px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(13,17,32,.7);backdrop-filter:blur(8px);transition:border-color .3s,background .3s;cursor:pointer}
+.tix-row{position:relative;padding:14px 18px 14px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(13,17,32,.7);backdrop-filter:blur(8px);transition:border-color .3s,background .3s}
 .tix-row:hover{border-color:var(--hair-hi);background:rgba(22,30,48,.9);z-index:1}
-.tix-row:focus-visible{outline:1px solid var(--candlelight);outline-offset:3px;z-index:2}
+.tix-row.featured{border-color:rgba(212,184,106,.42);background:rgba(20,28,50,.88)}
 .tix-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
 .acc-c{background:linear-gradient(180deg,var(--beeswax),var(--candlelight))}
 .acc-f{background:linear-gradient(180deg,var(--velvet),#4A2B5A)}
@@ -286,7 +260,7 @@ img{display:block;object-fit:cover}
 .tix-clarification a{color:var(--candlelight);border-bottom:1px solid rgba(212,184,106,.35)}
 /* includes - RIGHT */
 .inc-panel{padding-top:0}
-.inc-header{font-family:var(--font-serif);font-size:clamp(1.25rem,2vw,1.5rem);font-weight:400;color:var(--pale-gold);line-height:1.2;margin:0 0 20px auto;max-width:410px}
+.inc-header{font:400 15px/1.65 var(--font-sans);color:var(--parchment);opacity:.88;margin:0 0 22px auto;max-width:410px}
 .inc-list{list-style:none;padding:0;max-width:410px;margin-left:auto}
 .inc-li{display:flex;align-items:center;gap:18px;padding:8px 0;font:400 15px/1.65 var(--font-sans);color:var(--parchment);opacity:.88;white-space:normal}
 .inc-ico{flex-shrink:0;width:34px;height:34px;color:var(--beeswax);display:inline-flex;align-items:center;justify-content:center}
@@ -426,12 +400,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .inc-li{white-space:normal}
 }
 
-@media(max-width:1080px) and (min-width:821px){
-  #tickets .tix-layout{grid-template-columns:1fr;gap:34px}
-  #tickets .tix-rows{max-width:none}
-  #tickets .inc-header,#tickets .inc-list{max-width:none;margin-left:0}
-}
-
 
 /* Blood Moon palette overrides */
 .btn-gold,.nav-cta,.sticky-btn{background:var(--blood);color:var(--parchment)!important}
@@ -480,8 +448,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .dress-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:44px}
 .dress-grid h2{font-family:var(--font-serif);font-size:clamp(1.4rem,2.8vw,2.1rem);font-weight:400;color:var(--candlelight);line-height:1.3;margin-bottom:18px}
 .dress-grid p{font:400 16px/1.85 var(--font-sans);color:var(--parchment);opacity:.86;margin-bottom:14px}
-.dress-directions{list-style:disc;margin:20px 0 24px 38px;padding:0}
-.dress-directions li{font:400 15px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;padding:8px 0;border-bottom:0}
+.dress-directions{list-style:none;margin:20px 0 24px 18px;padding:0}
+.dress-directions li{font:400 15px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;padding:8px 0;display:flex;gap:12px;align-items:flex-start;border-bottom:0}
+.dress-directions li::before{content:"◆";color:var(--beeswax);font-size:8px;line-height:1;margin-top:9px;flex-shrink:0}
 .dress-note{border:1px solid rgba(212,184,106,.24);background:rgba(122,11,20,.12);padding:16px 18px;margin-top:18px}
 .dress-note p{font-size:14px;line-height:1.7;margin:0;opacity:.78}
 .pinterest-link{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font:600 12.5px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--candlelight);border-bottom:1px solid rgba(167,131,60,.42);padding-bottom:6px}
@@ -599,15 +568,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-eyebrow">Nocturne Gala Presents</p>
     <h1 class="hero-title">Blood Moon<br><em>Ball</em></h1>
     <div class="hero-details">
-      <p class="hero-location">Victoria &middot; October 31st &middot; Edelweiss Club</p>
-      <p class="hero-bullets">Beginner-friendly <span>&middot;</span> Pre-Ball Dance Workshop (October 24th) &ndash; Included <span>&middot;</span> Costumes required</p>
+      <p class="hero-location">Victoria &middot; October 31 &middot; Halloween Night</p>
+      <p class="hero-bullets">Beginner-friendly <span>&middot;</span> Workshop included <span>&middot;</span> Costumes required</p>
     </div>
     <div class="hero-ctas">
-      <a href="#tickets" class="btn btn-gold">Get Your Ticket</a>
+      <a href="#waitlist-form" class="btn btn-gold">Join Waitlist</a>
       <a href="#rehearsals" class="btn btn-outline">What&rsquo;s Included</a>
     </div>
   </div>
 </section>
+<div class="blood-divider"></div>
+
+<!-- PULL QUOTE -->
+<section class="pull-section">
+  <div class="pull-inner">
+    <p class="pull-quote reveal">
+      &ldquo;The Blood Moon rises. Somewhere in the dark, the doors open.&rdquo;
+    </p>
+    <div class="pull-stanzas reveal d1">
+      <p>Some say it offers beauty.</p>
+      <p>Some say it offers youth.</p>
+      <p>Some say it offers one perfect night you will remember for the rest of your life.</p>
+    </div>
+  </div>
+</section>
+
 <div class="blood-divider"></div>
 
 <!-- EXPERIENCE -->
@@ -649,7 +634,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="id-cards">
       <div class="id-card reveal">
         <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
-          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:00 PM</small></div>
+          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 23</strong><small>1:00 PM to 5:00 PM</small></div>
         </div>
         <div class="id-body">
           <h3 class="journey-card-title">Learn the Dances</h3>
@@ -660,7 +645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="id-card flip reveal d1">
         <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')">
-          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 31</strong><small>7:00 PM to 11:30 PM</small></div>
+          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 31</strong><small>Halloween Night</small></div>
         </div>
         <div class="id-body">
           <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
@@ -672,52 +657,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- TICKETS -->
+<!-- WAITLIST + WHAT'S INCLUDED -->
 <section id="tickets">
   <div class="tix-bg" id="tixBg" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')"></div>
   <div class="wrap">
-    <h2 class="stitle reveal">Tickets</h2>
+    <span class="eyebrow reveal">Join the Waitlist</span>
+    <h2 class="stitle reveal">Get notified when tickets become available</h2>
     <div class="tix-layout">
-      <div class="reveal d1">
-        <div class="tix-rows">
-          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" role="link" tabindex="0" aria-label="Get Couples Ticket">
-            <div class="tix-accent acc-c"></div>
-            <div class="tix-inner">
-              <div class="tix-left">
-                <div class="tix-role">Couples</div>
-                <div class="tix-desc">Workshop and Ball access for two guests in a dancing pair. Roles open to all genders.</div>
-                <a class="tix-btn btn-gold-sm" href="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">Get Couples Ticket</a>
-              </div>
-              <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two</div></div>
+      <div class="reveal d1 waitlist-panel" id="waitlist-form">
+        <div class="pricing-preview">
+          <div class="pricing-label">Ticket pricing</div>
+          <p class="pricing-intro">We&rsquo;re very excited to bring this new project to Victoria&mdash;we just don&rsquo;t know yet how many local vampires can join. While we gather interest, here&rsquo;s our approximate ticket pricing so there are no surprises. Join the waitlist below if you would like to join!</p>
+          <div class="pricing-options">
+            <div class="pricing-option">
+              <div class="pricing-name">Single ticket</div>
+              <div class="pricing-price">~$120</div>
+              <p class="pricing-detail">For one guest dancing as either a Leader or a Follower.</p>
+            </div>
+            <div class="pricing-option">
+              <div class="pricing-name">Couple ticket</div>
+              <div class="pricing-price">~$220</div>
+              <p class="pricing-detail">For two guests dancing together as one Leader and one Follower.</p>
             </div>
           </div>
-          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Follower Ticket">
-            <div class="tix-accent acc-f"></div>
-            <div class="tix-inner">
-              <div class="tix-left">
-                <div class="tix-role">Follower<sup>*</sup></div>
-                <div class="tix-desc">Traditionally the &ldquo;lady&rsquo;s part&rdquo; &mdash; the dancer responding to cues given by the Leader.</div>
-                <a class="tix-btn btn-velvet" href="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Follower Ticket</a>
-              </div>
-              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
-            </div>
-          </div>
-          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Leader Ticket">
-            <div class="tix-accent acc-l"></div>
-            <div class="tix-inner">
-              <div class="tix-left">
-                <div class="tix-role">Leader<sup>*</sup></div>
-                <div class="tix-desc">Traditionally the &ldquo;gentleman&rsquo;s part&rdquo; &mdash; the dancer responsible for guiding the couple&rsquo;s movement.</div>
-                <a class="tix-btn btn-teal" href="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Leader Ticket</a>
-              </div>
-              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
-            </div>
-          </div>
-          <p class="tix-footer">All sales final &middot; Transfers allowed before the workshop begins</p>
         </div>
+        <iframe data-tally-src="https://tally.so/embed/Y5qlz6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="319" frameborder="0" marginheight="0" marginwidth="0" title="Waitlist - Blood Moon Ball"></iframe>
       </div>
       <div class="reveal d2 inc-panel">
-        <p class="inc-header">Your Ticket Includes</p>
+        <p class="inc-header">When you attend Blood Moon Ball, you&rsquo;re stepping into a full vampire ball experience:</p>
         <ul class="inc-list">
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 11.5V8h22v3.5a3.5 3.5 0 0 0 0 7V22H5v-3.5a3.5 3.5 0 0 0 0-7Z"/><path d="M13 9v2M13 15v2M13 21v2"/><path d="M18.5 13h5M18.5 17h4"/></svg></span>Ball entry</li>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="11" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><path d="M11 10v7l-4 7"/><path d="M11 17l4 7"/><path d="M8 13h6l4-3"/><path d="M21 10v7l-3 7"/><path d="M21 17l5 7"/><path d="M18 13h6"/></svg></span>4-hour comprehensive dance workshop</li>
@@ -728,8 +695,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 5h12v6a6 6 0 0 1-12 0Z"/><path d="M16 17v8"/><path d="M11 25h10"/><path d="M10 10h12"/></svg></span>Light refreshments</li>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 26h22"/><path d="M7 26V13l9-6 9 6v13"/><path d="M12 26v-8h8v8"/><path d="M11 14h.01M16 14h.01M21 14h.01"/><path d="M16 7V4"/></svg></span>Immersive setting and decorations</li>
         </ul>
+        <p class="venue-note"><strong>Venue TBA.</strong> The venue is being finalized and will be announced before tickets go live.</p>
       </div>
-      <p class="tix-clarification">* Leader and Follower tickets are released in batches to help maintain an optimal balance of leaders and followers at the Ball. If your desired ticket type is not available, please <a href="#" data-tally-open="Y5qlz6" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">join the waitlist</a> and we&rsquo;ll notify you when the next batch opens.</p>
     </div>
   </div>
 </section>
@@ -750,6 +717,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Velvet, lace, satin, pearls, brooches, and old-world jewelry</li>
           <li>Dark academia or aristocratic styling</li>
         </ul>
+        <div class="dress-note">
+          <p><strong>Please avoid:</strong> low-effort party costumes, novelty costumes, inflatable costumes, and casual streetwear.</p>
+        </div>
         <a class="pinterest-link" href="https://pin.it/6OAkdKlCl" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.57 2 3 5.64 3 10.25c0 2.14 1.2 4.82 3.12 5.67.29.13.45.07.52-.2.05-.2.31-1.26.43-1.75.04-.16.02-.3-.11-.45-.63-.75-1.13-2.13-1.13-3.42 0-3.22 2.45-6.34 6.62-6.34 3.6 0 6.12 2.45 6.12 5.95 0 3.95-2 6.69-4.6 6.69-1.44 0-2.52-1.19-2.17-2.65.41-1.74 1.22-3.61 1.22-4.86 0-1.12-.6-2.06-1.85-2.06-1.47 0-2.65 1.52-2.65 3.56 0 1.3.44 2.18.44 2.18s-1.46 6.18-1.73 7.33c-.3 1.27-.18 3.05-.05 4.2.03.24.34.32.48.12.61-.84 1.62-2.4 1.94-3.62.17-.66.88-3.35.88-3.35.46.88 1.8 1.62 3.23 1.62 4.25 0 7.31-3.91 7.31-8.77C21 5.95 17.6 2 12.04 2Z"/></svg>Open Pinterest inspiration</a>
       </div>
       <div class="reveal d2">
@@ -775,8 +745,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="faq-list reveal d1">
       <details><summary>Do I need dance experience?</summary><div class="faq-ans">No. The event is designed to be beginner-friendly. The workshop teaches the dances before the Ball, and the evening itself is structured to help guests participate with confidence.</div></details>
       <details><summary>Do I need to attend the workshop?</summary><div class="faq-ans">Yes, preferably. The dance workshop helps you learn the dances, meet people before the Ball, and feel more confident during the evening. If you cannot attend, we&rsquo;ll share videos for home practice.</div></details>
-      <details><summary>Where is the venue?</summary><div class="faq-ans">The Blood Moon Ball takes place at the Edelweiss Club in Victoria.</div></details>
-      <details><summary>Are tickets available now?</summary><div class="faq-ans">Yes. <a href="#tickets">Choose a Couples, Follower, or Leader ticket &rarr;</a></div></details>
+      <details><summary>Where is the venue?</summary><div class="faq-ans">The venue is still being finalized and will be announced before tickets go live.</div></details>
+      <details><summary>When do tickets go live?</summary><div class="faq-ans">Join the waitlist to be notified when sales open.</div></details>
       <details><summary>Is this a Halloween party?</summary><div class="faq-ans">It is a Halloween event, but not a standard party. It is a structured historic dance ball with instruction, social dancing, a dress code, atmosphere, and an immersive gothic theme.</div></details>
       <details><summary>Can I come alone?</summary><div class="faq-ans">Yes. Leader and Follower are dance roles, not gender rules. Solo guests can buy the role they want to dance, rotate partners during many dances, and meet people throughout the workshop and Ball.</div></details>
       <details><summary>Is this historically accurate?</summary><div class="faq-ans">We use actual historic dances and adapt them for a modern social event. It is still a themed gothic Halloween Ball, not a strict reenactment.</div></details>
@@ -791,8 +761,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="final-ey">Nocturne Gala &middot; October 31, 2026</span>
     <h2 class="final-t">You can keep scrolling.<br>Or you can actually do this.</h2>
     <p class="final-s">No experience required. Just a room full of people who decided to step into something dark, elegant, and unforgettable.</p>
-    <a href="#tickets" class="btn btn-gold" style="font-size:12px;padding:16px 48px">Get Your Ticket</a>
-    <p class="final-m">Victoria &middot; Edelweiss Club &middot; October 31, 2026</p>
+    <a href="#waitlist-form" class="btn btn-gold" style="font-size:12px;padding:16px 48px">Join Waitlist</a>
+    <p class="final-m">Victoria &middot; Halloween Night &middot; October 31, 2026</p>
   </div>
 </section>
 
@@ -828,7 +798,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="sticky-name">Blood Moon Ball</span>
     <span class="sticky-date">Victoria &middot; October 31, 2026</span>
   </div>
-  <a href="#tickets" class="sticky-btn">Get Your Ticket</a>
+  <a href="#waitlist-form" class="sticky-btn">Join Waitlist</a>
 </div>
 
 <script>
@@ -950,33 +920,11 @@ function initVideoPlayers(){
   });
 }
 
-function initTicketCards(){
-  document.querySelectorAll('.tix-row[data-ticket-url]').forEach(row=>{
-    if(row.dataset.ticketBound==='true')return;
-    row.dataset.ticketBound='true';
-    const openTicket=()=>{
-      const url=row.dataset.ticketUrl;
-      if(url)window.open(url,'_blank','noopener');
-    };
-    row.addEventListener('click',event=>{
-      if(event.target.closest('a'))return;
-      openTicket();
-    });
-    row.addEventListener('keydown',event=>{
-      if(event.key==='Enter'||event.key===' '){
-        event.preventDefault();
-        openTicket();
-      }
-    });
-  });
-}
-
 var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})},s=d.querySelector('script[src="'+w+'"]');if("undefined"!=typeof Tally)v();else if(s){s.addEventListener("load",v);s.addEventListener("error",v);}else{s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}
 
 loadResources().then(R => {
   applyResources(R);
   initVideoPlayers();
-  initTicketCards();
   window.addEventListener('load', () => { matchVideoHeights(); initVideoPlayers(); });
   window.addEventListener('resize', matchVideoHeights);
   setTimeout(matchVideoHeights, 800);
