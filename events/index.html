@@ -114,7 +114,7 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
       "description": "A free community potluck picnic in Port Moody with beginner-friendly historic dancing, games, food, and good company.",
       "startDate": "2026-09-11T18:00:00-07:00",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
+      "eventStatus": "https://schema.org/EventCompleted",
       "isAccessibleForFree": true,
       "image": "https://nocturne-gala.vercel.app/end-of-summer-picnic/images/dance%20picnic.png",
       "url": "https://nocturne-gala.vercel.app/end-of-summer-picnic/",
@@ -137,14 +137,14 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
     {
       "@type": "Event",
       "@id": "https://nocturne-gala.vercel.app/spring-gala/#event",
-      "name": "Spring Gala",
+      "name": "Spring Gala Ball",
       "description": "A romantic spring ball with florals, pastels, and a light whimsical theme.",
-      "startDate": "2026-05-15",
+      "startDate": "2026-05-08",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventCompleted",
       "image": "https://nocturne-gala.vercel.app/events/images/spring%20-%20card.png",
       "url": "https://nocturne-gala.vercel.app/spring-gala/",
-      "location": {"@type": "Place", "name": "Vancouver, BC", "address": {"@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA"}},
+      "location": {"@type": "Place", "name": "Burnaby, BC", "address": {"@type": "PostalAddress", "addressLocality": "Burnaby", "addressRegion": "BC", "addressCountry": "CA"}},
       "organizer": {"@id": "https://nocturne-gala.vercel.app/#organization"}
     }
   ]
@@ -276,6 +276,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 }
 </style>
 <link rel="stylesheet" href="/shared-components.css"/>
+<script defer src="/events-data.js"></script>
+<script defer src="/events-render.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -311,48 +313,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="events-head reveal">
       <span class="eyebrow">Upcoming Events</span>
     </div>
-    <div class="event-grid">
-
-      <div class="ev-card reveal">
-        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" aria-label="Learn more about Celestial Winter Masquerade"><div class="ev-img celestial"><img class="ev-photo" src="/images/4. celestial - card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Tickets On Sale</span></div></a>
-        <div class="ev-body">
-          <h3 class="ev-name">Celestial Winter Masquerade</h3>
-          <p class="ev-meta">Vancouver, BC &middot; Dec 18, 2026</p>
-          <p class="ev-desc">A candlelit winter masquerade at the Scottish Cultural Centre, with guided rehearsals, live music, celestial winter decor, and an elegant evening of historic social dancing.</p>
-          <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold">Buy Tickets</a>
-            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="btn btn-outline">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="ev-card reveal d1">
-        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/end-of-summer-picnic/" aria-label="Learn more about the End-of-Summer Historic Dance Picnic"><div class="ev-img picnic"><img class="ev-photo" src="/end-of-summer-picnic/images/dance%20picnic.png" alt="End-of-Summer Historic Dance Picnic"/><span class="ev-status">Free Community Event</span></div></a>
-        <div class="ev-body">
-          <h3 class="ev-name">End-of-Summer Historic Dance Picnic</h3>
-          <p class="ev-meta">Port Moody, BC &middot; Sep 11, 2026 &middot; 6:00 PM</p>
-          <p class="ev-desc">A free potluck picnic at Rocky Point Park with beginner-friendly historic dancing, games, food, and good company.</p>
-          <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/end-of-summer-picnic/#register" class="btn btn-gold">Register for Free</a>
-            <a href="https://nocturne-gala.vercel.app/end-of-summer-picnic/" class="btn btn-outline">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="ev-card reveal d1">
-        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/blood-moon-ball" aria-label="Learn more about Blood Moon Ball"><div class="ev-img blood"><img class="ev-photo" src="/images/3. vampire - card.webp" alt="Blood Moon Ball"/><span class="ev-status">Tickets On Sale</span></div></a>
-        <div class="ev-body">
-          <h3 class="ev-name">Blood Moon Ball</h3>
-          <p class="ev-meta">Victoria, BC &middot; Oct 30, 2026</p>
-          <p class="ev-desc">A gothic historic dance ball on Halloween night, with vampire court atmosphere, candlelight, and an immersive evening of social dancing.</p>
-          <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/blood-moon-ball#tickets" class="btn btn-blood">Buy Tickets</a>
-            <a href="https://nocturne-gala.vercel.app/blood-moon-ball" class="btn btn-outline">Learn More</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <div class="event-grid" data-event-list="upcoming"><p>Upcoming events will be announced here. <a href="/events/">View events</a>.</p></div>
   </div>
 </section>
 
@@ -361,19 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="events-head reveal">
       <span class="eyebrow">Past Events</span>
     </div>
-    <div class="event-grid">
-      <div class="ev-card reveal">
-        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/spring-gala/" aria-label="View the Spring Gala recap"><div class="ev-img spring"><img class="ev-photo" src="/events/images/spring%20-%20card.png" alt="Spring Gala"/><span class="ev-status past">Past Event</span></div></a>
-        <div class="ev-body">
-          <h3 class="ev-name">Spring Gala</h3>
-          <p class="ev-meta">Vancouver, BC &middot; May 15, 2026</p>
-          <p class="ev-desc">A romantic spring ball with florals, pastels, soft light, and a whimsical spring romance theme. The Spring Gala happened on May 15, 2026.</p>
-          <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/spring-gala/" class="btn btn-outline">View Recap</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="event-grid" data-event-list="past"><p>Explore our past events. <a href="/events/">View events</a>.</p></div>
   </div>
 </section>
 

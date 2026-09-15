@@ -372,6 +372,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 }
 </style>
 <link rel="stylesheet" href="/shared-components.css"/>
+<script defer src="/events-data.js"></script>
+<script defer src="/events-render.js"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -550,32 +552,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="eyebrow">Next Nocturne Gala Events</span>
       <h2 class="stitle">Where we&rsquo;re dancing next</h2>
     </div>
-    <div class="event-grid">
-      <div class="ev-card reveal">
-        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/blood-moon-ball" aria-label="Learn more about Blood Moon Ball"><div class="ev-img blood"><img class="ev-photo" src="/images/3.%20vampire%20-%20card.webp" alt="Blood Moon Ball"/><span class="ev-status">Waitlist Open</span></div></a>
-        <div class="ev-body">
-          <h3 class="ev-name">Blood Moon Ball</h3>
-          <p class="ev-meta">Victoria, BC &middot; Oct 31, 2026</p>
-          <p class="ev-desc">A gothic historic dance ball on Halloween night — vampire court, candlelight, and an immersive evening of social dancing.</p>
-          <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/blood-moon-ball#waitlist-form" class="btn btn-gold">Join Waitlist</a>
-            <a href="https://nocturne-gala.vercel.app/blood-moon-ball" class="btn btn-outline">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="ev-card reveal d1">
-        <a class="ev-img-link" href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" aria-label="Learn more about Celestial Winter Masquerade"><div class="ev-img celestial"><img class="ev-photo" src="/images/4.%20celestial%20-%20card.webp" alt="Celestial Winter Masquerade"/><span class="ev-status">Tickets On Sale</span></div></a>
-        <div class="ev-body">
-          <h3 class="ev-name">Celestial Winter Masquerade</h3>
-          <p class="ev-meta">Vancouver, BC &middot; Dec 18, 2026</p>
-          <p class="ev-desc">A mysterious winter masquerade with guided rehearsals, live music, performances, ballroom games, and celestial winter decor.</p>
-          <div class="ev-ctas">
-            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade#tickets" class="btn btn-gold">Buy Tickets</a>
-            <a href="https://nocturne-gala.vercel.app/celestial-winter-masquerade" class="btn btn-outline">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="event-grid" data-event-list="next"><p>Upcoming events will be announced here. <a href="/events/">View events</a>.</p></div>
   </div>
 </section>
 
