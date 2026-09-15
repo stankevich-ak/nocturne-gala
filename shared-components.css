@@ -82,7 +82,7 @@ footer{
   border-top:1px solid var(--hair,rgba(212,184,106,.28))!important;
   text-align:center!important;
 }
-footer .footer-nav{display:grid!important;grid-template-columns:repeat(3,92px)!important;justify-content:center!important;gap:0!important;margin-bottom:18px!important}
+footer .footer-nav{display:grid!important;grid-template-columns:repeat(4,92px)!important;justify-content:center!important;gap:0!important;margin-bottom:18px!important}
 footer .footer-nav a{font:500 11px/1 var(--font-sans,'Poppins',sans-serif)!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:var(--parchment,#F0E8D5)!important;opacity:.6!important;text-align:center!important}
 footer .footer-nav a:hover{opacity:1!important;color:var(--candlelight,#D4B86A)!important}
 footer .footer-divider{width:46px!important;height:1px!important;background:var(--hair,rgba(212,184,106,.28))!important;margin:0 auto 22px!important}
@@ -126,7 +126,7 @@ footer .footer-copy{font:400 11px/1.6 var(--font-sans,'Poppins',sans-serif)!impo
   #nav{min-height:58px;padding:14px 24px!important}
   #nav.scrolled{padding:10px 24px!important}
   #nav .nav-brand-text{display:none!important}
-  #nav .nav-links{gap:18px!important}
+  #nav .nav-links{gap:clamp(10px,3vw,18px)!important}
   #nav .nav-links a{font-size:11px!important}
   footer{padding:46px 24px 40px!important}
   #sticky .sticky-btn{font-size:11px!important}
