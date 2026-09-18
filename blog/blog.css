@@ -28,10 +28,6 @@
 .article-body strong{font-weight:600;color:#241810}
 
 /* Followers' guide: editorial dress-code graphic and product imagery. */
-.follower-article-header{background:radial-gradient(circle at 76% 30%,rgba(112,10,24,.42),transparent 32%),linear-gradient(145deg,#18090d,var(--pitch) 68%)}
-.article-hero-placeholder,.follower-thumb{display:grid;place-items:center;min-height:260px;border:1px solid rgba(184,144,42,.48);background:radial-gradient(circle at 50% 42%,rgba(143,17,32,.78),transparent 18%),linear-gradient(145deg,#17080d,#2c0c15 55%,#0f0d0b);color:var(--pale-gold);text-align:center;font:600 11px/1.5 var(--font-sans);letter-spacing:.18em;text-transform:uppercase}
-.article-hero-placeholder{aspect-ratio:16/9;min-height:0;margin-bottom:42px}
-.follower-thumb{aspect-ratio:3/2}
 .dress-code{position:relative;width:min(calc(100vw - 32px),1040px);margin:58px 50% 64px;transform:translateX(-50%);overflow:hidden;border:1px solid rgba(212,184,106,.34);background:radial-gradient(circle at 50% 48%,rgba(130,11,26,.3),transparent 34%),linear-gradient(145deg,#180d10,#0e0b0b 72%);color:var(--parchment);box-shadow:0 28px 70px rgba(31,6,12,.18)}
 .dress-code::before{content:'';position:absolute;inset:12px;pointer-events:none;border:1px solid rgba(212,184,106,.16)}
 .dress-code-heading{position:relative;z-index:1;padding:42px 32px 16px;text-align:center}
@@ -44,13 +40,10 @@
 .dress-rule p{margin:0 0 8px;color:rgba(250,247,240,.78);font-size:13px;line-height:1.65}
 .dress-rule p:last-of-type{margin-bottom:0}.dress-rule-length{grid-area:length}.dress-rule-gloves{grid-area:gloves}.dress-rule-shoes{grid-area:shoes}.dress-rule-colors{grid-area:colors}
 .gown-emblem{grid-area:gown;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:390px}
-.blood-moon{position:absolute;top:48px;width:154px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 36% 30%,#b73643,#7f0e1d 42%,#430811 78%);box-shadow:0 0 70px rgba(149,22,39,.42)}
-.gown-emblem svg{position:relative;width:164px;height:auto;fill:#0c090a;filter:drop-shadow(0 12px 12px rgba(0,0,0,.5));stroke:var(--candlelight);stroke-width:1.2}
-.gown-emblem .gown-detail{fill:none;stroke:rgba(212,184,106,.6);stroke-width:1}
-.gown-emblem span{position:relative;margin-top:-7px;color:var(--beeswax);font:600 9px/1 var(--font-sans);letter-spacing:.28em;text-transform:uppercase}
+.gown-emblem img{display:block;width:100%;height:100%;max-height:440px;object-fit:cover;object-position:center;border:1px solid rgba(212,184,106,.22);box-shadow:0 18px 42px rgba(0,0,0,.36)}
 .fabric-swatches{display:flex;gap:8px;margin-top:16px}.fabric-swatches i{display:block;width:28px;height:7px;background:#090909}.fabric-swatches i:nth-child(2){background:#7a0b14}.fabric-swatches i:nth-child(3){background:#4b102b}.fabric-swatches i:nth-child(4){background:#35134d}
 .product-gallery a,.product-feature a{display:block}.product-gallery img{transition:transform .35s ease,filter .35s ease}.product-gallery a:hover img{transform:scale(1.018);filter:brightness(1.06)}
 .product-feature{margin:34px auto;max-width:560px}.product-feature img{display:block;width:100%;height:auto;max-height:720px;object-fit:contain;border:1px solid rgba(74,55,40,.28);background:#efe8da}
 
 @media(max-width:840px){.dress-code-layout{grid-template-columns:1fr 180px;grid-template-areas:'length gown' 'gloves gown' 'shoes colors';padding-inline:28px}.gown-emblem{min-height:360px}}
-@media(max-width:620px){.dress-code{margin-block:44px 52px}.dress-code-heading{padding:34px 24px 10px}.dress-code-layout{grid-template-columns:1fr;grid-template-areas:'gown' 'length' 'gloves' 'shoes' 'colors';gap:14px;padding:12px 22px 34px}.gown-emblem{min-height:300px}.blood-moon{top:26px;width:132px}.gown-emblem svg{width:142px}.dress-rule{min-height:0;padding:20px}.article-hero-placeholder{margin-bottom:32px}}
+@media(max-width:620px){.dress-code{margin-block:44px 52px}.dress-code-heading{padding:34px 24px 10px}.dress-code-layout{grid-template-columns:1fr;grid-template-areas:'gown' 'length' 'gloves' 'shoes' 'colors';gap:14px;padding:12px 22px 34px}.gown-emblem{min-height:0}.gown-emblem img{width:min(100%,280px);max-height:none;aspect-ratio:4/5}.dress-rule{min-height:0;padding:20px}}
