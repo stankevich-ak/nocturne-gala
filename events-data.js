@@ -7,7 +7,7 @@ window.nocturneEvents = [
     "location": "Victoria, BC",
     "image": "/images/3.%20vampire%20-%20card.webp",
     "description": "A gothic historic dance ball with vampire court atmosphere, candlelight, and an immersive evening of social dancing.",
-    "status": "Tickets On Sale",
+    "status": "Tickets Available",
     "cta": "Buy Tickets",
     "anchor": "tickets"
   },
@@ -18,7 +18,7 @@ window.nocturneEvents = [
     "location": "Vancouver, BC",
     "image": "/images/4.%20celestial%20-%20card.webp",
     "description": "A candlelit winter masquerade at the Scottish Cultural Centre, with guided rehearsals, live music, celestial winter decor, and an elegant evening of historic social dancing.",
-    "status": "Tickets On Sale",
+    "status": "Tickets Available",
     "cta": "Buy Tickets",
     "anchor": "tickets"
   },
