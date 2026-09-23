@@ -117,14 +117,14 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
           "@type": "VideoObject",
           "name": "Spring Ball Memories",
           "description": "Vertical video highlights from the Nocturne Gala Spring Gala Ball.",
-          "contentUrl": "https://nocturne-gala.vercel.app/spring-gala/videos/spring%20ball%20memories.mp4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/rTBilYAJGnE",
           "thumbnailUrl": "https://nocturne-gala.vercel.app/spring-gala/images/couples%20dancing%20at%20the%20ball.webp"
         },
         {
           "@type": "VideoObject",
           "name": "Spring Ball Rehearsals",
           "description": "Rehearsal memories from the Spring Gala Ball dance program.",
-          "contentUrl": "https://nocturne-gala.vercel.app/spring-gala/videos/rehearsals-spring%20ball.mp4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Ek10nkKAMqw",
           "thumbnailUrl": "https://nocturne-gala.vercel.app/spring-gala/images/group%20dance.webp"
         }
       ],
@@ -267,15 +267,9 @@ img{display:block;object-fit:cover}
 .memory-list{list-style:none;margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px}
 .memory-list li{position:relative;padding-left:20px;font:600 14px/1.55 var(--font-sans);color:rgba(28,23,16,.84)}
 .memory-list li::before{content:'';position:absolute;left:0;top:.75em;width:7px;height:7px;background:var(--beeswax);transform:rotate(45deg)}
-.video-frame{width:fit-content;max-width:100%;height:auto;border:0;background:transparent;position:relative;overflow:visible;justify-self:end;display:block;line-height:0}
+.video-frame{width:min(100%,360px);aspect-ratio:9/16;border:1px solid rgba(74,43,90,.28);background:transparent;position:relative;overflow:hidden;justify-self:end;display:block;line-height:0}
 .memory-block.flip .video-frame{justify-self:start}
-.video-frame video,.video-frame iframe{display:block;width:auto;height:min(76vh,680px);max-height:680px;object-fit:contain;border:1px solid rgba(74,43,90,.28);background:transparent}
-.sound-toggle{position:absolute;left:14px;bottom:14px;z-index:4;width:44px;height:44px;border:1px solid rgba(232,212,154,.76);background:rgba(27,25,24,.82);color:var(--pale-gold);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);transition:background .2s,color .2s,border-color .2s,transform .2s}
-.sound-toggle:hover,.sound-toggle.sound-on{background:var(--beeswax);color:var(--pitch);border-color:var(--beeswax);transform:translateY(-1px)}
-.sound-toggle svg{width:23px;height:23px;display:block}
-.sound-toggle .icon-sound{display:none}
-.sound-toggle.sound-on .icon-muted{display:none}
-.sound-toggle.sound-on .icon-sound{display:block}
+.video-frame iframe{display:block;width:100%;height:100%;border:0;background:transparent}
 .video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:28px;color:rgba(28,23,16,.52);background:linear-gradient(160deg,rgba(212,186,235,.22),rgba(232,212,154,.18))}
 .video-placeholder strong{font:600 11px/1.4 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--spring-purple)}
 .video-placeholder span{font:400 13px/1.65 var(--font-sans);max-width:210px}
@@ -354,8 +348,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .memory-block,.memory-block.flip{display:flex;flex-direction:column;gap:30px;min-height:0}
   .memory-block.flip .video-frame{order:2}
   .memory-block.flip .memory-text{order:1}
-  .video-frame,.memory-block.flip .video-frame{justify-self:center;width:fit-content;max-width:100%;height:auto;border:0;background:transparent;overflow:visible}
-  .video-frame video,.video-frame iframe{width:min(100%,380px);height:auto;max-height:none}
+  .video-frame,.memory-block.flip .video-frame{justify-self:center;width:min(100%,360px)}
   .memory-list{grid-template-columns:1fr}
   .playlist-inline{align-items:flex-start}
   .event-grid{grid-template-columns:1fr}
@@ -471,13 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div class="video-frame reveal d2">
-        <video autoplay muted loop preload="auto" playsinline poster="/spring-gala/images/group%20dance.webp">
-          <source src="/spring-gala/videos/rehearsals-spring%20ball.mp4" type="video/mp4"/>
-        </video>
-        <button class="sound-toggle" type="button" aria-label="Turn sound on">
-          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
-          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
-        </button>
+        <iframe src="https://www.youtube-nocookie.com/embed/Ek10nkKAMqw" title="Spring Gala rehearsals video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -487,13 +474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="memory-block flip">
       <div class="video-frame reveal">
-        <video autoplay muted loop preload="auto" playsinline poster="/spring-gala/images/couples%20dancing%20at%20the%20ball.webp">
-          <source src="/spring-gala/videos/spring%20ball%20memories.mp4" type="video/mp4"/>
-        </video>
-        <button class="sound-toggle" type="button" aria-label="Turn sound on">
-          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
-          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
-        </button>
+        <iframe src="https://www.youtube-nocookie.com/embed/rTBilYAJGnE" title="Spring Gala ball video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="memory-text reveal d2">
         <span class="eyebrow">The Ball</span>
@@ -596,28 +577,6 @@ if(rail&&prev&&next){
   prev.addEventListener('click',()=>rail.scrollBy({left:-move(),behavior:'smooth'}));
   next.addEventListener('click',()=>rail.scrollBy({left:move(),behavior:'smooth'}));
 }
-document.querySelectorAll('.video-frame').forEach(frame=>{
-  const video=frame.querySelector('video');
-  const button=frame.querySelector('.sound-toggle');
-  if(!video)return;
-  video.muted=true;
-  video.play().catch(()=>{});
-  if(button){
-    button.addEventListener('click',()=>{
-      const turnOn=video.muted;
-      document.querySelectorAll('.video-frame video').forEach(other=>{
-        if(other!==video){other.muted=true;}
-      });
-      document.querySelectorAll('.sound-toggle').forEach(otherButton=>{
-        if(otherButton!==button){otherButton.classList.remove('sound-on');otherButton.setAttribute('aria-label','Turn sound on');}
-      });
-      video.muted=!turnOn;
-      video.play().catch(()=>{});
-      button.classList.toggle('sound-on',turnOn);
-      button.setAttribute('aria-label',turnOn?'Turn sound off':'Turn sound on');
-    });
-  }
-});
 
 </script>
 </body>
