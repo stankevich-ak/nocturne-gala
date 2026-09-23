@@ -223,19 +223,12 @@ img{display:block;object-fit:cover}
 .exp-bullets{list-style:none;padding:0;margin-top:18px}
 .exp-bullets li{font:400 16px/1.65 var(--font-sans);color:var(--parchment);opacity:.88;padding:9px 0;display:flex;gap:12px;align-items:flex-start}
 .exp-bullets li::before{content:"\25C6";color:var(--beeswax);font-size:8px;flex-shrink:0;margin-top:7px}
-/* Video — full-frame, matched sizing via JS */
+/* Portrait YouTube Shorts */
 .vid-col{position:relative;overflow:hidden;background:var(--navy-dark);border:1px solid var(--hair);flex-shrink:0;width:100%;aspect-ratio:9/16}
-.vid-col video{width:100%;height:100%;object-fit:contain;display:block;background:var(--navy-dark)}
+.vid-col iframe{display:block;width:100%;height:100%;border:0}
 .vid-col.video-frame{line-height:0}
-.sound-toggle{position:absolute;left:14px;bottom:14px;z-index:4;width:44px;height:44px;border:1px solid rgba(232,212,154,.76);background:rgba(27,25,24,.82);color:var(--pale-gold);padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);transition:background .2s,color .2s,border-color .2s,transform .2s}
-.sound-toggle:hover,.sound-toggle.sound-on{background:var(--beeswax);color:var(--pitch);border-color:var(--beeswax);transform:translateY(-1px)}
-.sound-toggle svg{width:23px;height:23px;display:block}
-.sound-toggle .icon-sound{display:none}
-.sound-toggle.sound-on .icon-muted{display:none}
-.sound-toggle.sound-on .icon-sound{display:block}
 /* Match rehearsal video sizing to the main experience video */
 #rehVid{justify-self:stretch;width:100%;max-width:none;aspect-ratio:9/16;min-height:0}
-#rehVid video{height:100%;min-height:0;object-fit:contain;background:var(--navy-dark)}
 
 /* ── REHEARSALS ── */
 #rehearsals{padding:80px 0;background:linear-gradient(135deg,var(--navy-mid),var(--navy-rich) 60%,var(--navy-dark));position:relative;overflow:hidden}
@@ -410,9 +403,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .two-col.vid-left .section-text{order:1}
   .two-col.vid-left .vid-col{order:2}
   .vid-col{width:100%;max-width:420px;margin:0 auto;height:auto!important;max-height:none!important;min-height:0;aspect-ratio:9/16}
-  .vid-col video{height:100%!important;min-height:0;object-fit:contain}
   #rehVid{max-width:420px;min-height:0}
-  #rehVid video{min-height:0;object-fit:contain}
   .id-card,.id-card.flip{display:flex;flex-direction:column;direction:ltr;min-height:0}
   .id-card.flip>*{direction:ltr}
   .id-photo{min-height:260px;width:100%}
@@ -506,11 +497,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Nocturne Gala makes that feeling possible for real guests. Before the ball, we teach beginner-friendly adaptations of historic dances through guided rehearsals and workshops, so you arrive knowing what to do, who you&rsquo;re dancing with, and how to take part.</p>
       </div>
       <div class="vid-col video-frame reveal d2" id="expVid">
-        <video id="expVideo" src="" autoplay muted loop playsinline preload="auto"></video>
-        <button class="sound-toggle" type="button" aria-label="Turn sound on">
-          <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
-          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
-        </button>
+        <iframe src="https://www.youtube-nocookie.com/embed/sdBhvGbSJNI" title="Celestial Winter Masquerade video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -541,11 +528,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="two-col vid-left">
       <div class="journey-media">
         <div class="vid-col video-frame reveal" id="rehVid">
-          <video id="rehVideo" src="" autoplay muted loop playsinline preload="auto"></video>
-          <button class="sound-toggle" type="button" aria-label="Turn sound on">
-            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M20 9l-6 6"/><path d="M14 9l6 6"/></svg>
-            <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5v3h3.4L15 18.5v-13l-7.6 5H4z"/><path d="M18 9.5c1.1 1.4 1.1 3.6 0 5"/><path d="M20.5 7c2 2.8 2 7.2 0 10"/></svg>
-          </button>
+          <iframe src="https://www.youtube-nocookie.com/embed/sdBhvGbSJNI" title="Celestial Winter Masquerade video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
       <div class="section-text reveal d2">
@@ -796,9 +779,6 @@ function loadResources() {
     slide_7:          BASE + "images/Queen%20of%20the%20Ball.webp",
     cta_pattern:      BASE + "images/celestial-2.webp",
     final_cta_image:  BASE + "images/Masquerade%20Ball.webp",
-    experience_video: BASE + "videos/winter-ball-trailer-website.mp4",
-    rehearsal_video:  BASE + "videos/reheasals%20video.mp4",
-    rehearsal_video_fallback: BASE + "videos/rehearsals-video.mp4"
   });
 }
 
@@ -818,30 +798,6 @@ function applyResources(R) {
   // Final CTA
   const finalBg = document.getElementById('finalBg');
   if (finalBg && R.final_cta_image) finalBg.style.backgroundImage = `url('${R.final_cta_image}')`;
-  // Videos
-  function attachVideo(video, urls) {
-    if (!video) return;
-    const candidates = urls.filter(Boolean);
-    let i = 0;
-    const tryNext = () => {
-      if (i >= candidates.length) return;
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-      video.preload = 'auto';
-      video.src = candidates[i++];
-      video.load();
-      const attempt = video.play();
-      if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
-    };
-    video.addEventListener('error', tryNext, { once: false });
-    tryNext();
-  }
-
-  const expV = document.getElementById('expVideo');
-  attachVideo(expV, [R.experience_video]);
-  const rehV = document.getElementById('rehVideo');
-  attachVideo(rehV, [R.rehearsal_video, R.rehearsal_video_fallback]);
   // Why Different — 3 alternating cards
   const photoMap = { idPhoto1: R.slide_1, idPhoto2: R.slide_3, idPhoto3: R.slide_5 };
   Object.entries(photoMap).forEach(([id, url]) => {
@@ -916,35 +872,6 @@ for(let i=0;i<55;i++){
 // ── WHY DIFFERENT — photos assigned in applyResources ──
 
 
-function initVideoPlayers(){
-  document.querySelectorAll('.video-frame').forEach(frame=>{
-    const video=frame.querySelector('video');
-    const button=frame.querySelector('.sound-toggle');
-    if(!video)return;
-    video.muted=true;
-    video.defaultMuted=true;
-    video.playsInline=true;
-    video.play().catch(()=>{});
-    if(button && !button.dataset.bound){
-      button.dataset.bound='true';
-      button.addEventListener('click',()=>{
-        const turnOn=video.muted;
-        document.querySelectorAll('.video-frame video').forEach(other=>{
-          if(other!==video){other.muted=true;}
-        });
-        document.querySelectorAll('.sound-toggle').forEach(otherButton=>{
-          if(otherButton!==button){otherButton.classList.remove('sound-on');otherButton.setAttribute('aria-label','Turn sound on');}
-        });
-        video.muted=!turnOn;
-        video.defaultMuted=!turnOn;
-        video.play().catch(()=>{});
-        button.classList.toggle('sound-on',turnOn);
-        button.setAttribute('aria-label',turnOn?'Turn sound off':'Turn sound on');
-      });
-    }
-  });
-}
-
 function initTicketCards(){
   document.querySelectorAll('.tix-row[data-ticket-url]').forEach(row=>{
     if(row.dataset.ticketBound==='true')return;
@@ -980,10 +907,9 @@ var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=t
 // ── INIT ───────────────────────────────────────────────────────
 loadResources().then(R => {
   applyResources(R);
-  initVideoPlayers();
   initTicketCards();
   // match heights after images/videos load
-  window.addEventListener('load', () => { matchVideoHeights(); initVideoPlayers(); });
+  window.addEventListener('load', matchVideoHeights);
   window.addEventListener('resize', matchVideoHeights);
   setTimeout(matchVideoHeights, 800);
 });
