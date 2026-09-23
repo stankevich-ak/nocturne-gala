@@ -29,6 +29,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '914146107853520');
 fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'Blood Moon Ball', content_category: 'Event'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
@@ -681,7 +682,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="tix-layout">
       <div class="reveal d1">
         <div class="tix-rows">
-          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" role="link" tabindex="0" aria-label="Get Couples Ticket">
+          <div class="tix-row" data-ticket-type="Couples" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" role="link" tabindex="0" aria-label="Get Couples Ticket">
             <div class="tix-accent acc-c"></div>
             <div class="tix-inner">
               <div class="tix-left">
@@ -692,7 +693,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two</div></div>
             </div>
           </div>
-          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Follower Ticket">
+          <div class="tix-row" data-ticket-type="Follower" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Follower Ticket">
             <div class="tix-accent acc-f"></div>
             <div class="tix-inner">
               <div class="tix-left">
@@ -703,7 +704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
             </div>
           </div>
-          <div class="tix-row" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Leader Ticket">
+          <div class="tix-row" data-ticket-type="Leader" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Leader Ticket">
             <div class="tix-accent acc-l"></div>
             <div class="tix-inner">
               <div class="tix-left">
@@ -955,17 +956,25 @@ function initTicketCards(){
   document.querySelectorAll('.tix-row[data-ticket-url]').forEach(row=>{
     if(row.dataset.ticketBound==='true')return;
     row.dataset.ticketBound='true';
+    const trackTicketClick=()=>{
+      if(typeof fbq==='function'){
+        fbq('trackCustom','BloodMoonTicketClick',{ticket_type:row.dataset.ticketType});
+      }
+    };
     const openTicket=()=>{
       const url=row.dataset.ticketUrl;
       if(url)window.open(url,'_blank','noopener');
     };
     row.addEventListener('click',event=>{
+      trackTicketClick();
       if(event.target.closest('a'))return;
       openTicket();
     });
     row.addEventListener('keydown',event=>{
+      if(event.target.closest('a'))return;
       if(event.key==='Enter'||event.key===' '){
         event.preventDefault();
+        trackTicketClick();
         openTicket();
       }
     });
