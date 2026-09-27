@@ -27,7 +27,7 @@ window.nocturneEvents = [
     "name": "End-of-Summer Historic Dance Picnic",
     "date": "2026-09-11",
     "location": "Port Moody, BC",
-    "image": "/end-of-summer-picnic/images/dance%20picnic.png",
+    "image": "/end-of-summer-picnic/images/dance%20picnic.webp",
     "description": "A free community potluck picnic with beginner-friendly historic dancing, games, shared food, and good company.",
     "past": true
   },
@@ -36,7 +36,7 @@ window.nocturneEvents = [
     "name": "Spring Gala Ball",
     "date": "2026-05-08",
     "location": "Burnaby, BC",
-    "image": "/events/images/spring%20-%20card.png",
+    "image": "/events/images/spring%20-%20card.webp",
     "description": "A spring evening of historic social dancing, live music, food, and floral atmosphere.",
     "past": true
   }
