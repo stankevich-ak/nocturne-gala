@@ -114,7 +114,7 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pirata+One&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
 <link rel="icon" href="/logo.svg" type="image/svg+xml"/>
 <style>
 
@@ -188,6 +188,9 @@ img{display:block;object-fit:cover}
 .hero-bullets{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
 .hero-bullets span{margin:0 11px;opacity:.45}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .65s var(--ease) forwards}
+.hero-costume{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
+.hero-more{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding-bottom:5px;border-bottom:1px solid rgba(167,131,60,.42);font:600 12px/1.5 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight)}
+#tickets,#couples-ticket,#solo-tickets,#ticket-includes{scroll-margin-top:80px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* ── STORY ── */
@@ -392,6 +395,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .hero-bullets span{margin:0 9px}
   .hero-ctas{gap:12px}
   .hero-ctas .btn{width:100%;text-align:center}
+  .hero-costume{font-size:14px;line-height:1.65}
+  .hero-more{margin-top:18px}
   .two-col,.tix-layout,.story-grid{grid-template-columns:1fr;gap:30px}
   #tickets{padding:64px 0}
   #tickets .wrap{max-width:980px}
@@ -504,6 +509,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 /* Blood Moon code tweaks - July 1 */
 .hero-title{color:#8F111D!important;text-shadow:0 10px 38px rgba(0,0,0,.78),0 0 28px rgba(143,17,29,.26)}
 .hero-title em{color:var(--ivory)!important;text-shadow:0 10px 38px rgba(0,0,0,.82)}
+.hero-title,.hero-title em{font-family:'Pirata One',serif;font-style:normal}
 .hero-eyebrow{color:rgba(244,235,221,.86)!important}
 .hero-location{color:rgba(244,235,221,.9)!important}
 .hero-bullets{color:rgba(230,216,198,.86)!important}
@@ -591,37 +597,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-eyebrow">Nocturne Gala Presents</p>
     <h1 class="hero-title">Blood Moon<br><em>Ball</em></h1>
     <div class="hero-details">
-      <p class="hero-location">Victoria &middot; October 30th &middot; Esquimalt Gorge Pavilion</p>
-      <p class="hero-bullets">Beginner-friendly <span>&middot;</span> Pre-Ball Dance Workshop (October 24th) &ndash; Included <span>&middot;</span> Costumes required</p>
+      <p class="hero-location">October 30th &middot; Esquimalt Gorge Pavilion</p>
+      <p class="hero-bullets">Pre-Ball Workshop &middot; October 24th</p>
+      <p class="hero-costume">Costume: Gothic or vampire-inspired</p>
     </div>
     <div class="hero-ctas">
-      <a href="#tickets" class="btn btn-gold">Get Your Ticket</a>
-      <a href="#rehearsals" class="btn btn-outline">What&rsquo;s Included</a>
+      <a href="#solo-tickets" class="btn btn-gold">Get Solo Ticket</a>
+      <a href="#couples-ticket" class="btn btn-outline">Get Couples Ticket</a>
     </div>
+    <a href="#ticket-includes" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 <div class="blood-divider"></div>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="experience-lace" id="experienceLace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
+<!-- TICKETS -->
+<section id="tickets">
+  <div class="tix-bg" id="tixBg" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')"></div>
   <div class="wrap">
-    <div class="two-col vid-right">
-      <div class="section-text reveal">
-        <span class="eyebrow">The Experience</span>
-        <h2>A vampire ball you actually take part in.</h2>
-        <p>Blood Moon Ball is built around participation, not standing at the edge of the room. Before the Ball, you learn the dances in a guided workshop, meet other guests, and arrive ready to step in.</p>
-        <p>Then the room turns darker: candlelight, roses, velvet, lace, music, and a floor full of people who no longer feel like strangers.</p>
-        <ul class="exp-bullets">
-          <li>No dance experience needed</li>
-          <li>Learn historic dances before the Ball, workshop included in your ticket</li>
-          <li>Costumes required for a full gothic court atmosphere</li>
-          <li>Structured social dancing</li>
+    <h2 class="stitle reveal">Tickets</h2>
+    <div class="tix-layout">
+      <div class="reveal d1">
+        <div class="tix-rows">
+          <div class="tix-row" id="couples-ticket" data-ticket-type="Couples" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" role="link" tabindex="0" aria-label="Get Couples Ticket">
+            <div class="tix-accent acc-c"></div>
+            <div class="tix-inner">
+              <div class="tix-left">
+                <div class="tix-role">Couples</div>
+                <div class="tix-desc">Workshop and Ball access for two guests in a dancing pair. Roles open to all genders.</div>
+                <a class="tix-btn btn-gold-sm" href="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">Get Couples Ticket</a>
+              </div>
+              <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two</div></div>
+            </div>
+          </div>
+          <div class="tix-row" id="solo-tickets" data-ticket-type="Follower" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Follower Ticket">
+            <div class="tix-accent acc-f"></div>
+            <div class="tix-inner">
+              <div class="tix-left">
+                <div class="tix-role">Follower<sup>*</sup></div>
+                <div class="tix-desc">Traditionally the &ldquo;lady&rsquo;s part&rdquo; &mdash; the dancer responding to cues given by the Leader.</div>
+                <a class="tix-btn btn-velvet" href="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Follower Ticket</a>
+              </div>
+              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
+            </div>
+          </div>
+          <div class="tix-row" data-ticket-type="Leader" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Leader Ticket">
+            <div class="tix-accent acc-l"></div>
+            <div class="tix-inner">
+              <div class="tix-left">
+                <div class="tix-role">Leader<sup>*</sup></div>
+                <div class="tix-desc">Traditionally the &ldquo;gentleman&rsquo;s part&rdquo; &mdash; the dancer responsible for guiding the couple&rsquo;s movement.</div>
+                <a class="tix-btn btn-teal" href="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Leader Ticket</a>
+              </div>
+              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
+            </div>
+          </div>
+          <p class="tix-footer">All sales final &middot; Transfers allowed before the workshop begins</p>
+        </div>
+      </div>
+      <div class="reveal d2 inc-panel" id="ticket-includes">
+        <p class="inc-header">Your Ticket Includes</p>
+        <ul class="inc-list">
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 11.5V8h22v3.5a3.5 3.5 0 0 0 0 7V22H5v-3.5a3.5 3.5 0 0 0 0-7Z"/><path d="M13 9v2M13 15v2M13 21v2"/><path d="M18.5 13h5M18.5 17h4"/></svg></span>Ball entry</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="11" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><path d="M11 10v7l-4 7"/><path d="M11 17l4 7"/><path d="M8 13h6l4-3"/><path d="M21 10v7l-3 7"/><path d="M21 17l5 7"/><path d="M18 13h6"/></svg></span>4-hour comprehensive dance workshop</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h9a4 4 0 0 1 4 4v15a4 4 0 0 0-4-4H5Z"/><path d="M27 7h-9a4 4 0 0 0-4 4v15a4 4 0 0 1 4-4h9Z"/><path d="M16 11v15"/></svg></span>Beginner-friendly instruction</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h9a4 4 0 0 1 4 4v15a4 4 0 0 0-4-4H5Z"/><path d="M27 7h-9a4 4 0 0 0-4 4v15a4 4 0 0 1 4-4h9Z"/><path d="M16 11v15"/></svg></span>Structured dance program</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 23a4 4 0 1 1-2-3.45V7l14-3v16"/><path d="M24 20a4 4 0 1 1-2-3.45"/><path d="M12 11l12-2.5"/></svg></span>Gothic Halloween music</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="10" cy="9" r="3"/><circle cx="22" cy="9" r="3"/><path d="M4 25c.7-4 3-7 6-7s5.3 3 6 7"/><path d="M16 25c.7-4 3-7 6-7s5.3 3 6 7"/></svg></span>Time to meet and dance with other guests</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 5h12v6a6 6 0 0 1-12 0Z"/><path d="M16 17v8"/><path d="M11 25h10"/><path d="M10 10h12"/></svg></span>Light refreshments</li>
+          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 26h22"/><path d="M7 26V13l9-6 9 6v13"/><path d="M12 26v-8h8v8"/><path d="M11 14h.01M16 14h.01M21 14h.01"/><path d="M16 7V4"/></svg></span>Immersive setting and decorations</li>
         </ul>
       </div>
-      <div class="vid-col video-frame reveal d2" id="expVid">
-        <iframe src="https://www.youtube-nocookie.com/embed/dcmO3R1kQCY" title="Blood Moon Ball video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
+      <p class="tix-clarification">* Leader and Follower tickets are released in batches to help maintain an optimal balance of leaders and followers at the Ball. If your desired ticket type is not available, please <a href="#" data-tally-open="Y5qlz6" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">join the waitlist</a> and we&rsquo;ll notify you when the next batch opens.</p>
     </div>
   </div>
 </section>
@@ -661,64 +707,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- TICKETS -->
-<section id="tickets">
-  <div class="tix-bg" id="tixBg" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')"></div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="experience-lace" id="experienceLace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
   <div class="wrap">
-    <h2 class="stitle reveal">Tickets</h2>
-    <div class="tix-layout">
-      <div class="reveal d1">
-        <div class="tix-rows">
-          <div class="tix-row" data-ticket-type="Couples" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" role="link" tabindex="0" aria-label="Get Couples Ticket">
-            <div class="tix-accent acc-c"></div>
-            <div class="tix-inner">
-              <div class="tix-left">
-                <div class="tix-role">Couples</div>
-                <div class="tix-desc">Workshop and Ball access for two guests in a dancing pair. Roles open to all genders.</div>
-                <a class="tix-btn btn-gold-sm" href="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">Get Couples Ticket</a>
-              </div>
-              <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two</div></div>
-            </div>
-          </div>
-          <div class="tix-row" data-ticket-type="Follower" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Follower Ticket">
-            <div class="tix-accent acc-f"></div>
-            <div class="tix-inner">
-              <div class="tix-left">
-                <div class="tix-role">Follower<sup>*</sup></div>
-                <div class="tix-desc">Traditionally the &ldquo;lady&rsquo;s part&rdquo; &mdash; the dancer responding to cues given by the Leader.</div>
-                <a class="tix-btn btn-velvet" href="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Follower Ticket</a>
-              </div>
-              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
-            </div>
-          </div>
-          <div class="tix-row" data-ticket-type="Leader" data-ticket-url="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" role="link" tabindex="0" aria-label="Get Leader Ticket">
-            <div class="tix-accent acc-l"></div>
-            <div class="tix-inner">
-              <div class="tix-left">
-                <div class="tix-role">Leader<sup>*</sup></div>
-                <div class="tix-desc">Traditionally the &ldquo;gentleman&rsquo;s part&rdquo; &mdash; the dancer responsible for guiding the couple&rsquo;s movement.</div>
-                <a class="tix-btn btn-teal" href="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Leader Ticket</a>
-              </div>
-              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
-            </div>
-          </div>
-          <p class="tix-footer">All sales final &middot; Transfers allowed before the workshop begins</p>
-        </div>
-      </div>
-      <div class="reveal d2 inc-panel">
-        <p class="inc-header">Your Ticket Includes</p>
-        <ul class="inc-list">
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 11.5V8h22v3.5a3.5 3.5 0 0 0 0 7V22H5v-3.5a3.5 3.5 0 0 0 0-7Z"/><path d="M13 9v2M13 15v2M13 21v2"/><path d="M18.5 13h5M18.5 17h4"/></svg></span>Ball entry</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="11" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><path d="M11 10v7l-4 7"/><path d="M11 17l4 7"/><path d="M8 13h6l4-3"/><path d="M21 10v7l-3 7"/><path d="M21 17l5 7"/><path d="M18 13h6"/></svg></span>4-hour comprehensive dance workshop</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h9a4 4 0 0 1 4 4v15a4 4 0 0 0-4-4H5Z"/><path d="M27 7h-9a4 4 0 0 0-4 4v15a4 4 0 0 1 4-4h9Z"/><path d="M16 11v15"/></svg></span>Beginner-friendly instruction</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h9a4 4 0 0 1 4 4v15a4 4 0 0 0-4-4H5Z"/><path d="M27 7h-9a4 4 0 0 0-4 4v15a4 4 0 0 1 4-4h9Z"/><path d="M16 11v15"/></svg></span>Structured dance program</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 23a4 4 0 1 1-2-3.45V7l14-3v16"/><path d="M24 20a4 4 0 1 1-2-3.45"/><path d="M12 11l12-2.5"/></svg></span>Gothic Halloween music</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="10" cy="9" r="3"/><circle cx="22" cy="9" r="3"/><path d="M4 25c.7-4 3-7 6-7s5.3 3 6 7"/><path d="M16 25c.7-4 3-7 6-7s5.3 3 6 7"/></svg></span>Time to meet and dance with other guests</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 5h12v6a6 6 0 0 1-12 0Z"/><path d="M16 17v8"/><path d="M11 25h10"/><path d="M10 10h12"/></svg></span>Light refreshments</li>
-          <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 26h22"/><path d="M7 26V13l9-6 9 6v13"/><path d="M12 26v-8h8v8"/><path d="M11 14h.01M16 14h.01M21 14h.01"/><path d="M16 7V4"/></svg></span>Immersive setting and decorations</li>
+    <div class="two-col vid-right">
+      <div class="section-text reveal">
+        <span class="eyebrow">The Experience</span>
+        <h2>A vampire ball you actually take part in.</h2>
+        <p>Blood Moon Ball is built around participation, not standing at the edge of the room. Before the Ball, you learn the dances in a guided workshop, meet other guests, and arrive ready to step in.</p>
+        <p>Then the room turns darker: candlelight, roses, velvet, lace, music, and a floor full of people who no longer feel like strangers.</p>
+        <ul class="exp-bullets">
+          <li>No dance experience needed</li>
+          <li>Learn historic dances before the Ball, workshop included in your ticket</li>
+          <li>Costumes required for a full gothic court atmosphere</li>
+          <li>Structured social dancing</li>
         </ul>
       </div>
-      <p class="tix-clarification">* Leader and Follower tickets are released in batches to help maintain an optimal balance of leaders and followers at the Ball. If your desired ticket type is not available, please <a href="#" data-tally-open="Y5qlz6" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">join the waitlist</a> and we&rsquo;ll notify you when the next batch opens.</p>
+      <div class="vid-col video-frame reveal d2" id="expVid">
+        <iframe src="https://www.youtube-nocookie.com/embed/dcmO3R1kQCY" title="Blood Moon Ball video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
