@@ -278,13 +278,12 @@ img{display:block;object-fit:cover}
 .tix-footer{margin:18px 0 0;font:italic 13px/1.5 var(--font-sans);color:var(--candlelight);opacity:.82}
 .tix-clarification{grid-column:1/-1;max-width:760px;margin:0 auto;font:400 13px/1.7 var(--font-sans);color:var(--parchment);opacity:.72;text-align:center}
 .tix-clarification a{color:var(--candlelight);border-bottom:1px solid rgba(212,184,106,.35)}
-.tix-info{position:relative;display:inline-block;flex:none}
-.tix-info[open]{z-index:5}
-.tix-info summary{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;border:1px solid rgba(201,168,79,.62);border-radius:50%;font:600 13px/1 var(--font-serif);color:var(--pale-gold);cursor:pointer;list-style:none;user-select:none}
-.tix-info summary::-webkit-details-marker{display:none}
-.tix-info summary::after{content:none}
-.tix-info[open]>summary{color:var(--ivory);background:rgba(201,168,79,.16)}
-.tix-tooltip{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);width:min(280px,80vw);padding:14px 16px;background:#1b1017;border:1px solid rgba(201,168,79,.44);border-radius:6px;box-shadow:0 12px 28px rgba(0,0,0,.5);font:400 13px/1.55 var(--font-sans);color:var(--parchment)}
+.tix-info{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:none;width:24px;height:24px;border:1px solid rgba(201,168,79,.62);border-radius:50%;font:600 13px/1 var(--font-serif);color:var(--pale-gold);cursor:help;z-index:1}
+.tix-info:hover,.tix-info:focus-visible{color:var(--ivory);background:rgba(201,168,79,.16);z-index:5}
+.tix-info:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
+.tix-tooltip{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);width:min(280px,80vw);padding:14px 16px;background:#1b1017;border:1px solid rgba(201,168,79,.44);border-radius:6px;box-shadow:0 12px 28px rgba(0,0,0,.5);font:400 13px/1.55 var(--font-sans);color:var(--parchment);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .15s ease,visibility .15s ease}
+.tix-info:hover .tix-tooltip,.tix-info:focus-visible .tix-tooltip{visibility:visible;opacity:1;pointer-events:auto}
+.tix-tooltip::before{content:'';position:absolute;top:100%;left:0;right:0;height:12px}
 .tix-tooltip::after{content:'';position:absolute;top:100%;left:calc(50% - 6px);border:6px solid transparent;border-top-color:rgba(201,168,79,.44)}
 .inc-panel{padding-top:5px}
 .inc-header{font:400 15px/1.65 var(--font-sans);color:var(--parchment);margin:0 0 20px;max-width:410px}
@@ -439,6 +438,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 /* Blood Moon palette overrides */
 .btn-gold,.nav-cta,.sticky-btn{background:var(--blood);color:var(--parchment)!important}
 .btn-gold:hover,.nav-cta:hover,.sticky-btn:hover{background:var(--crimson)!important;color:var(--ivory)!important;box-shadow:0 10px 30px rgba(122,11,20,.34)}
+.hero-ctas .btn-hero-yellow{background:var(--beeswax);color:var(--pitch)}
+.hero-ctas .btn-hero-yellow:hover{background:var(--candlelight);color:var(--pitch);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,144,42,.28)}
 .btn-outline{border-color:rgba(212,184,106,.45);color:var(--candlelight)}
 .btn-outline:hover{background:rgba(122,11,20,.22);color:var(--pale-gold)}
 #nav.scrolled{background:rgba(8,5,7,.96)}
@@ -608,8 +609,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="hero-costume">Costume: Gothic or vampire-inspired</p>
     </div>
     <div class="hero-ctas">
-      <a href="#solo-tickets" class="btn btn-gold">Get Solo Ticket</a>
-      <a href="#couples-ticket" class="btn btn-outline">Get Couples Ticket</a>
+      <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket</a>
+      <a href="#solo-tickets" class="btn btn-hero-yellow">Get Solo Ticket</a>
     </div>
     <a href="#rehearsals" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
   </div>
@@ -626,7 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <article class="tix-card tix-couples" id="couples-ticket">
           <div class="tix-card-head">
             <h3 class="tix-card-title">Couples Ticket</h3>
-            <details class="tix-info"><summary aria-label="About the Couples Ticket">i</summary><div class="tix-tooltip">Access for two guests attending as a dance pair. Roles open to all genders.</div></details>
+            <span class="tix-info" tabindex="0" aria-label="Couples Ticket information" aria-describedby="couples-tooltip">i<span class="tix-tooltip" id="couples-tooltip" role="tooltip">Access for two guests attending as a dance pair. Roles open to all genders.</span></span>
           </div>
           <div class="tix-card-body">
             <div><div class="tix-price">$240</div><div class="tix-note">for two guests</div></div>
@@ -638,7 +639,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <article class="tix-card">
             <div class="tix-card-head">
               <h4 class="tix-card-title">Follower</h4>
-              <details class="tix-info"><summary aria-label="About the Follower role">i</summary><div class="tix-tooltip">The dancer who responds to cues from the Leader. Traditionally the ladies&rsquo; part, but open to all genders.</div></details>
+              <span class="tix-info" tabindex="0" aria-label="Follower role information" aria-describedby="follower-tooltip">i<span class="tix-tooltip" id="follower-tooltip" role="tooltip">The dancer who responds to cues from the Leader. Traditionally the ladies&rsquo; part, but open to all genders.</span></span>
             </div>
             <div class="tix-card-body">
               <div><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
@@ -648,7 +649,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <article class="tix-card">
             <div class="tix-card-head">
               <h4 class="tix-card-title">Leader</h4>
-              <details class="tix-info"><summary aria-label="About the Leader role">i</summary><div class="tix-tooltip">The dancer who guides the couple&rsquo;s movement. Traditionally the gentlemen&rsquo;s part, but open to all genders.</div></details>
+              <span class="tix-info" tabindex="0" aria-label="Leader role information" aria-describedby="leader-tooltip">i<span class="tix-tooltip" id="leader-tooltip" role="tooltip">The dancer who guides the couple&rsquo;s movement. Traditionally the gentlemen&rsquo;s part, but open to all genders.</span></span>
             </div>
             <div class="tix-card-body">
               <div><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
