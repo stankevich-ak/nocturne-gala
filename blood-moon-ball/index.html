@@ -892,10 +892,38 @@ for (let i = 0; i < 36; i++) {
 }
 
 
+function trackTikTokEvent(eventName, details){
+  // The TikTok base pixel is installed by GTM and may finish loading after this page.
+  let attempts = 0;
+  const send = () => {
+    if(window.ttq && typeof window.ttq.track === 'function'){
+      window.ttq.track(eventName, details);
+      return true;
+    }
+    return false;
+  };
+  if(send())return;
+  const timer = window.setInterval(()=>{
+    if(send() || ++attempts >= 120)window.clearInterval(timer);
+  },250);
+}
+
 function initTicketCards(){
+  trackTikTokEvent('ViewContent',{
+    content_name:'Blood Moon Ball',
+    content_type:'product'
+  });
   document.querySelectorAll('.tix-btn[data-ticket-type]').forEach(link=>{
     link.addEventListener('click',()=>{
-      if(typeof fbq==='function')fbq('trackCustom','BloodMoonTicketClick',{ticket_type:link.dataset.ticketType});
+      const ticketType = link.dataset.ticketType;
+      if(typeof fbq==='function')fbq('trackCustom','BloodMoonTicketClick',{ticket_type:ticketType});
+      trackTikTokEvent('InitiateCheckout',{
+        content_id:new URL(link.href).searchParams.get('productId'),
+        content_name:`Blood Moon Ball — ${ticketType} Ticket`,
+        content_type:'product',
+        currency:'CAD',
+        value:ticketType === 'Couples' ? 240 : 130
+      });
     });
   });
 }
