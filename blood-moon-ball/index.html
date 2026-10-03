@@ -438,8 +438,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 /* Blood Moon palette overrides */
 .btn-gold,.nav-cta,.sticky-btn{background:var(--blood);color:var(--parchment)!important}
 .btn-gold:hover,.nav-cta:hover,.sticky-btn:hover{background:var(--crimson)!important;color:var(--ivory)!important;box-shadow:0 10px 30px rgba(122,11,20,.34)}
-.hero-ctas .btn-hero-yellow{background:var(--beeswax);color:var(--pitch)}
-.hero-ctas .btn-hero-yellow:hover{background:var(--candlelight);color:var(--pitch);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,144,42,.28)}
+.hero-ctas .btn-gold,.hero-ctas .btn-gold:hover{color:#fff!important}
+.hero-ctas .btn-hero-outline{background:transparent;border:1px solid var(--candlelight);color:var(--candlelight)}
+.hero-ctas .btn-hero-outline:hover{background:rgba(167,131,60,.12);border-color:var(--pale-gold);color:var(--pale-gold);transform:translateY(-2px)}
 .btn-outline{border-color:rgba(212,184,106,.45);color:var(--candlelight)}
 .btn-outline:hover{background:rgba(122,11,20,.22);color:var(--pale-gold)}
 #nav.scrolled{background:rgba(8,5,7,.96)}
@@ -610,12 +611,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="hero-ctas">
       <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket</a>
-      <a href="#solo-tickets" class="btn btn-hero-yellow">Get Solo Ticket</a>
+      <a href="#solo-tickets" class="btn btn-hero-outline">Get Solo Ticket</a>
     </div>
     <a href="#rehearsals" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 <div class="blood-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="experience-lace" id="experienceLace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
+  <div class="wrap">
+    <div class="two-col vid-right">
+      <div class="section-text reveal">
+        <span class="eyebrow">The Experience</span>
+        <h2>A vampire ball you actually take part in.</h2>
+        <p>Blood Moon Ball is built around participation, not standing at the edge of the room. Before the Ball, you learn the dances in a guided workshop, meet other guests, and arrive ready to step in.</p>
+        <p>Then the room turns darker: candlelight, roses, velvet, lace, music, and a floor full of people who no longer feel like strangers.</p>
+        <ul class="exp-bullets">
+          <li>No dance experience needed</li>
+          <li>Learn historic dances before the Ball, workshop included in your ticket</li>
+          <li>Costumes required for a full gothic court atmosphere</li>
+          <li>Structured social dancing</li>
+        </ul>
+      </div>
+      <div class="vid-col video-frame reveal d2" id="expVid">
+        <iframe src="https://www.youtube-nocookie.com/embed/dcmO3R1kQCY" title="Blood Moon Ball video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR JOURNEY -->
+<section id="rehearsals">
+  <div class="wrap">
+    <div class="journey-header reveal">
+      <span class="eyebrow" style="display:block;text-align:center">Your Journey</span>
+      <h2 class="stitle" style="text-align:center">Two evenings.<br><em>One invitation.</em></h2>
+    </div>
+
+    <div class="id-cards">
+      <div class="id-card reveal">
+        <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
+          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:30 PM</small></div>
+        </div>
+        <div class="id-body">
+          <h3 class="journey-card-title">Learn the Dances</h3>
+          <p class="journey-card-text">The workshop is where the evening begins. You learn the steps, rhythm, floor patterns, and social etiquette before the Ball, so the evening feels intentional instead of awkward.</p>
+          <p class="journey-card-text">Expect beginner-friendly social dances. No partner or previous experience needed.</p>
+          <p class="journey-card-text">Rehearsal location: Quadra Village Community Centre.</p>
+        </div>
+      </div>
+
+      <div class="id-card flip reveal d1">
+        <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')">
+          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 30</strong><small>7:00 PM to 11:30 PM</small></div>
+        </div>
+        <div class="id-body">
+          <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
+          <p class="journey-card-text">Return on Ball night in costume and enter the vampire court: candlelight, no masks, red velvet, music, and rooms that start to move together.</p>
+          <p class="journey-card-text">Wake from your eternal sleep and join the court: beautiful strangers, borrowed youth, red velvet shadows, and dancing beneath the Blood Moon until dawn.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- TICKETS -->
 <section id="tickets">
@@ -673,65 +733,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <p class="tix-clarification">Leader and Follower tickets are released in batches to help maintain an optimal balance of leaders and followers at the Ball. If your desired ticket type is not available, please <a href="#" data-tally-open="Y5qlz6" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">join the waitlist</a> and we&rsquo;ll notify you when the next batch opens.</p>
-    </div>
-  </div>
-</section>
-
-<!-- YOUR JOURNEY -->
-<section id="rehearsals">
-  <div class="wrap">
-    <div class="journey-header reveal">
-      <span class="eyebrow" style="display:block;text-align:center">Your Journey</span>
-      <h2 class="stitle" style="text-align:center">Two evenings.<br><em>One invitation.</em></h2>
-    </div>
-
-    <div class="id-cards">
-      <div class="id-card reveal">
-        <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
-          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:30 PM</small></div>
-        </div>
-        <div class="id-body">
-          <h3 class="journey-card-title">Learn the Dances</h3>
-          <p class="journey-card-text">The workshop is where the evening begins. You learn the steps, rhythm, floor patterns, and social etiquette before the Ball, so the evening feels intentional instead of awkward.</p>
-          <p class="journey-card-text">Expect beginner-friendly social dances. No partner or previous experience needed.</p>
-          <p class="journey-card-text">Rehearsal location: Quadra Village Community Centre.</p>
-        </div>
-      </div>
-
-      <div class="id-card flip reveal d1">
-        <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')">
-          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 30</strong><small>7:00 PM to 11:30 PM</small></div>
-        </div>
-        <div class="id-body">
-          <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
-          <p class="journey-card-text">Return on Ball night in costume and enter the vampire court: candlelight, no masks, red velvet, music, and rooms that start to move together.</p>
-          <p class="journey-card-text">Wake from your eternal sleep and join the court: beautiful strangers, borrowed youth, red velvet shadows, and dancing beneath the Blood Moon until dawn.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="experience-lace" id="experienceLace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
-  <div class="wrap">
-    <div class="two-col vid-right">
-      <div class="section-text reveal">
-        <span class="eyebrow">The Experience</span>
-        <h2>A vampire ball you actually take part in.</h2>
-        <p>Blood Moon Ball is built around participation, not standing at the edge of the room. Before the Ball, you learn the dances in a guided workshop, meet other guests, and arrive ready to step in.</p>
-        <p>Then the room turns darker: candlelight, roses, velvet, lace, music, and a floor full of people who no longer feel like strangers.</p>
-        <ul class="exp-bullets">
-          <li>No dance experience needed</li>
-          <li>Learn historic dances before the Ball, workshop included in your ticket</li>
-          <li>Costumes required for a full gothic court atmosphere</li>
-          <li>Structured social dancing</li>
-        </ul>
-      </div>
-      <div class="vid-col video-frame reveal d2" id="expVid">
-        <iframe src="https://www.youtube-nocookie.com/embed/dcmO3R1kQCY" title="Blood Moon Ball video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
     </div>
   </div>
 </section>
