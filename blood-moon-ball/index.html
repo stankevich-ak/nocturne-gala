@@ -257,34 +257,26 @@ img{display:block;object-fit:cover}
 #tickets .wrap{position:relative;z-index:1;max-width:1160px}
 .tix-layout{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(300px,.82fr);gap:48px;align-items:start}
 .tix-options{min-width:0}
-.tix-card{position:relative;min-width:0;padding:25px 27px;background:rgba(10,5,8,.75);border:1px solid rgba(167,131,60,.32);border-radius:12px;transition:border-color .2s}
-.tix-card:hover{border-color:rgba(201,168,79,.55)}
-.tix-card-head{display:flex;align-items:center;gap:9px;margin-bottom:12px}
-.tix-card-title{font:400 clamp(1.4rem,2.5vw,2rem)/1.2 var(--font-serif);color:var(--ivory);margin:0}
-.tix-price{font:400 clamp(2rem,3vw,2.65rem)/1 var(--font-serif);color:var(--pale-gold)}
-.tix-note{font:400 13px/1.5 var(--font-sans);color:var(--candlelight);margin-top:5px}
-.tix-card-body{display:flex;align-items:end;justify-content:space-between;gap:20px}
-.tix-card .tix-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:13px 19px;border:1px solid rgba(201,168,79,.7);border-radius:4px;font:600 11px/1.2 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--pale-gold);text-align:center;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
-.tix-card .tix-btn:hover{background:rgba(201,168,79,.12);border-color:var(--candlelight);color:var(--ivory)}
-.tix-card .tix-btn:focus-visible,.tix-info summary:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
-.tix-couples .tix-btn{background:#8F111D;border-color:#8F111D;color:var(--ivory)}
-.tix-couples .tix-btn:hover{background:#A91B29;border-color:#A91B29}
-.tix-solo-label{font:600 11px/1.2 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--pale-gold);margin:27px 0 14px}
-.tix-solo-grid{display:grid;grid-template-columns:1fr;gap:13px}
-.tix-solo-grid .tix-card{padding:22px 20px}
-.tix-solo-grid .tix-card-title{font-size:clamp(1.35rem,2.1vw,1.7rem)}
-.tix-solo-grid .tix-card-body{display:block}
-.tix-solo-grid .tix-btn{width:100%;margin-top:21px}
-.tix-footer{margin:18px 0 0;font:italic 13px/1.5 var(--font-sans);color:var(--candlelight);opacity:.82}
-.tix-clarification{grid-column:1/-1;max-width:760px;margin:0 auto;font:400 13px/1.7 var(--font-sans);color:var(--parchment);opacity:.72;text-align:center}
-.tix-clarification a{color:var(--candlelight);border-bottom:1px solid rgba(212,184,106,.35)}
-.tix-info{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:none;width:24px;height:24px;border:1px solid rgba(201,168,79,.62);border-radius:50%;font:600 13px/1 var(--font-serif);color:var(--pale-gold);cursor:help;z-index:1}
-.tix-info:hover,.tix-info:focus-visible{color:var(--ivory);background:rgba(201,168,79,.16);z-index:5}
-.tix-info:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
-.tix-tooltip{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);width:min(280px,80vw);padding:14px 16px;background:#1b1017;border:1px solid rgba(201,168,79,.44);border-radius:6px;box-shadow:0 12px 28px rgba(0,0,0,.5);font:400 13px/1.55 var(--font-sans);color:var(--parchment);visibility:hidden;opacity:0;pointer-events:none;transition:opacity .15s ease,visibility .15s ease}
-.tix-info:hover .tix-tooltip,.tix-info:focus-visible .tix-tooltip{visibility:visible;opacity:1;pointer-events:auto}
-.tix-tooltip::before{content:'';position:absolute;top:100%;left:0;right:0;height:12px}
-.tix-tooltip::after{content:'';position:absolute;top:100%;left:calc(50% - 6px);border:6px solid transparent;border-top-color:rgba(201,168,79,.44)}
+.tix-rows{display:flex;flex-direction:column;max-width:640px}
+.tix-row{position:relative;min-width:0;padding:15px 18px 15px 24px;border:1px solid var(--hair);margin-bottom:-1px;background:rgba(10,5,8,.75);transition:border-color .2s,background .2s}
+.tix-row:hover{border-color:var(--hair-hi);background:rgba(20,7,12,.9);z-index:1}
+.tix-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
+.acc-c{background:linear-gradient(180deg,var(--blood),var(--candlelight))}
+.acc-f{background:linear-gradient(180deg,#6E3C7A,#A46BA8)}
+.acc-l{background:linear-gradient(180deg,#1E6068,#2E8890)}
+.tix-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.tix-left{flex:1;min-width:0}
+.tix-role{font:400 18px/1.2 var(--font-serif);color:var(--ivory);margin:0 0 6px}
+.tix-desc{font:400 14px/1.45 var(--font-sans);color:var(--parchment);opacity:.86;margin:0 0 12px;max-width:520px}
+.tix-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:9px 16px;font:600 10px/1.25 var(--font-sans);letter-spacing:.13em;text-transform:uppercase;text-align:center;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.tix-btn:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
+.btn-gold-sm{background:var(--blood);color:#fff}.btn-gold-sm:hover{background:var(--crimson);color:#fff}
+.btn-velvet{color:#C899CC;border:1px solid #8D5B91}.btn-velvet:hover{background:rgba(110,60,122,.22);color:var(--ivory)}
+.btn-teal{color:#63B7BE;border:1px solid #2E8890}.btn-teal:hover{background:rgba(46,136,144,.14);color:var(--ivory)}
+.tix-right{text-align:right;flex-shrink:0;min-width:82px;padding-top:1px}
+.tix-price{font:400 22px/1 var(--font-serif);color:var(--pale-gold)}
+.tix-note{font:400 11px/1.3 var(--font-sans);color:var(--candlelight);opacity:.75;margin-top:4px}
+.tix-footer{margin:12px 0 0;font:italic 13px/1.5 var(--font-sans);color:var(--candlelight);opacity:.82;text-align:center}
 .inc-panel{padding-top:5px}
 .inc-header{font:400 15px/1.65 var(--font-sans);color:var(--parchment);margin:0 0 20px;max-width:410px}
 .inc-list{list-style:none;padding:0;max-width:410px;margin:0}
@@ -292,7 +284,7 @@ img{display:block;object-fit:cover}
 .inc-ico{flex-shrink:0;width:34px;height:34px;color:var(--beeswax);display:inline-flex;align-items:center;justify-content:center}
 .inc-ico svg{width:30px;height:30px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:1080px){#tickets .tix-layout{grid-template-columns:1fr;gap:36px}#tickets .inc-header,#tickets .inc-list{max-width:none;margin-left:0}}
-@media(max-width:650px){.tix-card-body{align-items:stretch;flex-direction:column;gap:18px}.tix-card .tix-btn{width:100%}.tix-solo-grid{grid-template-columns:1fr}.tix-card,.tix-solo-grid .tix-card{padding:22px}.tix-info .tix-tooltip{left:auto;right:-8px;transform:none}.tix-info .tix-tooltip::after{left:auto;right:12px}}
+@media(max-width:650px){.tix-row{padding:16px 15px 16px 21px}.tix-inner{gap:12px}.tix-right{min-width:70px}.tix-btn{max-width:100%}}
 
 /* ── WHY DIFFERENT - alternating cards ── */
 #identity{padding:80px 0;background:linear-gradient(160deg,var(--pitch),var(--navy-dark));position:relative;overflow:hidden}
@@ -420,9 +412,9 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .id-photo{min-height:260px;width:100%}
   .id-body{padding:34px 26px}
   .id-text-block{left:24px;right:24px;bottom:24px}
-  .tix-inner{gap:18px}
-  .tix-role{font-size:19px}
-  .tix-desc{font-size:14px;line-height:1.65}
+  .tix-inner{gap:12px}
+  .tix-role{font-size:18px}
+  .tix-desc{font-size:14px;line-height:1.5}
   #sticky{padding:11px 20px}
   .cta-strip{padding:56px 24px}
   .inc-li{white-space:normal}
@@ -684,36 +676,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="stitle reveal">Tickets</h2>
     <div class="tix-layout">
       <div class="reveal d1 tix-options">
-        <article class="tix-card tix-couples" id="couples-ticket">
-          <div class="tix-card-head">
-            <h3 class="tix-card-title">Couples Ticket</h3>
-            <span class="tix-info" tabindex="0" aria-label="Couples Ticket information" aria-describedby="couples-tooltip">i<span class="tix-tooltip" id="couples-tooltip" role="tooltip">Access for two guests attending as a dance pair. Roles open to all genders.</span></span>
-          </div>
-          <div class="tix-card-body">
-            <div><div class="tix-price">$240</div><div class="tix-note">for two guests</div></div>
-            <a class="tix-btn" data-ticket-type="Couples" href="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">Get Couples Ticket</a>
-          </div>
-        </article>
-        <h3 class="tix-solo-label" id="solo-tickets">Solo Tickets</h3>
-        <div class="tix-solo-grid">
-          <article class="tix-card">
-            <div class="tix-card-head">
-              <h4 class="tix-card-title">Follower</h4>
-              <span class="tix-info" tabindex="0" aria-label="Follower role information" aria-describedby="follower-tooltip">i<span class="tix-tooltip" id="follower-tooltip" role="tooltip">The dancer who responds to cues from the Leader. Traditionally the ladies&rsquo; part, but open to all genders.</span></span>
-            </div>
-            <div class="tix-card-body">
-              <div><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
-              <a class="tix-btn" data-ticket-type="Follower" href="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Follower Ticket</a>
+        <div class="tix-rows">
+          <article class="tix-row" id="couples-ticket">
+            <span class="tix-accent acc-c" aria-hidden="true"></span>
+            <div class="tix-inner">
+              <div class="tix-left">
+                <h3 class="tix-role">Couples Ticket</h3>
+                <p class="tix-desc">Access for two guests attending as a dance pair. Roles open to all genders.</p>
+                <a class="tix-btn btn-gold-sm" data-ticket-type="Couples" href="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">Get Couples Ticket</a>
+              </div>
+              <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two guests</div></div>
             </div>
           </article>
-          <article class="tix-card">
-            <div class="tix-card-head">
-              <h4 class="tix-card-title">Leader</h4>
-              <span class="tix-info" tabindex="0" aria-label="Leader role information" aria-describedby="leader-tooltip">i<span class="tix-tooltip" id="leader-tooltip" role="tooltip">The dancer who guides the couple&rsquo;s movement. Traditionally the gentlemen&rsquo;s part, but open to all genders.</span></span>
+          <article class="tix-row" id="solo-tickets">
+            <span class="tix-accent acc-f" aria-hidden="true"></span>
+            <div class="tix-inner">
+              <div class="tix-left">
+                <h3 class="tix-role">Follower</h3>
+                <p class="tix-desc">The dancer who responds to cues from the Leader. Traditionally the ladies&rsquo; part, but open to all genders.</p>
+                <a class="tix-btn btn-velvet" data-ticket-type="Follower" href="https://enchanted-gala.myhelcim.com/hosted/?token=ec916387a060146962e6e0&amp;productId=1786177&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Follower Ticket</a>
+              </div>
+              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
             </div>
-            <div class="tix-card-body">
-              <div><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
-              <a class="tix-btn" data-ticket-type="Leader" href="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Leader Ticket</a>
+          </article>
+          <article class="tix-row">
+            <span class="tix-accent acc-l" aria-hidden="true"></span>
+            <div class="tix-inner">
+              <div class="tix-left">
+                <h3 class="tix-role">Leader</h3>
+                <p class="tix-desc">The dancer who guides the couple&rsquo;s movement. Traditionally the gentlemen&rsquo;s part, but open to all genders.</p>
+                <a class="tix-btn btn-teal" data-ticket-type="Leader" href="https://enchanted-gala.myhelcim.com/hosted/?token=6cbe68fa7ccb7025375786&amp;productId=1786179&amp;productQuantity=1&amp;amountHash=6c1f52718710433296a8f0815bad8c4ec73d15ffdd8ef7bb0de9dfdd83280948" target="_blank" rel="noopener">Get Leader Ticket</a>
+              </div>
+              <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
             </div>
           </article>
         </div>
@@ -732,7 +726,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 26h22"/><path d="M7 26V13l9-6 9 6v13"/><path d="M12 26v-8h8v8"/><path d="M11 14h.01M16 14h.01M21 14h.01"/><path d="M16 7V4"/></svg></span>Immersive setting and decorations</li>
         </ul>
       </div>
-      <p class="tix-clarification">Leader and Follower tickets are released in batches to help maintain an optimal balance of leaders and followers at the Ball. If your desired ticket type is not available, please <a href="#" data-tally-open="Y5qlz6" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">join the waitlist</a> and we&rsquo;ll notify you when the next batch opens.</p>
     </div>
   </div>
 </section>
