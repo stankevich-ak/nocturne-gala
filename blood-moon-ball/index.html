@@ -483,6 +483,22 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .dress-note p{font-size:14px;line-height:1.7;margin:0;opacity:.78}
 .pinterest-link{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font:600 12.5px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--candlelight);border-bottom:1px solid rgba(167,131,60,.42);padding-bottom:6px}
 .pinterest-link svg{width:16px;height:16px;display:block;fill:currentColor;flex-shrink:0}
+.music-section{padding:38px 0;position:relative;overflow:hidden;background:linear-gradient(170deg,#030203 0%,#0B0406 50%,#140407 100%)}
+.music-section .wrap{position:relative;z-index:1}
+.music-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:36px;align-items:center}
+.music-copy .eyebrow{margin-bottom:8px}
+.music-copy h2{font:400 clamp(1.25rem,2.3vw,1.75rem)/1.3 var(--font-serif);color:var(--candlelight);margin-bottom:10px}
+.music-copy p{font:400 14px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;max-width:530px}
+.music-playlist{display:flex;align-items:center;gap:16px;min-height:82px;padding:16px 18px;border:1px solid rgba(159,25,37,.46);background:rgba(8,3,4,.82);color:var(--parchment);transition:border-color .2s,background .2s}
+.music-playlist:hover{border-color:var(--crimson);background:rgba(24,6,10,.94)}
+.music-playlist:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
+.music-playlist-icon{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#E84A52;border:1px solid rgba(159,25,37,.5);background:rgba(109,7,16,.18)}
+.music-playlist-icon svg{display:block;width:25px;height:25px}
+.music-playlist-text{min-width:0}
+.music-playlist-text strong{display:block;font:600 10px/1.3 var(--font-sans);letter-spacing:.18em;text-transform:uppercase;color:var(--pale-gold);margin-bottom:5px}
+.music-playlist-text span{display:block;font:500 13px/1.5 var(--font-sans);color:var(--ivory)}
+.music-playlist-arrow{margin-left:auto;color:var(--candlelight);font:400 21px/1 var(--font-sans)}
+@media(max-width:720px){.music-section{padding:36px 0}.music-layout{grid-template-columns:1fr;gap:20px}.music-playlist{width:100%}}
 .outfit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .outfit-card{min-height:230px;background-size:cover;background-position:center;border:1px solid rgba(122,11,20,.55);position:relative;overflow:hidden;background-color:#050203;box-shadow:0 0 0 1px rgba(0,0,0,.86) inset,0 16px 42px rgba(0,0,0,.28)}
 .outfit-card::before{content:'';position:absolute;inset:8px;z-index:2;border:1px solid rgba(159,25,37,.46);box-shadow:inset 0 0 24px rgba(0,0,0,.44);pointer-events:none}
@@ -758,6 +774,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="outfit-caption">Gothic romance, vampire court, Victorian silhouettes</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music" class="music-section" aria-labelledby="music-title">
+  <div class="experience-lace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
+  <div class="wrap music-layout">
+    <div class="music-copy reveal">
+      <span class="eyebrow">Music</span>
+      <h2 id="music-title">What will we dance to?</h2>
+      <p>European classical music meets modern tracks and dramatic musical theatre songs, creating a soundtrack for the Ball.</p>
+    </div>
+    <a class="music-playlist reveal d1" href="https://music.youtube.com/playlist?list=PLQQH6YMj90QE" target="_blank" rel="noopener noreferrer" aria-label="Open the Blood Moon Ball ambient playlist on YouTube Music (opens in a new tab)">
+      <span class="music-playlist-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg></span>
+      <span class="music-playlist-text"><strong>YouTube Music</strong><span>Open the Blood Moon Ball ambient playlist</span></span>
+      <span class="music-playlist-arrow" aria-hidden="true">&#8599;</span>
+    </a>
   </div>
 </section>
 
