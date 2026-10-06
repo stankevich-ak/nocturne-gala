@@ -184,7 +184,7 @@ img{display:block;object-fit:cover}
 .hero-eyebrow{font:600 12px/1 var(--font-sans);letter-spacing:.34em;text-transform:uppercase;color:var(--beeswax);margin-bottom:20px;opacity:0;animation:fadeUp .9s .15s var(--ease) forwards}
 .hero-title{font-family:var(--font-serif);font-size:clamp(2.8rem,7vw,5.2rem);font-weight:400;color:var(--candlelight);line-height:1.2;margin-bottom:26px;opacity:0;animation:fadeUp .9s .3s var(--ease) forwards}
 .hero-details{display:flex;flex-direction:column;gap:11px;margin-bottom:38px;opacity:0;animation:fadeUp .9s .5s var(--ease) forwards}
-.hero-location{font:500 14px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--pale-gold)}
+.hero-location{font:500 15.4px/1.4 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--pale-gold)}
 .hero-bullets{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
 .hero-bullets span{margin:0 11px;opacity:.45}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .65s var(--ease) forwards}
@@ -387,7 +387,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .hero-bg::after{background:linear-gradient(180deg,rgba(10,15,28,.58) 0%,rgba(10,15,28,.48) 48%,rgba(10,15,28,.86) 100%)}
   .hero-content{margin-left:0;max-width:100%}
   .hero-title{font-size:clamp(2.15rem,13vw,3.65rem);line-height:1.22;max-width:100%}
-  .hero-location{font-size:12px;line-height:1.7}
+  .hero-location{font-size:13.2px;line-height:1.7}
   .hero-bullets{font-size:14px;line-height:1.65;max-width:320px}
   .hero-bullets span{margin:0 9px}
   .hero-ctas{gap:12px}
@@ -451,6 +451,12 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .journey-date-chip span{display:block;font:600 11px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--beeswax);margin-bottom:9px}
 .journey-date-chip strong{display:block;font-family:var(--font-serif);font-size:30px;font-weight:400;color:var(--candlelight);line-height:1}
 .journey-date-chip small{display:block;margin-top:9px;font:500 12px/1.3 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--parchment);opacity:.78}
+.journey-chip-location{display:flex;align-items:flex-start;gap:6px;margin-top:10px;max-width:225px;font:500 11px/1.35 var(--font-sans);letter-spacing:.04em;color:var(--ivory)}
+.journey-chip-location svg{width:13px;height:13px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.journey-location strong{font-weight:700;color:var(--ivory)}
+.journey-music-link{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;margin-top:8px;padding-bottom:4px;border-bottom:1px solid currentColor;font:600 13px/1.5 var(--font-sans);color:var(--pale-gold);text-decoration:none}
+.journey-music-link:hover{color:var(--candlelight)}
+.journey-music-link:focus-visible{outline:2px solid var(--candlelight);outline-offset:4px}
 .waitlist-live{max-width:680px;margin:-6px auto 28px;font:400 15px/1.7 var(--font-sans);color:var(--pale-gold);opacity:.86;text-align:center}
 .ticket-date-note{margin:28px auto 0;color:var(--pale-gold);opacity:.9}
 .waitlist-panel{border:1px solid var(--hair);background:rgba(8,5,7,.72);backdrop-filter:blur(8px);padding:28px;min-height:100%}
@@ -483,12 +489,15 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .dress-note p{font-size:14px;line-height:1.7;margin:0;opacity:.78}
 .pinterest-link{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font:600 12.5px/1 var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--candlelight);border-bottom:1px solid rgba(167,131,60,.42);padding-bottom:6px}
 .pinterest-link svg{width:16px;height:16px;display:block;fill:currentColor;flex-shrink:0}
-.music-section{padding:38px 0;position:relative;overflow:hidden;background:linear-gradient(170deg,#030203 0%,#0B0406 50%,#140407 100%)}
+.music-section{padding:64px 0;position:relative;overflow:hidden;background:linear-gradient(170deg,#030203 0%,#0B0406 50%,#140407 100%);scroll-margin-top:80px}
 .music-section .wrap{position:relative;z-index:1}
 .music-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:36px;align-items:center}
 .music-copy .eyebrow{margin-bottom:8px}
 .music-copy h2{font:400 clamp(1.25rem,2.3vw,1.75rem)/1.3 var(--font-serif);color:var(--candlelight);margin-bottom:10px}
 .music-copy p{font:400 14px/1.7 var(--font-sans);color:var(--parchment);opacity:.86;max-width:530px}
+.dance-list{display:grid;gap:18px;margin-top:22px}
+.dance-list h3{font:600 11px/1.4 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--beeswax);margin-bottom:6px}
+.dance-list ul{margin:0 0 0 20px;padding:0;color:var(--parchment);font:400 14px/1.7 var(--font-sans)}
 .music-playlist{display:flex;align-items:center;gap:16px;min-height:82px;padding:16px 18px;border:1px solid rgba(159,25,37,.46);background:rgba(8,3,4,.82);color:var(--parchment);transition:border-color .2s,background .2s}
 .music-playlist:hover{border-color:var(--crimson);background:rgba(24,6,10,.94)}
 .music-playlist:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
@@ -531,8 +540,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .hero-bullets{color:rgba(230,216,198,.86)!important}
 .hero-stars span{background:rgba(244,235,221,.72)!important}
 
-#rehearsals .id-cards{display:grid;grid-template-rows:repeat(2,420px);gap:3px}
-#rehearsals .id-card{height:420px;min-height:420px;border-color:rgba(76,52,32,.5);background:#040203;box-shadow:0 0 0 1px rgba(0,0,0,.94) inset,0 20px 58px rgba(0,0,0,.32)}
+#rehearsals .id-cards{display:grid;grid-template-rows:repeat(2,minmax(420px,auto));gap:3px}
+#rehearsals .id-card{min-height:420px;border-color:rgba(76,52,32,.5);background:#040203;box-shadow:0 0 0 1px rgba(0,0,0,.94) inset,0 20px 58px rgba(0,0,0,.32)}
 #rehearsals .id-card:hover{border-color:rgba(124,86,48,.58)}
 #rehearsals .id-photo{height:100%}
 #rehearsals .id-photo::before{inset:12px;border:1px solid rgba(124,86,48,.36);border-radius:2px 18px 2px 18px;box-shadow:0 0 0 1px rgba(0,0,0,.62),inset 0 0 20px rgba(0,0,0,.34)}
@@ -636,24 +645,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="id-cards">
       <div class="id-card reveal">
         <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
-          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:30 PM</small></div>
+          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:30 PM</small><div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Quadra Village Community Centre</div></div>
         </div>
         <div class="id-body">
           <h3 class="journey-card-title">Learn the Dances</h3>
           <p class="journey-card-text">The workshop is where the evening begins. You learn the steps, rhythm, floor patterns, and social etiquette before the Ball, so the evening feels intentional instead of awkward.</p>
           <p class="journey-card-text">Expect beginner-friendly social dances. No partner or previous experience needed.</p>
-          <p class="journey-card-text">Rehearsal location: Quadra Village Community Centre.</p>
+          <p class="journey-card-text journey-location"><strong>Rehearsal location: Quadra Village Community Centre.</strong></p>
+          <a class="journey-music-link" href="#music">See the dances we&rsquo;ll learn <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
 
       <div class="id-card flip reveal d1">
         <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')">
-          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 30</strong><small>7:00 PM to 11:30 PM</small></div>
+          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 30</strong><small>7:00 PM to 11:30 PM</small><div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Esquimalt Gorge Pavilion</div></div>
         </div>
         <div class="id-body">
           <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
-          <p class="journey-card-text">Return on Ball night in costume and enter the vampire court: candlelight, no masks, red velvet, music, and rooms that start to move together.</p>
-          <p class="journey-card-text">Wake from your eternal sleep and join the court: beautiful strangers, borrowed youth, red velvet shadows, and dancing beneath the Blood Moon until dawn.</p>
+          <p class="journey-card-text">On October 30th, dress up in your vampire finest and enter the vampire court. Candlelight, red velvet, music, and rooms that start to move together.</p>
+          <p class="journey-card-text journey-location"><strong>Ball location: Esquimalt Gorge Pavilion.</strong></p>
         </div>
       </div>
     </div>
@@ -783,9 +793,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="experience-lace" style="background-image:url('/blood-moon-ball/images/2.%20lace%20pattern.webp')"></div>
   <div class="wrap music-layout">
     <div class="music-copy reveal">
-      <span class="eyebrow">Music</span>
-      <h2 id="music-title">What will we dance to?</h2>
+      <span class="eyebrow">Music and Dances</span>
+      <h2 id="music-title">Here are the dances we&rsquo;re going to learn</h2>
       <p>European classical music meets modern tracks and dramatic musical theatre songs, creating a soundtrack for the Ball.</p>
+      <div class="dance-list">
+        <div><h3>Waltzes</h3><ul><li>Basic waltz</li><li>Basic Viennese waltz</li><li>Figure waltz</li></ul></div>
+        <div><h3>Group and contra dances</h3><ul><li>Slow minuet</li><li>Gothic dance</li><li>Hole in the Wall</li></ul></div>
+        <div><h3>Rotating partner dances</h3><ul><li>Polka</li><li>Polka for Three</li><li>Minuet (fast)</li><li>Cotillion</li><li>Chabalois</li></ul></div>
+      </div>
     </div>
     <a class="music-playlist reveal d1" href="https://music.youtube.com/playlist?list=PLQQH6YMj90QE" target="_blank" rel="noopener noreferrer" aria-label="Open the Blood Moon Ball ambient playlist on YouTube Music (opens in a new tab)">
       <span class="music-playlist-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg></span>
@@ -806,7 +821,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <details><summary>Do I need dance experience?</summary><div class="faq-ans">No. The event is designed to be beginner-friendly. The workshop teaches the dances before the Ball, and the evening itself is structured to help guests participate with confidence.</div></details>
       <details><summary>Are rehearsals included in my ticket?</summary><div class="faq-ans">Yes. Your ticket includes a guided dance workshop on October 24, from 12:00 PM to 4:30 PM. The workshop takes place at Quadra Village Community Centre, 901 Kings Road, Victoria, BC V8T 1W5.</div></details>
       <details><summary>Do I need to attend the workshop?</summary><div class="faq-ans">Yes, preferably. The dance workshop helps you learn the dances, meet people before the Ball, and feel more confident during the evening. If you cannot attend, we&rsquo;ll share videos for home practice.</div></details>
-      <details><summary>Where is the venue?</summary><div class="faq-ans">The Blood Moon Ball takes place at Esquimalt Gorge Pavilion in Victoria.</div></details>
+      <details><summary>Where is the venue?</summary><div class="faq-ans">The Blood Moon Ball takes place at Esquimalt Gorge Pavilion in Victoria. The pre-ball workshop takes place at Quadra Village Community Centre.</div></details>
       <details><summary>Is this a Halloween party?</summary><div class="faq-ans">It is a Halloween event, but not a standard party. It is a structured historic dance ball with instruction, social dancing, a dress code, atmosphere, and an immersive gothic theme.</div></details>
       <details><summary>Can I come alone?</summary><div class="faq-ans">Yes. Leader and Follower are dance roles, not gender rules. Solo guests can buy the role they want to dance, rotate partners during many dances, and meet people throughout the workshop and Ball.</div></details>
     </div>
