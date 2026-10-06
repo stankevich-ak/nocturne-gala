@@ -436,7 +436,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .btn-outline{border-color:rgba(212,184,106,.45);color:var(--candlelight)}
 .btn-outline:hover{background:rgba(122,11,20,.22);color:var(--pale-gold)}
 #nav.scrolled{background:rgba(8,5,7,.96)}
-.hero-bg::after{background:linear-gradient(105deg,rgba(8,5,7,.9) 0%,rgba(18,6,8,.68) 52%,rgba(70,4,14,.18) 100%)}
+.hero-bg::after{background:linear-gradient(105deg,rgba(8,5,7,.86) 0%,rgba(18,6,8,.48) 52%,rgba(70,4,14,.1) 100%)}
+@media(max-width:700px){.hero-bg::after{background:linear-gradient(90deg,rgba(8,5,7,.48),transparent 85%),linear-gradient(180deg,rgba(8,5,7,.42) 0%,rgba(8,5,7,.68) 60%,rgba(8,5,7,.86) 100%)}}
 .hero-title em{font-style:italic;color:var(--pale-gold)}
 .hero-stars span{background:var(--pale-gold)}
 #experience{position:relative;overflow:hidden;background:linear-gradient(170deg,#030203 0%,#0B0406 50%,#140407 100%)}
@@ -532,12 +533,12 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 
 
 /* Blood Moon code tweaks - July 1 */
-.hero-title{color:#8F111D!important;text-shadow:0 10px 38px rgba(0,0,0,.78),0 0 28px rgba(143,17,29,.26)}
+.hero-title{color:#C03943!important;text-shadow:0 10px 38px rgba(0,0,0,.78),0 0 28px rgba(143,17,29,.26)}
 .hero-title em{color:var(--ivory)!important;text-shadow:0 10px 38px rgba(0,0,0,.82)}
 .hero-title,.hero-title em{font-family:'Pirata One',serif;font-style:normal}
 .hero-eyebrow{color:rgba(244,235,221,.86)!important}
 .hero-location{color:rgba(244,235,221,.9)!important}
-.hero-bullets{color:rgba(230,216,198,.86)!important}
+.hero-bullets{color:var(--ivory)!important;opacity:1;text-shadow:0 2px 12px rgba(0,0,0,.8)}
 .hero-stars span{background:rgba(244,235,221,.72)!important}
 
 #rehearsals .id-cards{display:grid;grid-template-rows:repeat(2,minmax(420px,auto));gap:3px}
@@ -616,57 +617,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg" id="heroBg" style="background-image:url('/blood-moon-ball/images/1.%20hero%20image.webp')"></div>
+  <div class="hero-bg" id="heroBg" style="background-image:url('/blood-moon-ball/images/Blood%20moon%20new%20hero.webp')"></div>
   <div class="hero-stars" id="heroStars"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Nocturne Gala Presents</p>
     <h1 class="hero-title">Blood Moon<br><em>Ball</em></h1>
     <div class="hero-details">
-      <p class="hero-location">October 30th &middot; Esquimalt Gorge Pavilion</p>
-      <p class="hero-bullets">Pre-Ball Workshop &middot; October 24th</p>
-      <p class="hero-costume">Costume: Gothic or vampire-inspired</p>
+      <p class="hero-bullets">Costumed, beginner-friendly dance ball. Pre-ball workshop included.</p>
     </div>
     <div class="hero-ctas">
       <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket</a>
       <a href="#solo-tickets" class="btn btn-hero-outline">Get Solo Ticket</a>
     </div>
-    <a href="#rehearsals" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
-  </div>
-</section>
-
-<!-- YOUR JOURNEY -->
-<section id="rehearsals">
-  <div class="wrap">
-    <div class="journey-header reveal">
-      <span class="eyebrow" style="display:block;text-align:center">Your Journey</span>
-      <h2 class="stitle" style="text-align:center">Two evenings.<br><em>One invitation.</em></h2>
-    </div>
-
-    <div class="id-cards">
-      <div class="id-card reveal">
-        <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
-          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:30 PM</small><div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Quadra Village Community Centre</div></div>
-        </div>
-        <div class="id-body">
-          <h3 class="journey-card-title">Learn the Dances</h3>
-          <p class="journey-card-text">The workshop is where the evening begins. You learn the steps, rhythm, floor patterns, and social etiquette before the Ball, so the evening feels intentional instead of awkward.</p>
-          <p class="journey-card-text">Expect beginner-friendly social dances. No partner or previous experience needed.</p>
-          <p class="journey-card-text journey-location"><strong>Rehearsal location: Quadra Village Community Centre.</strong></p>
-          <a class="journey-music-link" href="#music">See the dances we&rsquo;ll learn <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-
-      <div class="id-card flip reveal d1">
-        <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')">
-          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 30</strong><small>7:00 PM to 11:30 PM</small><div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Esquimalt Gorge Pavilion</div></div>
-        </div>
-        <div class="id-body">
-          <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
-          <p class="journey-card-text">On October 30th, dress up in your vampire finest and enter the vampire court. Candlelight, red velvet, music, and rooms that start to move together.</p>
-          <p class="journey-card-text journey-location"><strong>Ball location: Esquimalt Gorge Pavilion.</strong></p>
-        </div>
-      </div>
-    </div>
+    <a href="#ticket-includes" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 
@@ -674,7 +637,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="tickets">
   <div class="tix-bg" id="tixBg" style="background-image:url('/blood-moon-ball/images/4.%20dance-procession.webp')"></div>
   <div class="wrap">
-    <h2 class="stitle reveal">Tickets</h2>
+    <h2 class="stitle reveal">One ball, one workshop, one ticket.</h2>
     <div class="tix-layout">
       <div class="reveal d1 tix-options">
         <div class="tix-rows">
@@ -726,6 +689,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 5h12v6a6 6 0 0 1-12 0Z"/><path d="M16 17v8"/><path d="M11 25h10"/><path d="M10 10h12"/></svg></span>Light refreshments</li>
           <li class="inc-li"><span class="inc-ico" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 26h22"/><path d="M7 26V13l9-6 9 6v13"/><path d="M12 26v-8h8v8"/><path d="M11 14h.01M16 14h.01M21 14h.01"/><path d="M16 7V4"/></svg></span>Immersive setting and decorations</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR JOURNEY -->
+<section id="rehearsals">
+  <div class="wrap">
+    <div class="journey-header reveal">
+      <span class="eyebrow" style="display:block;text-align:center">Your Journey</span>
+      <h2 class="stitle" style="text-align:center">Two evenings.<br><em>One invitation.</em></h2>
+    </div>
+
+    <div class="id-cards">
+      <div class="id-card reveal">
+        <div class="id-photo" id="workshopPhoto" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')">
+          <div class="journey-date-chip"><span>Dance Workshop</span><strong>Oct 24</strong><small>12:00 PM to 4:30 PM</small><div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Quadra Village Community Centre</div></div>
+        </div>
+        <div class="id-body">
+          <h3 class="journey-card-title">Learn the Dances</h3>
+          <p class="journey-card-text">The workshop is where the evening begins. You learn the steps, rhythm, floor patterns, and social etiquette before the Ball, so the evening feels intentional instead of awkward.</p>
+          <p class="journey-card-text">Expect beginner-friendly social dances. No partner or previous experience needed.</p>
+          <p class="journey-card-text journey-location"><strong>Rehearsal location: Quadra Village Community Centre.</strong></p>
+          <a class="journey-music-link" href="#music">See the dances we&rsquo;ll learn <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="id-card flip reveal d1">
+        <div class="id-photo" id="ballPhoto" style="background-image:url('/blood-moon-ball/images/blood%20moon%20new%20two%20dates.webp')">
+          <div class="journey-date-chip"><span>The Ball</span><strong>Oct 30</strong><small>7:00 PM to 11:30 PM</small><div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Esquimalt Gorge Pavilion</div></div>
+        </div>
+        <div class="id-body">
+          <h3 class="journey-card-title">Enter the Blood Moon Ball</h3>
+          <p class="journey-card-text">On October 30th, dress up in your vampire finest and enter the vampire court. Candlelight, red velvet, music, and rooms that start to move together.</p>
+          <p class="journey-card-text journey-location"><strong>Ball location: Esquimalt Gorge Pavilion.</strong></p>
+        </div>
       </div>
     </div>
   </div>
@@ -819,9 +818,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq-list reveal d1">
       <details><summary>Do I need dance experience?</summary><div class="faq-ans">No. The event is designed to be beginner-friendly. The workshop teaches the dances before the Ball, and the evening itself is structured to help guests participate with confidence.</div></details>
-      <details><summary>Are rehearsals included in my ticket?</summary><div class="faq-ans">Yes. Your ticket includes a guided dance workshop on October 24, from 12:00 PM to 4:30 PM. The workshop takes place at Quadra Village Community Centre, 901 Kings Road, Victoria, BC V8T 1W5.</div></details>
+      <details><summary>Are rehearsals included in my ticket?</summary><div class="faq-ans">Yes. Your ticket includes a guided dance workshop on October 24, from 12:00 PM to 4:30 PM. The workshop takes place at Quadra Village Community Centre, 950 Kings Road, Victoria, BC V8T 2W6.</div></details>
       <details><summary>Do I need to attend the workshop?</summary><div class="faq-ans">Yes, preferably. The dance workshop helps you learn the dances, meet people before the Ball, and feel more confident during the evening. If you cannot attend, we&rsquo;ll share videos for home practice.</div></details>
-      <details><summary>Where is the venue?</summary><div class="faq-ans">The Blood Moon Ball takes place at Esquimalt Gorge Pavilion in Victoria. The pre-ball workshop takes place at Quadra Village Community Centre.</div></details>
+      <details><summary>Where is the venue?</summary><div class="faq-ans">The Blood Moon Ball takes place at Esquimalt Gorge Pavilion, 1070 Tillicum Road, Esquimalt, BC V9A 2A1. The pre-ball workshop takes place at Quadra Village Community Centre, 950 Kings Road, Victoria, BC V8T 2W6.</div></details>
       <details><summary>Is this a Halloween party?</summary><div class="faq-ans">It is a Halloween event, but not a standard party. It is a structured historic dance ball with instruction, social dancing, a dress code, atmosphere, and an immersive gothic theme.</div></details>
       <details><summary>Can I come alone?</summary><div class="faq-ans">Yes. Leader and Follower are dance roles, not gender rules. Solo guests can buy the role they want to dance, rotate partners during many dances, and meet people throughout the workshop and Ball.</div></details>
     </div>
@@ -879,10 +878,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 const BASE = "";
 function loadResources() {
   return Promise.resolve({
-    hero_image: "/blood-moon-ball/images/1.%20hero%20image.webp",
+    hero_image: "/blood-moon-ball/images/Blood%20moon%20new%20hero.webp",
     lace_pattern: "/blood-moon-ball/images/2.%20lace%20pattern.webp",
     workshop_card: "/blood-moon-ball/images/3.%20rehearsals.webp",
-    ball_card: "/blood-moon-ball/images/4.%20dance-procession.webp",
+    ball_card: "/blood-moon-ball/images/blood%20moon%20new%20two%20dates.webp",
     final_cta_image: "/blood-moon-ball/images/final%20just%20do%20it%20section.webp",
     outfit_1: "/blood-moon-ball/images/outfit1.webp",
     outfit_2: "/blood-moon-ball/images/outfit2.webp",
