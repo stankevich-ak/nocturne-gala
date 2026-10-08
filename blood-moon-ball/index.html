@@ -180,15 +180,13 @@ img{display:block;object-fit:cover}
 .hero-stars{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
 .hero-stars span{position:absolute;background:var(--candlelight);clip-path:polygon(50% 0%,53% 44%,100% 50%,53% 56%,50% 100%,47% 56%,0% 50%,47% 44%);animation:twinkle var(--dur,4s) ease-in-out infinite;animation-delay:var(--del,0s);opacity:0}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.7) rotate(var(--rot,0deg))}50%{opacity:var(--op,.5);transform:scale(1) rotate(var(--rot,0deg))}}
-.hero-content{position:relative;z-index:2;max-width:580px;margin-left:8%}
-.hero-eyebrow{font:600 12px/1 var(--font-sans);letter-spacing:.34em;text-transform:uppercase;color:var(--beeswax);margin-bottom:20px;opacity:0;animation:fadeUp .9s .15s var(--ease) forwards}
-.hero-urgency{display:inline-flex;align-items:center;gap:9px;max-width:100%;padding:9px 14px;margin:0 0 18px;border:1px solid rgba(227,199,120,.6);border-radius:999px;background:rgba(7,3,4,.82);color:var(--ivory);font:600 10px/1.5 var(--font-sans);letter-spacing:.11em;text-transform:uppercase;opacity:0;animation:fadeUp .9s .23s var(--ease) forwards}
-.hero-urgency-dot{width:7px;height:7px;flex:none;border-radius:50%;background:var(--pale-gold);box-shadow:0 0 10px rgba(227,199,120,.65)}
+.hero-content{position:relative;z-index:2;max-width:580px;margin-left:8%;transform:translateY(-18px)}
+.hero-urgency{display:block;max-width:100%;margin:0 0 18px;color:var(--pale-gold);font:500 11px/1.5 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;opacity:0;animation:fadeUp .9s .23s var(--ease) forwards}
 .hero-title{font-family:var(--font-serif);font-size:clamp(2.8rem,7vw,5.2rem);font-weight:400;color:var(--candlelight);line-height:1.2;margin-bottom:26px;opacity:0;animation:fadeUp .9s .3s var(--ease) forwards}
 .hero-details{display:flex;flex-direction:column;gap:11px;margin-bottom:38px;opacity:0;animation:fadeUp .9s .5s var(--ease) forwards}
 .hero-location{font:500 15.4px/1.4 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--pale-gold)}
 .hero-bullets{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
-.hero-facts{font:700 clamp(16px,1.65vw,20px)/1.5 var(--font-sans);color:var(--pale-gold);letter-spacing:.07em;text-transform:uppercase;max-width:700px}
+.hero-facts{font:400 clamp(16px,1.65vw,20px)/1.5 var(--font-sans);color:var(--pale-gold);letter-spacing:.07em;text-transform:uppercase;max-width:700px}
 .hero-bullets span{margin:0 11px;opacity:.45}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .65s var(--ease) forwards}
 .hero-costume{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
@@ -390,7 +388,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .hero-bg::after{background:linear-gradient(180deg,rgba(10,15,28,.58) 0%,rgba(10,15,28,.48) 48%,rgba(10,15,28,.86) 100%)}
   .hero-content{margin-left:0;max-width:100%}
   .hero-title{font-size:clamp(2.15rem,13vw,3.65rem);line-height:1.22;max-width:100%}
-  .hero-urgency{font-size:9px;letter-spacing:.08em;padding:9px 12px;border-radius:14px}
+  .hero-urgency{font-size:10px;letter-spacing:.08em}
   .hero-location{font-size:13.2px;line-height:1.7}
   .hero-bullets{font-size:14px;line-height:1.65;max-width:320px}
   .hero-bullets span{margin:0 9px}
@@ -543,7 +541,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .hero-title{color:#C03943!important;text-shadow:0 10px 38px rgba(0,0,0,.78),0 0 28px rgba(143,17,29,.26)}
 .hero-title em{color:var(--ivory)!important;text-shadow:0 10px 38px rgba(0,0,0,.82)}
 .hero-title,.hero-title em{font-family:'Pirata One',serif;font-style:normal}
-.hero-eyebrow{color:rgba(244,235,221,.86)!important}
 .hero-location{color:rgba(244,235,221,.9)!important}
 .hero-bullets{color:var(--ivory)!important;opacity:1;text-shadow:0 2px 12px rgba(0,0,0,.8)}
 .hero-stars span{background:rgba(244,235,221,.72)!important}
@@ -707,8 +704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-bg" id="heroBg" style="background-image:url('/blood-moon-ball/images/Blood%20moon%20new%20hero.webp')"></div>
   <div class="hero-stars" id="heroStars"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Nocturne Gala Presents</p>
-    <p class="hero-urgency"><span class="hero-urgency-dot" aria-hidden="true"></span>Only 10 tickets left &middot; Registration closes Oct 23</p>
+    <p class="hero-urgency">Only 10 tickets left &middot; Registration closes Oct 23</p>
     <h1 class="hero-title">Blood Moon<br><em>Ball</em></h1>
     <div class="hero-details">
       <p class="hero-facts">October 30th &middot; Esquimalt Gorge Pavilion &middot; Tickets from $130</p>
