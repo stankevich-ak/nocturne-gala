@@ -181,7 +181,9 @@ img{display:block;object-fit:cover}
 .hero-stars span{position:absolute;background:var(--candlelight);clip-path:polygon(50% 0%,53% 44%,100% 50%,53% 56%,50% 100%,47% 56%,0% 50%,47% 44%);animation:twinkle var(--dur,4s) ease-in-out infinite;animation-delay:var(--del,0s);opacity:0}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.7) rotate(var(--rot,0deg))}50%{opacity:var(--op,.5);transform:scale(1) rotate(var(--rot,0deg))}}
 .hero-content{position:relative;z-index:2;max-width:580px;margin-left:8%;transform:translateY(-18px)}
-.hero-urgency{display:block;max-width:100%;margin:0 0 18px;color:var(--pale-gold);font:500 11px/1.5 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;opacity:0;animation:fadeUp .9s .23s var(--ease) forwards}
+.hero-urgency{display:flex;align-items:center;gap:8px;max-width:100%;margin:0 0 18px;color:var(--pale-gold);font:500 11px/1.5 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;opacity:0;animation:fadeUp .9s .23s var(--ease) forwards}
+.hero-blood-drop{width:14px;height:18px;flex:none;fill:var(--crimson);animation:bloodPulse 2.4s ease-in-out infinite}
+@keyframes bloodPulse{50%{transform:scale(1.2);filter:drop-shadow(0 0 7px rgba(159,25,37,.8))}}
 .hero-title{font-family:var(--font-serif);font-size:clamp(2.8rem,7vw,5.2rem);font-weight:400;color:var(--candlelight);line-height:1.2;margin-bottom:26px;opacity:0;animation:fadeUp .9s .3s var(--ease) forwards}
 .hero-details{display:flex;flex-direction:column;gap:11px;margin-bottom:38px;opacity:0;animation:fadeUp .9s .5s var(--ease) forwards}
 .hero-location{font:500 15.4px/1.4 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--pale-gold)}
@@ -704,15 +706,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-bg" id="heroBg" style="background-image:url('/blood-moon-ball/images/Blood%20moon%20new%20hero.webp')"></div>
   <div class="hero-stars" id="heroStars"></div>
   <div class="hero-content">
-    <p class="hero-urgency">Only 10 tickets left &middot; Registration closes Oct 23</p>
+    <p class="hero-urgency"><svg class="hero-blood-drop" viewBox="0 0 24 28" aria-hidden="true"><path d="M12 1C9 7 3 12 3 18a9 9 0 0 0 18 0c0-6-6-11-9-17Z"/></svg><span>Only 10 tickets left &middot; Registration closes Oct 23</span></p>
     <h1 class="hero-title">Blood Moon<br><em>Ball</em></h1>
     <div class="hero-details">
-      <p class="hero-facts">October 30th &middot; Esquimalt Gorge Pavilion &middot; Tickets from $130</p>
-      <p class="hero-bullets">Costumed, beginner-friendly dance ball. Free pre-ball workshop on October 24th included.</p>
+      <p class="hero-facts">Oct 30 &middot; Esquimalt Gorge Pavilion</p>
+      <p class="hero-bullets">Costumed, beginner-friendly dance ball. Pre-ball workshop on October 24th included.</p>
     </div>
     <div class="hero-ctas">
-      <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket</a>
-      <a href="#solo-tickets" class="btn btn-hero-outline">Get Solo Ticket</a>
+      <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket &mdash; $240</a>
+      <a href="#solo-tickets" class="btn btn-hero-outline">Get Solo Ticket &mdash; $130</a>
     </div>
     <a href="#ticket-includes" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
   </div>
