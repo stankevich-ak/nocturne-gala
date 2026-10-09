@@ -201,10 +201,9 @@ img{display:block;object-fit:cover}
 .hero-bullets{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
 .hero-bullets span{margin:0 11px;opacity:.45}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .65s var(--ease) forwards}
-.hero-ctas .btn-solo{background:var(--teal);color:#fff}
-.hero-ctas .btn-solo:hover{background:#3C9AA3;color:#fff}
-.hero-ctas .btn-includes{background:var(--navy-light);border:1px solid var(--candlelight);color:var(--ivory)}
-.hero-ctas .btn-includes:hover{background:var(--blue-velvet);color:var(--ivory)}
+.hero-ctas .btn-solo{background:var(--navy-light);border:1px solid var(--candlelight);color:var(--pale-gold)}
+.hero-ctas .btn-solo:hover{background:var(--blue-velvet);border-color:var(--pale-gold);color:var(--ivory)}
+.hero-more{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding-bottom:5px;border-bottom:1px solid rgba(212,184,106,.55);font:600 12px/1.5 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* ── STORY ── */
@@ -219,9 +218,10 @@ img{display:block;object-fit:cover}
 
 /* ── EXPERIENCE ── */
 #experience{padding:80px 0;background:var(--navy-deep);position:relative;overflow:hidden}
-.experience-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.62;pointer-events:none}
-#experience::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,15,28,.82),rgba(10,15,28,.64));z-index:1;pointer-events:none}
-#experience .wrap{position:relative;z-index:2}
+#rehearsals{position:relative;overflow:hidden}
+.journey-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.52;pointer-events:none}
+#rehearsals::before{content:'';position:absolute;inset:0;background:rgba(10,15,28,.76);z-index:1;pointer-events:none}
+#rehearsals .wrap{position:relative;z-index:2}
 .two-col{display:grid;gap:64px;align-items:start;margin-top:48px}
 .two-col.vid-right{grid-template-columns:1.15fr 1fr}
 .two-col.vid-left{grid-template-columns:1fr 1.15fr}
@@ -555,16 +555,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="hero-bullets">Beginner-friendly <span>&middot;</span> Rehearsals included <span>&middot;</span> Costumes and masks required</p>
     </div>
     <div class="hero-ctas">
-      <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket &mdash; $240</a>
-      <a href="#solo-tickets" class="btn btn-solo">Get Solo Ticket &mdash; $130</a>
-      <a href="#ticket-includes" class="btn btn-includes">What&rsquo;s Included</a>
+      <a href="#couples-ticket" class="btn btn-gold">Couples Ticket &mdash; $240</a>
+      <a href="#solo-tickets" class="btn btn-solo">Solo Ticket &mdash; $130</a>
     </div>
+    <a href="#ticket-includes" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="experience-bg" id="experienceBg"></div>
   <div class="wrap">
     <div class="two-col vid-right">
       <div class="section-text reveal">
@@ -587,6 +586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- YOUR JOURNEY -->
 <section id="rehearsals">
+  <div class="journey-bg" id="journeyBg"></div>
   <div class="wrap">
     <div class="two-col vid-left">
       <div class="journey-media">
@@ -869,9 +869,9 @@ function applyResources(R) {
   // Hero
   const heroBg = document.getElementById('heroBg');
   if (heroBg && R.hero_image) heroBg.style.backgroundImage = `url('${R.hero_image}')`;
-  // Experience background
-  const experienceBg = document.getElementById('experienceBg');
-  if (experienceBg && R.story_image) experienceBg.style.backgroundImage = `url('${R.story_image}')`;
+  // Journey background
+  const journeyBg = document.getElementById('journeyBg');
+  if (journeyBg && R.story_image) journeyBg.style.backgroundImage = `url('${R.story_image}')`;
   // Tix bg
   const tixBg = document.getElementById('tixBg');
   if (tixBg && R.slide_2) tixBg.style.backgroundImage = `url('${R.slide_2}')`;
