@@ -88,8 +88,7 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
       "name": "Couples Ticket",
       "price": "240",
       "priceCurrency": "CAD",
-      "url": "https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&productId=1786175&productQuantity=1&amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/SoldOut"
     },
     {
       "@type": "Offer",
@@ -190,6 +189,7 @@ img{display:block;object-fit:cover}
 .hero-facts{font:400 clamp(16px,1.65vw,20px)/1.5 var(--font-sans);color:var(--pale-gold);letter-spacing:.07em;text-transform:uppercase;max-width:700px}
 .hero-bullets span{margin:0 11px;opacity:.45}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .65s var(--ease) forwards}
+.hero-sold-out{background:#48374b;color:var(--parchment);border:1px solid #66546a;cursor:default}
 .hero-costume{font:400 15px/1.5 var(--font-sans);color:var(--parchment);opacity:.82;letter-spacing:.04em}
 .hero-more{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding-bottom:5px;border-bottom:1px solid rgba(167,131,60,.42);font:600 12px/1.5 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--candlelight)}
 #tickets,#couples-ticket,#solo-tickets,#ticket-includes{scroll-margin-top:80px}
@@ -713,7 +713,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="hero-bullets">Costumed, beginner-friendly dance ball. Pre-ball workshop on October 24th included.</p>
     </div>
     <div class="hero-ctas">
-      <a href="#couples-ticket" class="btn btn-gold">Get Couples Ticket &mdash; $240</a>
+      <span class="btn hero-sold-out">Couples Tickets Sold Out</span>
       <a href="#solo-tickets" class="btn btn-hero-outline">Get Solo Ticket &mdash; $130</a>
     </div>
     <a href="#ticket-includes" class="hero-more">What&rsquo;s Included <span aria-hidden="true">&rarr;</span></a>
@@ -796,7 +796,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="tix-left">
                 <h3 class="tix-role">Couples Ticket</h3>
                 <p class="tix-desc">Access for two guests attending as a dance pair. Roles open to all genders.</p>
-                <a class="tix-btn btn-gold-sm" data-ticket-type="Couples" href="https://enchanted-gala.myhelcim.com/hosted/?token=271abc3909087601f515e8&amp;productId=1786175&amp;productQuantity=1&amp;amountHash=b33adfc73660828b6e5eb61ccceb96cddc1ea46c5fdb24f53706461e1cbc5818" target="_blank" rel="noopener">Get Couples Ticket</a>
+                <span class="tix-btn tix-sold-out">Sold Out</span>
               </div>
               <div class="tix-right"><div class="tix-price">$240</div><div class="tix-note">for two guests<br>(save $20)</div></div>
             </div>
