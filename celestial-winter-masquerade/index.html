@@ -92,8 +92,8 @@ src="https://www.facebook.com/tr?id=914146107853520&ev=PageView&noscript=1"
       "name": "Follower Ticket",
       "price": "130.00",
       "priceCurrency": "CAD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://enchanted-gala.myhelcim.com/hosted/?token=cedaf431c87d421fdd8f2f&productId=1684467&productQuantity=1&amountHash=b4af9cbcd052a654a1a0298bffe1abc80d2ccd211031e89c4ee23d84bacd1d42"
+      "availability": "https://schema.org/OutOfStock",
+      "url": "https://tally.so/r/ZjQZQe"
     },
     {
       "@type": "Offer",
@@ -464,6 +464,8 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .tix-inner{gap:18px}
 .tix-role{font:400 18px/1.2 var(--font-serif);color:var(--ivory);margin:0 0 6px}
 .tix-desc{font:400 14px/1.45 var(--font-sans);opacity:.86;margin:0 0 12px}
+.tix-waitlist-note{font:400 14px/1.6 var(--font-sans);color:var(--parchment);margin:0 0 14px}
+.tix-waitlist-note strong{color:var(--pale-gold)}
 .tix-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:9px 16px;font:600 10px/1.25 var(--font-sans);letter-spacing:.13em;text-align:center}
 .tix-btn:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
 .btn-gold-sm{background:var(--beeswax);color:var(--pitch);border:1px solid var(--beeswax)}
@@ -487,6 +489,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
   .tix-role,.tix-desc{grid-column:1}
   .tix-role{grid-row:1;margin-bottom:0}
   .tix-desc{grid-row:2;margin-bottom:0}
+  .tix-waitlist-note{grid-column:1/-1;grid-row:3;margin:2px 0 4px}
   .tix-right{grid-column:2;grid-row:1/3}
   .tix-btn{grid-column:1/-1;width:100%;max-width:none}
 }
@@ -775,7 +778,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="tix-left">
                 <div class="tix-role">Follower</div>
                 <div class="tix-desc">The dancer who responds to cues from the Leader. Open to all genders; no partner required.</div>
-                <a class="tix-btn btn-velvet" data-ticket-type="Follower" href="https://enchanted-gala.myhelcim.com/hosted/?token=cedaf431c87d421fdd8f2f&amp;productId=1684467&amp;productQuantity=1&amp;amountHash=b4af9cbcd052a654a1a0298bffe1abc80d2ccd211031e89c4ee23d84bacd1d42" target="_blank" rel="noopener">Get Follower Ticket</a>
+                <p class="tix-waitlist-note" id="follower-waitlist-note"><strong>Follower ticket sales are temporarily paused.</strong> More tickets may become available later. Join the waitlist and we&rsquo;ll notify you if more tickets are released.</p>
+                <a class="tix-btn btn-velvet" href="https://tally.so/r/ZjQZQe" aria-describedby="follower-waitlist-note" target="_blank" rel="noopener">Join the waitlist</a>
               </div>
               <div class="tix-right"><div class="tix-price">$130</div><div class="tix-note">per person</div></div>
             </div>
