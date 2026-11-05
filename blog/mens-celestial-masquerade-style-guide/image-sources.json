@@ -1,13 +1,13 @@
 [
   {
-    "file": "celestial-masquerade-men.jpg",
+    "file": "celestial-masquerade-men.webp",
     "source": "User-supplied thumbail mask men.png",
     "usage": "Blog thumbnail and opening image"
   },
   {
-    "file": "star-gazer-jacket.jpg",
+    "file": "star-gazer-jacket.webp",
     "image_url": "https://cdn.shopify.com/s/files/1/0293/9277/files/11-28-25_S8_56_25BL011_Black_LR_DJ_14-03-36_36671_SKS.jpg?v=1764617155&width=1000",
-    "bytes": 101472,
+    "bytes": 62022,
     "product_url": "https://www.fashionnova.com/en-ca/products/relaxed-star-gazer-embellished-jacket?color=black",
     "retrieved": "2026-11-04"
   },
@@ -54,17 +54,17 @@
     "retrieved": "2026-11-04"
   },
   {
-    "file": "devilinspired-tailcoat-vest.jpg",
+    "file": "devilinspired-tailcoat-vest.webp",
     "image_url": "https://statics.devilinspired.com/image/cache/2026/0915/0/f81742fd-aa63-1908-29ab-eec610e1a977-750x1000.jpg",
     "product_url": "https://www.devilinspired.com/black-mens-gothic-asymmetrical-tailcoat-vest.html",
-    "bytes": 126943,
+    "bytes": 55498,
     "retrieved": "2026-11-04"
   },
   {
-    "file": "gothnrock-tailcoat.jpg",
+    "file": "gothnrock-tailcoat.webp",
     "image_url": "https://gothnrock.com/cdn/shop/products/Devil-Fashion-Mens-Gothic-Steampunk-Tailcoat-Jacket-Black-Brocade-Damask-Wedding_a7b235e5-54ba-4fb9-bec3-e116c70c0b35_1400x.jpg?v=1694463671",
     "product_url": "https://gothnrock.com/collections/men-jackets-coats/products/mens-gothic-tailcoat-3",
-    "bytes": 87333,
+    "bytes": 90156,
     "retrieved": "2026-11-04"
   },
   {
@@ -80,5 +80,91 @@
     "product_url": "https://ca.shein.com/Manfinity-AFTRDRK-Men-s-Floral-Jacquard-Double-Breasted-Tuxedo-Waistcoat-Formal-Ceremony-p-87962355.html",
     "retrieved": "2026-11-04",
     "bytes": 78420
+  },
+  {
+    "file": "accessory-gold-tie-set.webp",
+    "image_url": "https://m.media-amazon.com/images/I/7167AG64iYL._AC_SL1500_.jpg",
+    "product_url": "https://www.amazon.ca/dp/B0D95G7KZN",
+    "shop": "Amazon",
+    "title": "Gold paisley tie set",
+    "price": "About CA$19",
+    "alt": "Gold paisley necktie with matching pocket square and cufflinks",
+    "bytes": 294154,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "accessory-gold-signet-ring.webp",
+    "image_url": "https://imagescdn.simons.ca/images/13533/135/77/A1_3.jpg?__=3",
+    "product_url": "https://www.simons.ca/en/men-accessories/jewellery/rings/oval-signet-ring--13533-135?colourId=77",
+    "shop": "Simons",
+    "title": "Oval signet ring",
+    "price": "CA$39",
+    "alt": "Gold-coloured oval signet ring from Simons",
+    "bytes": 3580,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "accessory-birthstone-cufflinks.webp",
+    "image_url": "https://i.etsystatic.com/53422171/r/il/85a690/7992835094/il_794xN.7992835094_hy4o.jpg",
+    "product_url": "https://www.etsy.com/ca/listing/4500802586/personalized-birthstone-cufflinks-custom",
+    "shop": "Etsy \u00b7 GoldenGlowStudioUS",
+    "title": "Personalised birthstone cufflinks",
+    "price": "About CA$40",
+    "alt": "Gold-coloured cufflinks with blue and clear stones held in a hand",
+    "bytes": 38520,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "accessory-oak-luna-bracelet.webp",
+    "image_url": "https://cdn.oakandluna.com/digital-asset/products/id-bracelet-for-men-with-gold-plating-5.jpg?w=750",
+    "product_url": "https://www.oakandluna.com/products/id-bracelet-for-men-gold?cur=cad&pid=110-03-2929-33",
+    "shop": "Oak & Luna",
+    "title": "Gold ID bracelet",
+    "price": "About CA$170",
+    "alt": "Gold-plated ID bracelet with a curved nameplate and Figaro chain",
+    "bytes": 30820,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "accessory-mejuri-brooch.webp",
+    "image_url": "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0_Waveform_ClaraRibbonBrooch_Gold_Steel_OffFigFrontView_PDP.jpg?v=1793128171&width=800",
+    "product_url": "https://mejuri.com/ca/en/products/clara-ribbon-brooch?variant=52022891217181&Material=Gold+Finished+Steel",
+    "shop": "Mejuri",
+    "title": "Clara ribbon brooch",
+    "price": "CA$98",
+    "alt": "Sculptural gold-finished ribbon brooch from Mejuri",
+    "bytes": 13030,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "accessory-atolea-earrings.webp",
+    "image_url": "https://atoleajewelry.com/cdn/shop/products/summer-night--earrings.jpg?v=1632835055&width=1080",
+    "product_url": "https://atoleajewelry.com/products/summer-night-earrings?variant=35675114143912&currency=cad",
+    "shop": "Atolea",
+    "title": "Summer Night earrings",
+    "price": "CA$74",
+    "alt": "Gold-coloured hoop earrings with crescent moon and star charms",
+    "bytes": 164852,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "etsy-black-gold-mask.webp",
+    "image_url": "https://i.etsystatic.com/9105221/r/il/d19ed5/6654223134/il_794xN.6654223134_6k9y.jpg",
+    "product_url": "https://www.etsy.com/ca/listing/1502045216/black-gold-masquerade-mask-men-classic",
+    "shop": "Etsy \u00b7 HigginsCreek",
+    "title": "Black-and-gold Venetian mask",
+    "alt": "Black and gold Venetian masquerade mask with music-note decoration",
+    "bytes": 74092,
+    "retrieved": "2026-11-05"
+  },
+  {
+    "file": "amazon-oidea-mask.webp",
+    "image_url": "https://m.media-amazon.com/images/I/71M0Us07KxL._AC_SL1500_.jpg",
+    "product_url": "https://www.amazon.ca/dp/B0CN9FM513",
+    "shop": "Amazon",
+    "title": "OIDEA masquerade mask",
+    "alt": "OIDEA retro gold masquerade mask for men",
+    "bytes": 231286,
+    "retrieved": "2026-11-05"
   }
 ]
