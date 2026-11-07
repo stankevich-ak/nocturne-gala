@@ -469,7 +469,7 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 .tix-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:9px 16px;font:600 10px/1.25 var(--font-sans);letter-spacing:.13em;text-align:center}
 .tix-btn:focus-visible{outline:2px solid var(--candlelight);outline-offset:3px}
 .btn-gold-sm{background:var(--beeswax);color:var(--pitch);border:1px solid var(--beeswax)}
-.btn-velvet{background:#733D7B;color:#fff;border:1px solid #733D7B}.btn-velvet:hover{background:#8D5B91;color:#fff;border-color:#8D5B91}
+.btn-velvet{background:transparent;color:#D4BAEB;border:1px solid #B58ACB}.btn-velvet:hover{background:rgba(115,61,123,.16);color:#EBDDF7;border-color:#D4BAEB}
 .btn-teal{background:#1E6670;color:#fff;border:1px solid #1E6670}.btn-teal:hover{background:#2E8890;color:#fff;border-color:#2E8890}
 .tix-price{font:400 22px/1 var(--font-serif)}
 .tix-note{font:400 11px/1.3 var(--font-sans);opacity:.75;margin-top:4px}
@@ -554,20 +554,6 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 #rehearsals .pro-tip .registration-note{margin:0 0 10px;font:500 17px/1.5 var(--font-sans);color:var(--candlelight);opacity:1}
 #rehearsals .registration-note strong{font-weight:600}
 
-/* Swipeable reasons to join. */
-#identity .id-header{margin-bottom:28px}
-#identity .id-cards{display:flex;flex-direction:row;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;padding-bottom:6px}
-#identity .id-cards::-webkit-scrollbar{display:none}
-#identity .id-cards:focus-visible{outline:2px solid var(--pale-gold);outline-offset:3px}
-#identity .id-card,#identity .id-card.flip{display:flex;flex:0 0 calc((100% - 18px)/2);flex-direction:column;min-height:0;direction:ltr;scroll-snap-align:start}
-#identity .id-photo{height:220px;min-height:0;flex:none}
-#identity .id-body{flex:1;min-height:220px;padding:28px 30px}
-.id-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:24px}
-.id-arrow{width:42px;height:42px;border:1px solid var(--hair-hi);background:var(--navy-mid);color:var(--pale-gold);font:400 25px/1 var(--font-serif);cursor:pointer}
-.id-arrow:disabled{opacity:.35;cursor:default}
-.id-arrow:focus-visible{outline:2px solid var(--pale-gold);outline-offset:3px}
-.id-page{font:500 12px/1 var(--font-sans);letter-spacing:.12em;color:var(--pale-gold)}
-
 /* Dance details, grouped by century. */
 #music{padding:80px 0;background:linear-gradient(rgba(10,15,28,.72),rgba(10,15,28,.84)),url('/celestial-winter-masquerade/public/images/Music%20and%20Dances.webp') center/cover no-repeat;scroll-margin-top:80px}
 #music .music-head{text-align:center;margin-bottom:30px}
@@ -611,6 +597,64 @@ footer{padding:54px 44px 46px;background:var(--navy-deep);border-top:1px solid v
 }
 @media(prefers-reduced-motion:reduce){.hero-mask{animation:none}.hl-track,#identity .id-cards{scroll-behavior:auto}}
 
+
+/* Celestial page refinement: framed photographs and black information panels. */
+.hero-bg::after{background:linear-gradient(105deg,rgba(10,15,28,.8),rgba(10,15,28,.48) 55%,rgba(10,15,28,.2))}
+#rehearsals .journey-cards{display:grid;grid-template-columns:1fr;gap:3px}
+#rehearsals .id-card,#rehearsals .id-card.flip{display:grid;grid-template-columns:1fr 1fr;min-height:420px;border:1px solid rgba(167,131,60,.4);background:#050507;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+#rehearsals .id-card{direction:ltr}
+#rehearsals .id-card.flip{direction:rtl}
+#rehearsals .id-card>*{direction:ltr}
+#rehearsals .journey-photo{display:block;position:relative;min-height:420px;height:100%;background:#050507}
+.journey-image{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+.journey-image::after{content:'';position:absolute;inset:12px;border:1px solid rgba(212,184,106,.55);border-radius:2px 18px 2px 18px;box-shadow:0 0 0 1px rgba(0,0,0,.5),inset 0 0 20px rgba(0,0,0,.2);pointer-events:none}
+#rehearsals .journey-date-chip{position:absolute;top:auto;bottom:24px;left:24px;max-width:calc(100% - 48px);padding:16px 18px;border:1px solid rgba(167,131,60,.48);background:rgba(3,3,6,.82);box-shadow:0 10px 28px rgba(0,0,0,.32);backdrop-filter:blur(8px)}
+#rehearsals .journey-chip-location{max-width:230px}
+#rehearsals .journey-dates{max-width:230px;font-size:24px}
+#rehearsals .id-body{background:#050507;border-left:1px solid rgba(167,131,60,.24);padding:40px 36px;justify-content:center}
+#rehearsals .id-card.flip .id-body{border-left:0;border-right:1px solid rgba(167,131,60,.24)}
+#rehearsals .journey-location{display:flex;align-items:flex-start;gap:9px}
+#rehearsals .journey-location svg{width:18px;height:18px;flex:none;margin-top:5px;fill:none;stroke:var(--pale-gold);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#dress{padding:80px 0;background:#070a12;scroll-margin-top:80px}
+.dress-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.dress-copy p,.dress-directions{font:400 16px/1.8 var(--font-sans);color:var(--parchment)}
+.dress-directions{padding-left:20px;margin:20px 0}
+.dress-directions li{padding:5px 0}
+.pinterest-link{display:inline-flex;gap:12px;margin-top:12px;padding-bottom:8px;border-bottom:1px solid var(--beeswax);font:600 12px/1.5 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--pale-gold)}
+.outfit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.outfit-card{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(167,131,60,.4);background:#050507}
+.outfit-card img{display:block;width:100%;height:100%;object-fit:cover}
+.outfit-card::after{content:'';position:absolute;inset:8px;border:1px solid rgba(212,184,106,.4);border-radius:2px 14px 2px 14px;pointer-events:none}
+#music{background:linear-gradient(105deg,rgba(5,9,20,.83),rgba(5,9,20,.7)),url('/celestial-winter-masquerade/public/images/celestial-2.webp') center/cover no-repeat;padding:80px 0}
+.music-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.music-copy>p{font:400 16px/1.8 var(--font-sans);color:var(--parchment);max-width:460px}
+.playlist-card{display:flex;align-items:center;gap:16px;margin-top:28px;padding:22px 20px;background:#05070e;border:1px solid var(--hair-hi);color:var(--ivory)}
+.playlist-play{display:grid;place-items:center;flex:none;width:48px;height:48px;border:1px solid var(--beeswax);border-radius:50%;color:var(--pale-gold);font-size:15px;padding-left:3px}
+.playlist-card small{display:block;font:600 9px/1.5 var(--font-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--beeswax);margin-bottom:5px}
+.playlist-card strong{display:block;font:400 21px/1.3 var(--font-serif)}
+.playlist-arrow{margin-left:auto;font-size:22px;color:var(--pale-gold)}
+.playlist-card:hover{border-color:var(--beeswax);background:#101524}
+.playlist-card:focus-visible,.pinterest-link:focus-visible{outline:2px solid var(--pale-gold);outline-offset:5px}
+.dance-program{border-top:1px solid var(--hair-hi);background:rgba(5,9,20,.55);padding:0 24px 12px}
+.dance-program-label{font:600 10px/1.5 var(--font-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--beeswax);padding:22px 0 10px}
+.dance-era{display:grid;grid-template-columns:100px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--hair)}
+.dance-era>span{font:500 11px/1.8 var(--font-sans);color:var(--beeswax)}
+.dance-era p{font:400 16.15px/1.6 var(--font-serif);color:var(--ivory)}
+@media(max-width:820px){
+ .hero-bg::after{background:linear-gradient(180deg,rgba(10,15,28,.5),rgba(10,15,28,.42) 45%,rgba(10,15,28,.85))}
+ #rehearsals .journey-cards,.dress-grid,.music-layout{grid-template-columns:1fr;gap:28px}
+ #rehearsals .id-card,#rehearsals .id-card.flip{display:flex;flex-direction:column;direction:ltr;min-height:0}
+ #rehearsals .journey-photo{display:flex;flex-direction:column;min-height:0;height:auto}
+ #rehearsals .journey-image{position:relative;inset:auto;aspect-ratio:3/2;height:auto}
+ #rehearsals .journey-date-chip{position:relative;top:auto;bottom:auto;left:auto;max-width:none;width:100%;padding:22px 24px 0;border:0;border-top:1px solid rgba(167,131,60,.3);background:#050507;box-shadow:none;backdrop-filter:none}
+ #rehearsals .journey-dates,#rehearsals .journey-chip-location{max-width:none}
+ #rehearsals .id-body,#rehearsals .id-card.flip .id-body{padding:24px;border:0}
+ #dress,#music{padding:48px 0}
+ .dance-era{grid-template-columns:82px 1fr;gap:14px}
+ .playlist-card{padding:18px 16px;gap:12px}
+ .playlist-card strong{font-size:19px}
+}
+
 </style>
 <link rel="stylesheet" href="/shared-components.css"/>
 <style>
@@ -649,7 +693,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="hero-title">Celestial Winter<br>Masquerade</h1>
     <div class="hero-details">
       <p class="hero-location">December 18th &middot; Scottish Cultural Centre &middot; Vancouver</p>
-      <p class="hero-bullets">Beginner-friendly <span>&middot;</span> Rehearsals included: November 24th, December 1, 8, 15 <span>&middot;</span> Burnaby</p>
+      <p class="hero-bullets">Beginner-friendly<br>Pre-ball rehearsals included</p>
     </div>
     <div class="hero-ctas">
       <a href="#tickets" class="btn btn-gold">Get tickets</a>
@@ -663,13 +707,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="two-col vid-right">
       <div class="section-text reveal">
-        <h2>The Experience</h2>
-        <p>Step into a winter masquerade you can actually take part in. Four guided rehearsals help you learn the historic dances, meet other guests, and feel ready to join the Ball on December 18th.</p>
-        <p>At the Ball, the music, candlelight, costumes, and masks bring the room to life. You already know the dances, so you can step onto the floor and be part of the evening.</p>
+        <span class="eyebrow">The Experience</span>
+        <h2>A Real Masquerade Ball</h2>
+        <p>Step into candlelight, live music, and masked dancing. Learn the historic dances at guided rehearsals, meet other guests, and arrive ready to enjoy the Ball.</p>
         <ul class="exp-bullets">
-          <li>No dance experience required</li>
+          <li>No dance experience needed</li>
           <li>Learn historic dances before the Ball</li>
-          <li><span>Four <a href="#rehearsals" class="experience-inline-link">rehearsals</a> included with your ticket</span></li>
+          <li><span><a href="#rehearsals" class="experience-inline-link">Rehearsals</a> included with your ticket</span></li>
           <li>Costumes and masks required</li>
         </ul>
         <a href="#tickets" class="hero-more experience-ticket-link">Get your tickets <span aria-hidden="true">&rarr;</span></a>
@@ -677,26 +721,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="vid-col video-frame reveal d2" id="expVid">
         <iframe src="https://www.youtube-nocookie.com/embed/sdBhvGbSJNI" title="Celestial Winter Masquerade experience video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PAST EVENTS -->
-<section id="highlights">
-  <div class="wrap">
-    <div class="hl-head reveal">
-      <h2 class="stitle" style="margin-bottom:0">Past Events</h2>
-      <div class="hl-arrows">
-        <button class="hl-arrow" id="hlPrev" type="button" aria-label="Previous highlights"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <button class="hl-arrow" id="hlNext" type="button" aria-label="Next highlights"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-      </div>
-    </div>
-    <div class="hl-track" id="hlTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Past Nocturne Gala events">
-      <div class="hl-tile video"><iframe src="https://www.youtube-nocookie.com/embed/rTBilYAJGnE" title="Nocturne Gala past event video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <div class="hl-tile"><img src="/images/carousel 1.webp" alt="Guests at a past Nocturne Gala event" loading="lazy"/></div>
-      <div class="hl-tile"><img src="/images/carousel 2.webp" alt="Dancers at a past Nocturne Gala event" loading="lazy"/></div>
-      <div class="hl-tile"><img src="/images/carousel 3.webp" alt="Guests dancing at a past event" loading="lazy"/></div>
-      <div class="hl-tile"><img src="/images/carousel 4.webp" alt="Nocturne Gala event highlights" loading="lazy"/></div>
     </div>
   </div>
 </section>
@@ -713,31 +737,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="id-photo journey-photo" id="rehearsalPhoto">
           <div class="journey-image" role="img" aria-label="Guests practicing a dance at a rehearsal" style="background-image:url('/blood-moon-ball/images/3.%20rehearsals.webp')"></div>
           <div class="journey-date-chip">
-            <span>Rehearsals &times; 4</span>
+
             <div class="journey-dates">November 24, December 1, 8, 15</div>
             <small>6:00 to 8:00 PM</small>
-            <div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Lochdale Community School, Burnaby</div>
           </div>
         </div>
         <div class="id-body">
-          <h3 class="journey-card-title">Four Rehearsals</h3>
+          <h3 class="journey-card-title">Rehearsals</h3>
           <p class="journey-card-text">Learn the historic dances step by step over four guided rehearsals. You&rsquo;ll practice with other guests and meet people before the Ball.</p>
           <p class="journey-card-text">Come without a partner or previous dance experience. The rehearsals are included with your ticket.</p>
-          <p class="journey-card-text journey-location"><strong>Rehearsal location: Lochdale Community School, Burnaby.</strong></p>
+          <p class="journey-card-text journey-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><strong>Rehearsal location: Lochdale Community School, Burnaby.</strong></p>
         </div>
       </div>
       <div class="id-card flip reveal d1">
         <div class="id-photo journey-photo" id="ballPhoto">
-          <div class="journey-image" role="img" aria-label="Masked guests dancing at a masquerade ball" style="background-image:url('/celestial-winter-masquerade/public/images/Masquerade%20Ball.webp')"></div>
+          <div class="journey-image" role="img" aria-label="Masked guests dancing at a masquerade ball" style="background-image:url('/celestial-winter-masquerade/public/images/masquerade-dancers.webp')"></div>
           <div class="journey-date-chip">
-            <span>The Ball</span><strong>December 18</strong><small>7:00 to 11:00 PM</small>
-            <div class="journey-chip-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Scottish Cultural Centre, Vancouver</div>
+            <strong>December 18</strong><small>7:00 to 11:00 PM</small>
           </div>
         </div>
         <div class="id-body">
           <h3 class="journey-card-title">The Ball</h3>
           <p class="journey-card-text">On December 18, dress for the winter masquerade and step onto the dance floor. You&rsquo;ll know the dances and some of the people beside you, with music, candlelight, costumes, and masks bringing the evening to life.</p>
-          <p class="journey-card-text journey-location"><strong>Ball location: Scottish Cultural Centre, Vancouver.</strong></p>
+          <p class="journey-card-text journey-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><strong>Ball location: Scottish Cultural Centre, Vancouver.</strong></p>
         </div>
       </div>
     </div>
@@ -816,6 +838,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- PAST EVENTS -->
+<section id="highlights">
+  <div class="wrap">
+    <div class="hl-head reveal">
+      <h2 class="stitle" style="margin-bottom:0">Past Events</h2>
+      <div class="hl-arrows">
+        <button class="hl-arrow" id="hlPrev" type="button" aria-label="Previous highlights"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="hl-arrow" id="hlNext" type="button" aria-label="Next highlights"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="hl-track" id="hlTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Past Nocturne Gala events">
+      <div class="hl-tile video"><iframe src="https://www.youtube-nocookie.com/embed/rTBilYAJGnE" title="Nocturne Gala past event video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="hl-tile"><img src="/images/carousel 1.webp" alt="Guests at a past Nocturne Gala event" loading="lazy"/></div>
+      <div class="hl-tile"><img src="/images/carousel 2.webp" alt="Dancers at a past Nocturne Gala event" loading="lazy"/></div>
+      <div class="hl-tile"><img src="/images/carousel 3.webp" alt="Guests dancing at a past event" loading="lazy"/></div>
+      <div class="hl-tile"><img src="/images/carousel 4.webp" alt="Nocturne Gala event highlights" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
 <!-- GUEST TESTIMONIALS -->
 <section id="testimonials">
   <!-- ASSET: /images/5. guests - Ballroom.webp, full-width -->
@@ -852,66 +894,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- WHY DIFFERENT — alternating photo + text cards -->
-<section id="identity">
-  <div class="wrap">
-    <div class="id-header reveal">
-      <span class="eyebrow">About</span>
-      <h2 class="stitle" style="text-align:center">Why This Is Different</h2>
+<!-- WHAT TO WEAR -->
+<section id="dress" aria-labelledby="dress-title">
+  <div class="wrap dress-grid">
+    <div class="dress-copy reveal">
+      <span class="eyebrow">Dress Code</span>
+      <h2 class="stitle" id="dress-title">What to Wear</h2>
+      <p>A costume and mask are required. Think celestial, winter, historical, or romantic &mdash; polished, imaginative, and ready for the dance floor.</p>
+      <ul class="dress-directions">
+        <li>Flowing gowns, capes, velvet, or elegant eveningwear</li>
+        <li>Tailcoats, waistcoats, or suits with decorative details</li>
+        <li>Midnight blue, silver, gold, stars, and moon-inspired accents</li>
+        <li>A masquerade mask and shoes you can comfortably dance in</li>
+      </ul>
+      <a class="pinterest-link" href="https://pin.it/4q8zSmSXJ" target="_blank" rel="noopener">Open Pinterest inspiration <span aria-hidden="true">&#8599;</span></a>
     </div>
-    <div class="id-cards" id="identityTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Why this event is different">
-      <!-- Card 1: photo LEFT, text RIGHT -->
-      <div class="id-card reveal">
-        <div class="id-photo" id="idPhoto1"></div>
-        <div class="id-body">
-          <div class="id-icon">&#127917;</div>
-          <div class="id-title">Structured</div>
-          <p class="id-text">You are not dropped into a room and expected to figure it out. Rehearsals, dances, and a guided program give the evening rhythm.</p>
-        </div>
-      </div>
-      <!-- Card 2: text LEFT, photo RIGHT (flip) -->
-      <div class="id-card flip reveal d1">
-        <div class="id-photo" id="idPhoto2"></div>
-        <div class="id-body">
-          <div class="id-icon">&#10022;</div>
-          <div class="id-title">Immersive</div>
-          <p class="id-text">The dress code, masks, music, and setting work together. It feels less like attending an event and more like entering a world.</p>
-          <a href="https://pin.it/4q8zSmSXJ" target="_blank" class="id-link">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-            Costume Inspiration
-          </a>
-        </div>
-      </div>
-      <!-- Card 3: photo LEFT, text RIGHT -->
-      <div class="id-card reveal d2">
-        <div class="id-photo" id="idPhoto3"></div>
-        <div class="id-body">
-          <div class="id-icon">&#128131;&#128378;</div>
-          <div class="id-title">Social</div>
-          <p class="id-text">By the time the Ball begins, the room is no longer anonymous. You have already met people, practiced together, and shared the first part of the experience.</p>
-        </div>
-      </div>
-    </div>
-    <div class="id-controls">
-      <button class="id-arrow" id="idPrev" type="button" aria-label="Previous reason">&#8249;</button>
-      <span class="id-page" id="idPage" aria-live="polite">1 / 2</span>
-      <button class="id-arrow" id="idNext" type="button" aria-label="Next reason">&#8250;</button>
+    <div class="outfit-grid reveal d1" aria-label="Celestial masquerade outfit inspiration">
+      <div class="outfit-card"><img src="/celestial-winter-masquerade/public/images/celestial-hair.webp" alt="Silver moon and star hair accessories with celestial eveningwear" loading="lazy"/></div>
+      <div class="outfit-card"><img src="/celestial-winter-masquerade/public/images/celestial-mask.webp" alt="Blue and gold embroidered masquerade mask" loading="lazy"/></div>
+      <div class="outfit-card"><img src="/celestial-winter-masquerade/public/images/celestial-suit.webp" alt="Black suit with gold sun embroidery and pearl details" loading="lazy"/></div>
+      <div class="outfit-card"><img src="/celestial-winter-masquerade/public/images/celestial-gown.webp" alt="Midnight blue gown with gold celestial embellishments" loading="lazy"/></div>
     </div>
   </div>
 </section>
 
 <!-- MUSIC AND DANCES -->
 <section id="music" aria-labelledby="music-title">
-  <div class="wrap">
-    <div class="music-head reveal">
-      <span class="eyebrow">Details</span>
+  <div class="wrap music-layout">
+    <div class="music-copy reveal">
+      <span class="eyebrow">The Sound of the Ball</span>
       <h2 class="stitle" id="music-title">Music and Dances</h2>
-      <p>European classical music meets modern tracks and dramatic musical theater songs to create an eccentric Ball.</p>
+      <p>European classics, modern tracks, and dramatic musical theatre set the scene for an evening of historic dancing.</p>
+      <a class="playlist-card" href="https://music.youtube.com/playlist?list=PLvAWcgdkBQDEhO5Hw3mPwxA1K9YXt24KG" target="_blank" rel="noopener">
+        <span class="playlist-play" aria-hidden="true">&#9654;</span>
+        <span><small>Listen on YouTube Music</small><strong>Step into the atmosphere</strong></span>
+        <span class="playlist-arrow" aria-hidden="true">&#8599;</span>
+      </a>
     </div>
-    <div class="century-grid">
-      <div class="century-card reveal"><h3>18th century</h3><ul><li>Slow menuet</li></ul></div>
-      <div class="century-card reveal d1"><h3>19th century</h3><ul><li>Viennese waltz</li><li>Scottish Circle Waltz</li><li>Mazurka Del Gallopardo</li><li>Irish polka</li><li>La Portugaise</li><li>Quadrille allemande</li></ul></div>
-      <div class="century-card reveal d2"><h3>20th century</h3><ul><li>Waltz Velleta</li><li>Chapeloise</li></ul></div>
+    <div class="dance-program reveal d1">
+      <p class="dance-program-label">On the dance floor</p>
+      <div class="dance-era"><span>18th century</span><p>Slow menuet</p></div>
+      <div class="dance-era"><span>19th century</span><p>Viennese waltz &middot; Scottish Circle Waltz &middot; Mazurka Del Gallopardo &middot; Irish polka &middot; La Portugaise &middot; Quadrille allemande</p></div>
+      <div class="dance-era"><span>20th century</span><p>Waltz Velleta &middot; Chapeloise</p></div>
     </div>
   </div>
 </section>
@@ -1045,32 +1069,6 @@ if(highlightTrack){
   highlightTrack.addEventListener('scroll',syncHighlights,{passive:true});
   window.addEventListener('resize',syncHighlights);
   syncHighlights();
-}
-
-const identityTrack=document.getElementById('identityTrack');
-if(identityTrack){
-  const cards=[...identityTrack.querySelectorAll('.id-card')];
-  const prev=document.getElementById('idPrev');
-  const next=document.getElementById('idNext');
-  const page=document.getElementById('idPage');
-  const syncIdentity=()=>{
-    const visible=window.matchMedia('(max-width: 820px)').matches?1:2;
-    const maxPage=cards.length-visible+1;
-    const step=cards.length>1?cards[1].offsetLeft-cards[0].offsetLeft:1;
-    const current=Math.min(maxPage,Math.max(1,Math.round(identityTrack.scrollLeft/step)+1));
-    page.textContent=`${current} / ${maxPage}`;
-    prev.disabled=identityTrack.scrollLeft<8;
-    next.disabled=identityTrack.scrollLeft+identityTrack.clientWidth>=identityTrack.scrollWidth-8;
-  };
-  const move=direction=>{
-    const step=cards.length>1?cards[1].offsetLeft-cards[0].offsetLeft:identityTrack.clientWidth;
-    identityTrack.scrollBy({left:direction*step,behavior:'smooth'});
-  };
-  prev.addEventListener('click',()=>move(-1));
-  next.addEventListener('click',()=>move(1));
-  identityTrack.addEventListener('scroll',syncIdentity,{passive:true});
-  window.addEventListener('resize',syncIdentity);
-  syncIdentity();
 }
 
 const testimonialTrack=document.getElementById('testimonialTrack');
