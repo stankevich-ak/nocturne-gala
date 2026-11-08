@@ -1,0 +1,8 @@
+# Generated work belongs outside this website repository.
+outputs/
+output/
+
+# Local dependencies and macOS housekeeping.
+node_modules/
+.DS_Store
+._*
