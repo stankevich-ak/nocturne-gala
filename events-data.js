@@ -7,9 +7,7 @@ window.nocturneEvents = [
     "location": "Victoria, BC",
     "image": "/images/3.%20vampire%20-%20card.webp",
     "description": "A gothic historic dance ball with vampire court atmosphere, candlelight, and an immersive evening of social dancing.",
-    "status": "Tickets Available",
-    "cta": "Buy Tickets",
-    "anchor": "tickets"
+    "past": true
   },
   {
     "id": "celestial-winter-masquerade",
